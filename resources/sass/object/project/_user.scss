@@ -1,0 +1,43 @@
+.p-user {
+    &__info {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow:  0 3px 6px rgba(0, 0, 0, 0.15);
+        padding: 60px 80px;
+        box-sizing: border-box;
+        margin-bottom: 70px;
+        @include mq($breakpoint: md) {
+            padding: 60px 30px;
+        }
+    }
+    &__img {
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 8px;
+        max-width: 200px;
+    }
+    &__name {
+        color: #085591;
+        text-align: center;
+        font-size: 1.4rem;
+        word-break: break-all;
+    }
+    &__content {
+        margin-top: 50px;
+    }
+    &__content__text {
+        font-size: 1rem;
+        word-break: break-all;
+        line-height: 1.2;
+    }
+    &__product__heading {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        @include mq($breakpoint: md) {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    }
+}

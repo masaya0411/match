@@ -1,0 +1,41 @@
+.c-side {
+    border-radius: 4px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+    background: #fff;
+    
+    &__mypage {
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    &__mypage:hover {
+        background: #F0F4F8;
+    }
+    &__block {
+        padding: 10px 0;
+        border-top: 1px solid #000;
+    }
+    &__heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: $sub-color1;
+        padding: 0 30px;
+        @include mq($breakpoint: lg) {
+            text-align: center;
+        }
+    }
+    &__link {
+        padding: 15px;
+        display: block;
+        text-align: center;
+        border-radius: 6px;
+    }
+    &__link:hover {
+        background: #F0F4F8;
+    }
+}

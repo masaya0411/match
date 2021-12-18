@@ -1,0 +1,91 @@
+.c-header {
+    width: 100%;
+    height: 75px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    background: #fff;
+    @include mq($breakpoint: md) {
+        padding: 0 20px;
+        height: 60px;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 160px;
+        margin-right: 50px;
+        @include mq($breakpoint: md) {
+            width: 120px;
+        }
+    }
+    &__menu-trigger {
+        display: none;
+        transition: all .4s;
+        box-sizing: border-box;
+        position: relative;
+        width: 40px;
+        height: 32px;
+        z-index: 100;
+        @include mq($breakpoint: md) {
+            display: inline-block;
+        }
+    }
+    &__menu-line {
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #000;
+        border-radius: 4px;
+        &:nth-of-type(1) {
+            top: 0;
+        }
+        &:nth-of-type(2) {
+            top: 14px;
+        }
+        &:nth-of-type(3) {
+            bottom: 0;
+        }
+    }
+    &__menu--active  .c-header__menu-line {
+        &:nth-of-type(1) {
+            transform: translateY(12px) rotate(-45deg);
+        }
+        &:nth-of-type(2) {
+            opacity: 0;
+        }
+        &:nth-of-type(3) {
+            transform: translateY(-15px) rotate(45deg);
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq($breakpoint: md) {
+            display: none;
+        }
+    }
+    &__item {
+        margin: 0 5px;
+    }
+    &__link {
+        display: block;
+        padding: 8px;
+    }
+    &__link:hover {
+        opacity: .4;
+    }
+    &__link--green {
+        color: $main-color;
+    }
+}

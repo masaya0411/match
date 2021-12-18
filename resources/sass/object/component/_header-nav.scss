@@ -1,0 +1,112 @@
+.c-header-nav {
+    z-index: 1001;
+    position: fixed;
+    right: 40px;
+    top: 28px;
+    @include mq($breakpoint: md) {
+        background: #fff;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+        border-radius: 0 0 16px 16px;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        width: 100%;
+        transition: all 0.3s;
+        opacity: 0;
+        z-index: -1;
+    }
+    &__content {
+        @include mq($breakpoint: md) {
+            width: 100%;
+        }
+    }
+    &__btn__wrap {
+        display: flex;
+        align-items: center;
+        @include mq($breakpoint: md) {
+            display: block;
+            padding: 20px;
+        }
+    }
+    &__btn {
+        display: block;
+        padding: 8px;
+        box-sizing: border-box;
+        font-size: 12px;
+        border-radius: 4px;
+        margin: 0 5px;
+        @include mq($breakpoint: md) {
+            width: 100%;
+            margin: 0 0 10px;
+            font-size: 16px;
+            text-align: center;
+            padding: 18px 0;
+        }
+    }
+    &__btn:hover {
+        opacity: .6;
+    }
+    &__login__btn {
+        color: $sub-color1;
+        border: solid 1px $sub-color1;
+    }
+    &__register__btn {
+        color: #fff;
+        background: #3479CA;
+    }
+    &__open {
+        @include mq($breakpoint: md) {
+            opacity: 1;
+            z-index: 100;
+        }
+    }
+    &__user {
+        position: relative;
+    }
+    &__user__btn {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: #587170;
+        font-size: 1.4rem;
+        @include mq($breakpoint: md) {
+            display: none;
+        }
+    }
+    &__user__btn:hover {
+        cursor: pointer;
+    }
+    &__user__icon {
+        width: 40px;
+    }
+    &__user__list {
+        text-align: center;
+        &.is-show {
+            display: block;
+        }
+        @include mq($breakpoint: min-md) {
+            width: 230px;
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+    &__user__link {
+        padding: 15px 20px;
+        font-size: 18px;
+        display: block;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    &__user__link:hover {
+        background: #F0F4F8;
+    }
+    &__user__link--logout {
+        width: 100%;
+    }
+}

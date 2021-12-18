@@ -1,0 +1,6 @@
+.l-column {
+    @include mq($breakpoint: min-lg) {
+        display: flex;
+        justify-content: space-between;
+    }
+}

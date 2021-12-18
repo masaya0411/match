@@ -1,0 +1,225 @@
+.p-top {
+    position: relative;
+}
+.p-top__hero {
+    position: relative;
+    background: url('../images/undraw_work_chat_re_qes4.svg');
+    background-size: 60vw 500px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+    @include mq($breakpoint: md) {
+        padding-top: 40px;
+        padding-bottom: 0;
+        background-size: 90vw 350px;
+        background-position: bottom center;
+    }
+    @include mq() {
+        background-size: 90vw 300px;
+    }
+    &__content {
+        width: 90%;
+        margin: 0 auto;
+    }
+    &__title {
+        font-size: 2.8rem;
+        font-weight: bold;
+        line-height: 1.8;
+        padding-bottom: 200px;
+        @include mq($breakpoint: md) {
+            font-size: 1.6rem;
+            padding-bottom: 0px;
+        }
+    }
+    &__btn {
+        margin-left: 50px;
+        @include mq($breakpoint: md) {
+            margin: 250px auto 0;
+        }
+    }
+}
+
+.p-top__match {
+    padding: 80px 0;
+    @include mq($breakpoint: md) {
+        padding: 40px 0;
+    }
+    &__wrap {
+        display: flex;
+        @include mq($breakpoint: md) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    &__img {
+        width: 50%;
+        @include mq($breakpoint: md) {
+            width: 95%;
+        }
+    }
+    &__text {
+        width: 50%;
+        padding: 10px 15px;
+        text-align: center;
+        line-height: 2;
+        @include mq($breakpoint: md) {
+            width: 95%;
+            padding: 20px 10px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        @include mq() {
+            font-size: .8rem;
+        }
+        
+    }
+    &__text--bold {
+        font-weight: bold;
+    }
+}
+
+.p-top__use {
+    padding: 80px 0;
+    @include mq($breakpoint: md) {
+        padding: 40px 0;
+    }
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        @include mq($breakpoint: md) {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    &__card {
+        width: 30%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        @include mq($breakpoint: md) {
+            width: 100%;
+        }
+    }
+    &__card-heading {
+        text-align: center;
+        font-size: $font-size_xl;
+        font-weight: bold;
+        color: $sub-color1;
+        padding: 20px 0;
+    }
+    &__font-size {
+        font-size: 40px;
+    }
+    &__card-body {
+        text-align: center;
+    }
+    &__card-img {
+        height: 210px;
+    }
+    &__card-title {
+        font-weight: bold;
+        font-size: 26px;
+        margin: 15px 0;
+    }
+    &__card-text {
+        padding: 10px 0;
+        line-height: 1.4;
+        font-size: $font-size_s;
+    }
+}
+
+.p-top__customer {
+    padding: 80px 0;
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+        @include mq($breakpoint: md) {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+    &__panel {
+        width: 30%;
+        box-sizing: border-box;
+        border-radius: 13px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        @include mq($breakpoint: md) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    &__panel-body {
+        padding: 15px 40px;
+    }
+    &__panel-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    &__panel-sub-title {
+        color: #878787;
+        font-size: $font-size_s;
+        margin-bottom: 20px;
+    }
+    &__panel-text {
+        font-size: $font-size_s;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+}
+
+.p-top__question {
+    padding: 80px 0;
+    &__wrap {
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin: 0 auto 80px;
+    }
+    &__acdn {
+        position: relative;
+        border-top: 1px solid #C4C4C4;
+        border-bottom: 1px solid #C4C4C4;
+    }
+    &__acdn-title {
+        position: relative;
+        line-height: 3;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px 30px;
+        display: flex;
+        @include mq($breakpoint: md) {
+            line-height: 1.8;
+        }
+    }
+    &__acdn-title:hover {
+        cursor: pointer;
+    }
+    &__acdn-title::after {
+        position: absolute;
+        content: '';
+        width: 14px;
+        height: 14px;
+        right: 25px;
+        top: calc(50% - 10px);
+        border-top: 3px solid #BCBABA;
+        border-right: 3px solid #BCBABA;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        transition: all 0.2s ease-in-out;
+    }
+    &__q {
+        padding: 0 10px;
+    }
+    &__acdn-text {
+        display: none;
+        padding: 30px 80px;
+        line-height: 1.5;
+        border-top: 1px solid #C4C4C4;
+        @include mq($breakpoint: md) {
+            padding: 30px;
+        }
+    }
+}

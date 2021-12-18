@@ -1,0 +1,7 @@
+.l-header {
+    position: relative;
+    height: 75px;
+    @include mq($breakpoint: md) {
+        height: 60px;
+    }
+}

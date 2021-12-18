@@ -1,0 +1,6 @@
+.l-side {
+    width: 240px;
+    @include mq($breakpoint: lg) {
+        width: 100%;
+    }
+}

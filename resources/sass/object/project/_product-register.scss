@@ -1,0 +1,21 @@
+.p-product-register {
+    &__heading {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-align: center;
+        @include mq($breakpoint: md) {
+            font-size: 1.4rem;
+        }
+    }
+    &__btn {
+        margin-top: 30px;
+    }
+    &__radio {
+        display: flex;
+        align-items: center;
+    }
+    &__radio .c-form__radio {
+        margin-left: 24px;
+    }
+}

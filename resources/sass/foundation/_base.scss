@@ -1,0 +1,53 @@
+html,body {
+    width: 100%;
+    font-family: $font-family;
+    color: $font-color;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+    color: $font-color;
+    text-decoration: none;
+    transition: .3s;
+  }
+a:hover {
+  transition: .3s;
+}
+button {
+  transition: .3s;
+}
+button:hover {
+  transition: .3s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+input,button,textarea,select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+}
+input[type=email]:focus,input[type=password]:focus,input[type=text]:focus,select:focus,textarea:focus {
+  border: 2px solid rgb(77, 184, 211);
+  outline: rgb(77, 184, 211);
+}
+input[type=file] {
+  opacity: 0;
+  position: absolute;
+}
+button:hover {
+  cursor: pointer;
+}

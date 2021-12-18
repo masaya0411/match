@@ -1,0 +1,50 @@
+.p-terms {
+    background: #fff;
+    padding: 80px 60px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    @include mq($breakpoint: md) {
+        padding: 40px 24px;
+    }
+    &__heading {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__sub-heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    &__text {
+        font-size: .9rem;
+        line-height: 1.7;
+    }
+    &__item {
+        margin-top: 40px;
+    }
+    &__content {
+        padding-left: 20px;
+    }
+    &__content__item {
+        font-size: .9rem;
+        line-height: 1.7;
+        list-style-type: decimal;
+        margin: 8px 0;
+    }
+    &__privacy {
+        margin-top: 50px;
+        padding: 24px;
+        border: 3px solid #000;
+    }
+    &__privacy__title {
+        font-weight: bold;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    &__privacy__block__text {
+        font-size: .8rem;
+        line-height: 1.7;
+    }
+}

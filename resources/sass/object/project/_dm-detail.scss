@@ -1,0 +1,71 @@
+.p-dm-detail {
+    &__head {
+        background: #fff;
+        border-radius: 6px;
+        padding: 30px 40px;
+        margin-bottom: 50px;
+        @include mq($breakpoint: md) {
+            padding: 30px 10px;
+        }
+    }
+    &__head__wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    &__head__img {
+        width: 100px;
+    }
+    &__head__name {
+        color: $sub-color1;
+        font-size: 1.5rem;
+        margin-left: 30px;
+    }
+    &__head__heading {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #000;
+        display: inline-block;
+    }
+    &__head__product__title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $sub-color1;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    &__head__product__amount {
+        color: #CC0221;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+    &__head__product__apply {
+        margin: 15px 0;
+    }
+    &__body {
+        padding: 40px;
+        background: #fff;
+        border-radius: 6px;
+        @include mq($breakpoint: md) {
+            padding: 30px 10px;
+        }
+    }
+    &__body__title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    &__comment {
+        overflow: auto;
+        max-height: 1000px;
+        padding: 10px;
+    }
+    &__form {
+        margin-top: 40px;
+    }
+    &__btn {
+        margin-top: 30px;
+    }
+}

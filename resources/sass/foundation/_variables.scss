@@ -1,0 +1,40 @@
+$site-width: 100%;
+
+$main-color: #00BCAE;
+$sub-color1: #085591;
+
+$font-color: #000;
+
+$font-family: 'Hiragino Sans CNS', sans-serif;
+
+$font-size_s: 14px;
+$font-size_m: 18px;
+$font-size_l: 20px;
+$font-size_xl: 28px;
+$font-size_xxl: 32px;
+$font-size_3l: 52px;
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+$breakpoints: (
+    'sm': 'screen and (max-width: 414px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1000px)',
+    'xl': 'screen and (max-width: 1200px)',
+    'min-md': 'screen and (min-width: 768px)',
+    'min-lg': 'screen and (min-width: 1000px)'
+) !default;
+
+// ==============================
+// mixin
+// ==============================
+@mixin mq($breakpoint: sm) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}

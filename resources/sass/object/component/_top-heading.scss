@@ -1,0 +1,11 @@
+.c-top__heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 50px;
+    color: #3E62B2;
+    @include mq() {
+        font-size: 1.6rem;
+        padding-bottom: 30px;
+    }
+}
