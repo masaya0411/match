@@ -3,11 +3,19 @@
 
 @section('content')
 <main class="l-main u-bg-color--gray">
+    <!--  フラッシュメッセージ -->
+    @if(session('flash_message'))
+        <div class="c-flash-message c-flash-message--success js-flashMessage">
+            {{ session('flash_message') }}
+        </div>
+    @endif
+
     <div class="p-mypage">
         <div class="l-content-lg">
             <h1 class="p-mypage__title">マイページ</h1>
             <div class="l-column">
                 <div class="l-main-content">
+
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">登録済み案件</h2>
@@ -49,20 +57,10 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="c-panel__item p-mypage__panel">
-                                    <a href="#" class="c-panel__link">
-                                        <h3 class="c-panel__title">【急募】常駐でのお仕事をお願いします</h3>
-                                        <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">レベニューシェア</span>
-                                        </div>
-                                        <div class="c-panel__price-wrap">
-                                            <p class="c-panel__text">要相談</p>
-                                        </div>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
+
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">応募済み案件</h2>

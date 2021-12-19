@@ -15,7 +15,7 @@
             <p class="c-side__heading">お仕事を頼む</p>
             <ul class="c-side__list">
                 <li class="c-side__item">
-                    <a href="#" class="c-side__link">案件を登録</a>
+                    <a href="{{ route('products.create') }}" class="c-side__link">案件を登録</a>
                 </li>
             </ul>
         </div>

@@ -2,7 +2,7 @@
     z-index: 1001;
     position: fixed;
     right: 40px;
-    top: 28px;
+    top: 20px;
     @include mq($breakpoint: md) {
         background: #fff;
         box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
