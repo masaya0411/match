@@ -14,17 +14,19 @@
 Route::get('/', function () {
     return view('top');
 });
-
 Route::get('/privacy', function() {
     return view('privacy');
 });
-
 Route::get('/terms', function() {
     return view('terms');
 });
 
-Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/mypage', 'UsersController@show')->name('mypage');
+    Route::get('/products/create', 'ProductsController@create')->name('products.create');
+    Route::post('/products', 'ProductsController@store')->name('products.store');
+});
 
-Route::get('/mypage', 'UsersController@show')->name('mypage');
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
