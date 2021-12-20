@@ -29,7 +29,8 @@ class ProductRequest extends FormRequest
             'min_price' => 'integer|max:100000',
             'max_price' => 'integer|max:100000|gt:min_price',
             'reward' => 'string|max:50',
-            'description' => 'required|string|max:5000'
+            'description' => 'required|string|max:5000',
+            'recruit_flg' => 'required|integer'
         ];
     }
 }

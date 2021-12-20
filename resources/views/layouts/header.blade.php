@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="c-header-nav__user__item">
-                            <a href="product.html" class="c-header-nav__user__link js-header-link">
+                            <a href="{{ route('products.index') }}" class="c-header-nav__user__link js-header-link">
                                 案件を探す
                             </a>
                         </li>

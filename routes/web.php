@@ -23,9 +23,13 @@ Route::get('/terms', function() {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage', 'UsersController@show')->name('mypage');
+
+    Route::get('/products', 'ProductsController@index')->name('products.index');
     Route::get('/products/create', 'ProductsController@create')->name('products.create');
     Route::post('/products', 'ProductsController@store')->name('products.store');
-});
+    Route::get('/products/{id}/edit', 'ProductsController@edit')->name('products.edit');
+    Route::put('/products/{id}', 'ProductsController@update')->name('products.update');
+}); 
 
 Auth::routes();
 

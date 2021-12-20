@@ -17,7 +17,12 @@ class productsController extends Controller
      */
     public function index()
     {
-        //
+        // 案件一覧画面を表示
+        $products = Product::all();
+        $category = new Category;
+        $categories = $category->getLists()->prepend('選択して下さい', '');
+
+        return view('logined.products.product', ['products' => $products, 'categories' => $categories]);
     }
 
     /**
@@ -27,10 +32,10 @@ class productsController extends Controller
      */
     public function create()
     {
-        // カテゴリーを取得
+        // 案件登録画面を表示
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
-        // 案件登録画面を表示
+
         return view('logined.products.productRegister', ['categories' => $categories]);
     }
 
@@ -42,6 +47,7 @@ class productsController extends Controller
      */
     public function store(ProductRequest $request)
     {
+        // 新規案件を登録
         $product = new Product;
         Auth::user()->products()->save($product->fill($request->all()));
 
@@ -67,7 +73,21 @@ class productsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // 案件編集画面を表示
+
+        if(!ctype_digit($id)){
+            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
+        }
+
+        $product = Auth::user()->products()->find($id);
+        
+        if(empty($product->id)) {
+            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
+        }
+        
+        $category = Category::find($product->category_id);
+        
+        return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
     }
 
     /**
@@ -77,9 +97,17 @@ class productsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        //
+        // 案件の編集内容を更新
+        if(!ctype_digit($id)){
+            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
+        }
+
+        $product = Product::find($id);
+        $product->fill($request->all())->save();
+
+        return redirect('/mypage')->with('flash_message', '編集内容を登録しました。');
     }
 
     /**

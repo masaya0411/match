@@ -13,6 +13,11 @@ $(function() {
     $('.js-header-link').on('click', function() {
         $('.js-userListBtn-target').toggleClass('is-show');
     })
+    $(document).on('click', function(e){
+        if( !$(e.target).closest('.js-userListBtn').length && !$(e.target).closest('.js-header-link').length ) {
+            $('.js-userListBtn-target').removeClass('is-show');
+        }
+    });
 
 
     // アコーディオンメニュー
@@ -83,5 +88,7 @@ $(function() {
 
 
     //フラッシュメッセージ
-    $('.js-flashMessage').fadeOut(5000);
+    setTimeout(function(){
+        $('.js-flashMessage').slideUp("fast");
+    }, 3000);
 });

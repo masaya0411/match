@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -45,7 +47,10 @@ class UsersController extends Controller
      */
     public function show()
     {
-        return view('logined.mypage');
+        $products = Auth::user()->products()->get();
+        $category = new Category;
+        $categories = $category->getLists()->prepend('選択して下さい', '');
+        return view('logined.mypage', ['products' => $products, 'categories' => $categories]);
     }
 
     /**
