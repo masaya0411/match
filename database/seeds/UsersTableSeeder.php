@@ -2,9 +2,8 @@
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class CategoriesTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,13 +12,17 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([
-            'category_name' => '単発',
+        DB::table('users')->insert([
+            'name' => 'aaa',
+            'email' => 'a@a.com',
+            'password' => bcrypt('aaaaaaaa'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        DB::table('categories')->insert([
-            'category_name' => 'レベニューシェア',
+        DB::table('users')->insert([
+            'name' => 'bbb',
+            'email' => 'b@b.com',
+            'password' => bcrypt('bbbbbbbb'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

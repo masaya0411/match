@@ -57,24 +57,32 @@
                                             <a href="{{ route('products.edit',$product->id) }}" class="p-mypage__panel__btn--edit">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <button type="button" class="p-mypage__panel__btn--delete js-modal-open">
+                                            <button type="button" class="p-mypage__panel__btn--delete js-modal-open" data-target="modal{{$product->id}}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                         </div>
-                                        <div class="c-modal js-modal">
+
+                                        <!-- 削除モーダル -->
+                                        <div id="modal{{$product->id}}" class="c-modal js-modal">
                                             <div class="c-modal__bg js-modal-close"></div>
                                             <div class="c-modal__content">
                                                 <button type="button" class="c-modal__close js-modal-close">
                                                     <img src="images/close.svg" alt="閉じる">
                                                 </button>
-                                                <form action="" method="POST" class="c-modal__form">
-                                                    <p class="c-modal__form__text">aaaを削除しますか？</p>
+                                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="c-modal__form">
+                                                    @method('DELETE')
+                                                    @csrf
+
+                                                    <p class="c-modal__form__text">
+                                                        {{ $product->title }}を削除しますか？
+                                                    </p>
                                                     <div class="c-modal__form__btn">
                                                         <button type="submit" class="c-btn--danger u-m-auto">削除</button>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
+
                                     </li>
 
                                 @endforeach

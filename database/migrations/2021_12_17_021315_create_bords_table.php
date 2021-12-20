@@ -18,7 +18,7 @@ class CreateBordsTable extends Migration
             $table->integer('post_user');
             $table->integer('apply_user');
             $table->integer('product_id');
-            $table->boolean('delete_flg')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

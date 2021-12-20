@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/products', 'ProductsController@store')->name('products.store');
     Route::get('/products/{id}/edit', 'ProductsController@edit')->name('products.edit');
     Route::put('/products/{id}', 'ProductsController@update')->name('products.update');
+    Route::delete('/products/{id}', 'ProductsController@destroy')->name('products.destroy');
 }); 
 
 Auth::routes();

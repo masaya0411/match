@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('user_id');
             $table->boolean('recruit_flg')->default(1);
-            $table->boolean('delete_flg')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

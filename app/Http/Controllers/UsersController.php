@@ -47,7 +47,7 @@ class UsersController extends Controller
      */
     public function show()
     {
-        $products = Auth::user()->products()->get();
+        $products = Auth::user()->products()->where('deleted_at', null)->get();
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
         return view('logined.mypage', ['products' => $products, 'categories' => $categories]);

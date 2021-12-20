@@ -16,7 +16,7 @@ class CreateLikesTable extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->integer('product_id');
             $table->integer('user_id');
-            $table->boolean('delete_flg')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

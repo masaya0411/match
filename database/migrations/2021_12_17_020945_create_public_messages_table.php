@@ -19,7 +19,7 @@ class CreatePublicMessagesTable extends Migration
             $table->integer('send_user');
             $table->dateTime('send_date');
             $table->string('public_msg');
-            $table->boolean('delete_flg')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

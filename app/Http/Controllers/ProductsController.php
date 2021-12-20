@@ -18,7 +18,7 @@ class productsController extends Controller
     public function index()
     {
         // 案件一覧画面を表示
-        $products = Product::all();
+        $products = Product::where('deleted_at', null)->get();
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
 
@@ -86,7 +86,7 @@ class productsController extends Controller
         }
         
         $category = Category::find($product->category_id);
-        
+
         return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
     }
 
@@ -118,6 +118,13 @@ class productsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // 登録案件を論理削除
+        if(!ctype_digit($id)){
+            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
+        }
+
+        Product::find($id)->delete();
+
+        return redirect('/mypage')->with('flash_message', '案件を削除しました。');
     }
 }
