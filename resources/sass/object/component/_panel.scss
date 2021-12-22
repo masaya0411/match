@@ -7,6 +7,7 @@
         padding: 20px 40px;
         position: relative;
         width: 100%;
+        border-radius: 4px;
 
         &.is-finished {
             overflow: hidden;
@@ -39,6 +40,7 @@
     }
     &__link:hover {
         background: #F0F4F8;
+        border: 2px solid #97e1a7;
     }
     &__title {
         display: inline-block;

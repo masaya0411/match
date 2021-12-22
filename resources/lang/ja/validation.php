@@ -150,6 +150,10 @@ return [
         "min_price" => "下限金額",
         "reward" => "報酬内容",
         "description" => "内容",
+        "name" => "ニックネーム",
+        "email" => "メールアドレス",
+        "introduction" => "自己紹介",
+        "pic" => "プロフィール画像"
     ],
 
 ];

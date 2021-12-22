@@ -52,9 +52,9 @@
                 <div class="c-headr-nav__user">
                     <button type="button" class="c-header-nav__user__btn js-userListBtn">
                         <span class="c-header-nav__user__icon">
-                            <img src="{{ asset('images/70b3dd52350bf605f1bb4078ef79c9b9.png') }}" alt="アイコン：プロフィール画像">
+                            <img src="/storage/profile_images/{{ Auth::user()->pic }}" alt="アイコン：プロフィール画像">
                         </span>
-                        msy0411さん
+                        {{ Auth::user()->name }}さん
                     </button>
 
                     <ul class="c-header-nav__user__list js-userListBtn-target">

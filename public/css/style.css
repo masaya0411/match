@@ -186,7 +186,7 @@ button:hover {
 
 .c-btn {
   display: block;
-  width: 330px;
+  max-width: 330px;
   text-align: center;
   color: #fff;
   font-size: 18px;
@@ -198,6 +198,7 @@ button:hover {
 @media screen and (max-width: 768px) {
   .c-btn {
     width: 100%;
+    padding: 15px 60px;
   }
 }
 .c-btn--upload {
@@ -745,6 +746,14 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 .c-header-nav__user__icon {
   width: 40px;
+  margin-right: 10px;
+}
+.c-header-nav__user__icon > img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 .c-header-nav__user__list {
   text-align: center;
@@ -938,6 +947,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   padding: 20px 40px;
   position: relative;
   width: 100%;
+  border-radius: 4px;
 }
 .c-panel__link.is-finished {
   overflow: hidden;
@@ -969,6 +979,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 .c-panel__link:hover {
   background: #F0F4F8;
+  border: 2px solid #97e1a7;
 }
 .c-panel__title {
   display: inline-block;
@@ -1185,6 +1196,47 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 .p-dm-detail__btn {
   margin-top: 30px;
+}
+
+.p-error {
+  padding: 60px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 414px) {
+  .p-error {
+    padding: 30px 20px;
+  }
+}
+.p-error__heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .p-error__heading {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+}
+.p-error__text {
+  line-height: 1.3;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .p-error__text {
+    font-size: 0.8rem;
+  }
+}
+.p-error__btn {
+  margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .p-error__btn {
+    margin-top: 20px;
+  }
 }
 
 .p-mypage {
@@ -1506,6 +1558,13 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   border-radius: 50%;
   overflow: hidden;
   max-width: 160px;
+}
+.p-profile__img > img {
+  width: 160px;
+  height: 160px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
 }
 .p-profile__mail {
   display: flex;

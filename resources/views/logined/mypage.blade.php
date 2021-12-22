@@ -27,7 +27,7 @@
                                 @foreach($products as $product)
 
                                     <li class="c-panel__item p-mypage__panel">
-                                        <a href="#" class="c-panel__link">
+                                        <a href="{{ route('products.show',$product->id) }}" class="c-panel__link">
                                             <h3 class="c-panel__title">{{ $product->title }}</h3>
                                             <div class="c-panel__badge-wrap">
                                                 <span class="c-panel__badge c-badge-sm">
@@ -43,7 +43,7 @@
                                             <div class="c-panel__price-wrap">
                                                 @if($product->category_id == 1)
                                                     <p class="c-panel__price">
-                                                        {{ number_format($product->min_price*1000) }}~{{ number_format($product->max_price*1000) }}
+                                                        {{ number_format($product->min_price*1000) }} ~ {{ number_format($product->max_price*1000) }}
                                                     </p>
                                                     <span class="c-panel__unit">円</span>
                                                 @else

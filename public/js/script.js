@@ -93,4 +93,20 @@ $(function() {
     setTimeout(function(){
         $('.js-flashMessage').slideUp("fast");
     }, 3000);
+
+
+    // 画像ライブプレビュー
+    var $fileUpload = $('#file_upload');
+
+    $fileUpload.on('change', function(e){
+        var file = this.files[0];
+            $img = $('.js-profImg');
+            fileReader = new FileReader();
+
+        fileReader.onload = function(event) {
+            $img.attr('src', event.target.result).show();
+        };
+
+        fileReader.readAsDataURL(file);
+    });
 });

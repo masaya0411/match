@@ -19,4 +19,8 @@ class Product extends Model
     {
         return $this->belongsTo('App\Category');
     }
+    public function public_messages()
+    {
+        return $this->hasMany('App\PublicMessage');
+    }
 }

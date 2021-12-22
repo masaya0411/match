@@ -1,6 +1,6 @@
 .c-btn {
     display: block;
-    width: 330px;
+    max-width: 330px;
     text-align: center;
     color: #fff;
     font-size: $font-size_m;
@@ -10,6 +10,7 @@
     border-radius: 4px;
     @include mq($breakpoint: md) {
         width: 100%;
+        padding: 15px 60px;
     }
     &--upload {
         margin: 0 auto;

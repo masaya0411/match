@@ -79,6 +79,14 @@
     }
     &__user__icon {
         width: 40px;
+        margin-right: 10px;
+    }
+    &__user__icon > img{
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
     &__user__list {
         text-align: center;

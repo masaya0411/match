@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
@@ -47,6 +49,7 @@ class UsersController extends Controller
      */
     public function show()
     {
+        // マイページを表示
         $products = Auth::user()->products()->where('deleted_at', null)->get();
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
@@ -59,9 +62,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        //プロフィール編集画面を表示
+        $user = Auth::user();
+        return view('logined.profEdit', compact('user'));
     }
 
     /**
@@ -71,9 +76,22 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        //
+        // プロフィールを更新
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->introduction = $request->introduction;
+
+        if(!empty($request->pic)){
+            $fileType = $request->pic->getClientOriginalName();
+            $filepath = $request->pic->storeAs('public/profile_images', Auth::id().date("YmdHis").$fileType);
+            $user->pic = basename($filepath);
+        }
+
+        $user->save();
+
+        return redirect('/mypage/edit')->with('flash_message', 'プロフィールを更新しました。');
     }
 
     /**

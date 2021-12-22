@@ -34,7 +34,7 @@
             <p class="c-side__heading">設定</p>
             <ul class="c-side__list">
                 <li class="c-side__item">
-                    <a href="#" class="c-side__link">プロフィールを編集</a>
+                    <a href="{{ route('users.edit') }}" class="c-side__link">プロフィールを編集</a>
                 </li>
                 <li class="c-side__item">
                     <a href="#" class="c-side__link">退会</a>

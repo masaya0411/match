@@ -17,6 +17,13 @@
         overflow: hidden;
         max-width: 160px;
     }
+    &__img > img {
+        width: 160px;
+        height: 160px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        font-family: "object-fit: cover;";
+    }
     &__mail {
         display: flex;
         justify-content: space-between;

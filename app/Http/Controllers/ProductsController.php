@@ -62,7 +62,15 @@ class productsController extends Controller
      */
     public function show($id)
     {
-        //
+        // 案件詳細画面を表示
+        if(!ctype_digit($id)){
+            return redirect('errors.404');
+        }
+
+        $product = Auth::user()->products()->find($id);
+        $category = Category::find($product->category_id);
+
+        return view('logined.products.productDetail', ['product' => $product, 'category' => $category]);
     }
 
     /**
@@ -76,15 +84,10 @@ class productsController extends Controller
         // 案件編集画面を表示
 
         if(!ctype_digit($id)){
-            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
+            return redirect('errors.404');
         }
 
         $product = Auth::user()->products()->find($id);
-        
-        if(empty($product->id)) {
-            return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
-        }
-        
         $category = Category::find($product->category_id);
 
         return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
