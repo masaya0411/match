@@ -124,6 +124,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">お気に入り</h2>
@@ -157,6 +158,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">パブリックメッセージ</h2>
@@ -164,18 +166,29 @@
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">
+
+                            @foreach($public_messages as $public_message)
                                 <li class="c-panel__item">
                                     <a href="#" class="c-panel__link">
-                                        <h3 class="c-panel__title">【急募】常駐でのお仕事をお願いします</h3>
+                                        <h3 class="c-panel__title">
+                                            {{ $public_message->title }}
+                                        </h3>
                                         <div class="p-mypage__pb-msg__wrap">
-                                            <p class="p-mypage__pb-msg__text">これはどのような案件ですか？</p>
-                                            <span class="p-mypage__pb-msg__time">2021/12/12　12:30</span>
+                                            <p class="p-mypage__pb-msg__text">
+                                                {{ $public_message->msg->public_msg }}
+                                            </p>
+                                            <span class="p-mypage__pb-msg__time">
+                                                {{ $public_message->msg->created_at->format('Y/m/d H:i') }}
+                                            </span>
                                         </div>
                                     </a>
                                 </li>
+                            @endforeach
+
                             </ul>
                         </div>
                     </div>
+
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">DM</h2>

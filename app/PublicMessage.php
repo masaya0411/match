@@ -9,8 +9,12 @@ class PublicMessage extends Model
 {
     use SoftDeletes;
     
-    protected $fillable = ['send_user', 'send_date', 'public_msg'];
+    protected $fillable = ['product_id', 'user_id', 'send_date', 'public_msg'];
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     public function product()
     {
         return $this->belongsTo('App\Product');

@@ -16,7 +16,7 @@ class CreatePublicMessagesTable extends Migration
         Schema::create('public_messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('product_id');
-            $table->integer('send_user');
+            $table->integer('user_id');
             $table->dateTime('send_date');
             $table->string('public_msg');
             $table->softDeletes();

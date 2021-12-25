@@ -36,7 +36,7 @@
                                 @foreach($products as $product)
 
                                 <li class="c-panel__item">
-                                    <a href="#" class="c-panel__link">
+                                    <a href="{{ route('products.show',$product->id) }}" class="c-panel__link">
                                         <h3 class="c-panel__title">{{ $product->title }}</h3>
                                         <div class="c-panel__badge-wrap">
                                             <span class="c-panel__badge c-badge-sm">

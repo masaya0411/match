@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Product;
 use App\Category;
+use App\PublicMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductRequest;
@@ -67,10 +69,12 @@ class productsController extends Controller
             return redirect('errors.404');
         }
 
-        $product = Auth::user()->products()->find($id);
-        $category = Category::find($product->category_id);
+        $product = Product::find($id);
+        $post_user = $product->user()->first();
+        $category = $product->category()->first();
+        $messages = $product->public_messages()->with('user')->get();
 
-        return view('logined.products.productDetail', ['product' => $product, 'category' => $category]);
+        return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages'));
     }
 
     /**

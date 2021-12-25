@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 }); 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/public_messages', 'PublicMessagesController@store')->name('public.store');
+    Route::post('/public_messages/{id}', 'PublicMessagesController@store')->name('public.store');
 }); 
 
 Auth::routes();
