@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bord;
 use App\User;
 use App\Product;
 use App\Category;
@@ -65,16 +66,33 @@ class productsController extends Controller
     public function show($id)
     {
         // 案件詳細画面を表示
+        // idが数字でなければ404ページへリダイレクト
         if(!ctype_digit($id)){
-            return redirect('errors.404');
+            abort(404);
+        }
+        // 案件情報を取得
+        $product = Product::find($id);
+        // 案件がなければ404ヘリダイレクト
+        if(empty($product)) {
+            abort(404);
+        }
+        // 投稿者の情報を取得
+        $post_user = $product->user()->first();
+        // カテゴリーの名前を取得
+        $category = $product->category()->value('category_name');
+        // パブリックメッセージとそれに紐づくユーザー情報を取得
+        $messages = $product->public_messages()->with('user')->get();
+        // 応募者情報を取得
+        $apply_usersId = Bord::where('product_id', $product->id)->select('apply_user')->get();
+        // ログインユーザーが応募済みか判定
+        $apply_flg = 0;
+        foreach($apply_usersId as $apply_id){
+            if($apply_id->apply_user == Auth::user()->id){
+                $apply_flg = 1;
+            }
         }
 
-        $product = Product::find($id);
-        $post_user = $product->user()->first();
-        $category = $product->category()->first();
-        $messages = $product->public_messages()->with('user')->get();
-
-        return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages'));
+        return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages', 'apply_flg'));
     }
 
     /**
@@ -88,7 +106,7 @@ class productsController extends Controller
         // 案件編集画面を表示
 
         if(!ctype_digit($id)){
-            return redirect('errors.404');
+            abort(404);
         }
 
         $product = Auth::user()->products()->find($id);

@@ -23,7 +23,7 @@
 
                         <div class="p-product-detail__wrap">
                             <span class="c-badge-lg">
-                                {{ $category->category_name }}
+                                {{ $category }}
                             </span>
                             <i class="fas fa-heart js-click-like p-product-detail__heart"></i>
                         </div>
@@ -55,8 +55,17 @@
                             {{ $product->description }}
                         </p>
 
-                        <form class="p-product-detail__form">
-                            <button type="submit" class="c-btn--apply u-m-auto">応募する</button>
+                        <form action="{{ route('bord.store', [$post_user->id, $product->id]) }}" method="POST" class="p-product-detail__form">
+                            @csrf
+
+                            @if($post_user->id == Auth::user()->id)
+                                <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
+                            @elseif($apply_flg)
+                                <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
+                            @else
+                                <button type="submit" class="c-btn--apply u-m-auto">応募する</button>
+                            @endif
+
                         </form>
 
                         <div class="p-product-detail__twitter">
@@ -123,7 +132,7 @@
                     </div>
                     <form action="{{ route('public.store', $product->id) }}" method="POST" class="p-dm-detail__form js-countUp">
                         @csrf
-                        <textarea name="public_msg" cols="30" rows="10" class="c-form__textarea c-form__textarea--message" placeholder="メッセージを入力して下さい"></textarea>
+                        <textarea name="public_msg" cols="30" rows="10" class="c-form__textarea c-form__textarea--message" placeholder="メッセージを入力して下さい" required="required">{{ old('public_msg') }}</textarea>
                         <div data-count="500" class="c-form__count js-countText">
                             <span>0/500</span>
                         </div>

@@ -17,6 +17,9 @@
     &__head__img {
         width: 100px;
     }
+    &__head__img > img {
+        border-radius: 50%;
+    }
     &__head__name {
         color: $sub-color1;
         font-size: 1.5rem;
