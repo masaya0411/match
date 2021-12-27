@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage', 'UsersController@show')->name('mypage');
     Route::get('/mypage/edit', 'UsersController@edit')->name('users.edit');
     Route::put('/mypage/{id}', 'UsersController@update')->name('users.update');
+    Route::get('/withdrawal', 'UsersController@delete_confirm')->name('users.delete_confirm');
+    Route::delete('/withdrawal/{id}', 'UsersController@destroy')->name('users.destroy');
 }); 
 
 // パブリックメッセージ一覧表示・登録

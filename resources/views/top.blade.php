@@ -3,7 +3,14 @@
 
 @section('content')
 <main class="l-main">
+    <!--  フラッシュメッセージ -->
+    @if(session('flash_message'))
+        <div class="c-flash-message c-flash-message--success js-flashMessage">
+            {{ session('flash_message') }}
+        </div>
+    @endif
 
+    <!-- トップバナー -->
     <div class="p-top__hero">
         <div class="p-top__hero__content">
             <h1 class="p-top__hero__title">「誰でも」、「気軽に」<br>

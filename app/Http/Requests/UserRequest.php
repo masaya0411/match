@@ -24,7 +24,7 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:10|unique:users,name,'.$this->id.',id',
+            'name' => 'required|string|max:10|unique:users,name,'.$this->id.',id,deleted_at,NULL',
             'introduction' => 'max:5000',
             'pic' => 'file|mimes:jpeg,png,jpg,gif|max:2048'
         ];

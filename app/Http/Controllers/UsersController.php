@@ -145,6 +145,13 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/')->with('flash_message', '退会が完了しました。');
+    }
+
+    public function delete_confirm()
+    {
+        return view('logined.withdraw');
     }
 }
