@@ -25,17 +25,30 @@
                             <span class="c-badge-lg">
                                 {{ $category }}
                             </span>
-                            <i class="fas fa-heart js-click-like p-product-detail__heart"></i>
+                            <!-- お気に入りボタン -->
+                            @if(Auth::check())
+                            <like-button :product="{{ json_encode($product) }}"></like-button>
+                            @else
+                            <i class="fas fa-heart p-product-detail__heart"  onclick='return confirm("ログインしてお気に入りに登録して下さい");'></i>
+                            @endif
                         </div>
 
                         <div class="p-product-detail__requester">
-                            <a href="profDetail.html" class="p-product-detail__requester__link">
+                            <a href="@if(!empty($post_user)) {{ route('users.show', $post_user->id) }} @else {{ route('users.show', 0) }} @endif" class="p-product-detail__requester__link">
                                 <p class="p-product-detail__requester__title">依頼者：</p>
                                 <div class="p-product-detail__img">
+                                @if(empty($post_user))
+                                    <img src="{{ asset('storage/profile_images/profile.png') }}">
+                                @else
                                     <img src="{{ asset('storage/profile_images/'.$post_user->pic) }}">
+                                @endif
                                 </div>
                                 <p class="p-product-detail__name">
+                                    @if(empty($post_user))
+                                    退会したユーザー
+                                    @else
                                     {{ $post_user->name }}
+                                    @endif
                                 </p>    
                             </a>
                         </div>
@@ -55,10 +68,10 @@
                             {{ $product->description }}
                         </p>
 
-                        <form action="{{ route('bord.store', [$post_user->id, $product->id]) }}" method="POST" class="p-product-detail__form">
+                        <form action="{{ route('bord.store', [$product->user_id, $product->id]) }}" method="POST" class="p-product-detail__form">
                             @csrf
 
-                            @if($post_user->id == Auth::user()->id)
+                            @if(empty($post_user) || $product->user_id == Auth::user()->id)
                                 <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
                             @elseif($apply_flg)
                                 <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
@@ -87,7 +100,7 @@
                                     @if(!empty($msg->user_id) && $msg->user_id == Auth::user()->id)
                                         <div class="c-comment__list">
                                             <div class="c-comment__user c-comment__user--send">
-                                                <a href="profDetail.html" class="c-comment__user__avater c-comment__user__avater--send">
+                                                <a href="{{ route('users.show', $msg->user->id) }}" class="c-comment__user__avater c-comment__user__avater--send">
                                                     <div class="c-comment__user__avater__img">
                                                         <img src="{{ asset('storage/profile_images/'.$msg->user->pic) }}">
                                                     </div>
@@ -107,12 +120,20 @@
                                     @else
                                         <div class="c-comment__list">
                                             <div class="c-comment__user c-comment__user--receved">
-                                                <a href="profDetail.html" class="c-comment__user__avater c-comment__user__avater--receved">
+                                                <a href="@if(!empty($msg->user)) {{ route('users.show', $msg->user->id) }} @else {{ route('users.show', 0) }} @endif" class="c-comment__user__avater c-comment__user__avater--receved">
                                                     <div class="c-comment__user__avater__img">
+                                                        @if(!empty($msg->user))
                                                         <img src="{{ asset('storage/profile_images/'.$msg->user->pic) }}">
+                                                        @else
+                                                        <img src="{{ asset('storage/profile_images/profile.png') }}">
+                                                        @endif
                                                     </div>
                                                     <p class="c-comment__user__avater__name">
+                                                        @if(!empty($msg->user))
                                                         {{ $msg->user->name }}
+                                                        @else
+                                                        退会したユーザー
+                                                        @endif
                                                     </p>
                                                 </a>
                                                 <div class="c-comment__user__content">
@@ -144,7 +165,11 @@
                         @enderror
 
                         <div class="p-dm-detail__btn">
+                            @if(empty($post_user))
+                            <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">送信できません</button>
+                            @else
                             <button type="submit" class="c-btn u-m-auto">送信</button>
+                            @endif
                         </div>
                     </form>
                 </div>

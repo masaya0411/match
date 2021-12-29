@@ -21,38 +21,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
         // マイページを表示
         // 登録済み案件を取得
         $user = Auth::user();
@@ -96,7 +64,35 @@ class UsersController extends Controller
             $bord->user = User::find($partner_id);
         }
         
-        return view('logined.mypage', compact('products', 'categories', 'public_messages', 'direct_bords', 'apply_products'));
+        return view('logined.profile.mypage', compact('products', 'categories', 'public_messages', 'direct_bords', 'apply_products'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        // プロフィール詳細画面を表示
+        // idが数字でなければ404ページへリダイレクト
+        if(!ctype_digit($id)){
+            abort(404);
+        }
+        // ユーザー情報を取得
+        $user = User::find($id);
+        // ユーザー情報がなければ404ページへリダイレクト
+        if(empty($user)){
+            abort(404);
+        }
+        // 案件情報を取得
+        $products = $user->products()->get();
+        // カテゴリー情報を取得
+        $category = new Category;
+        $categories = $category->getLists()->prepend('選択して下さい', '');
+
+        return view('logined.profile.profDetail', compact('user', 'products', 'categories'));
     }
 
     /**
@@ -109,7 +105,7 @@ class UsersController extends Controller
     {
         //プロフィール編集画面を表示
         $user = Auth::user();
-        return view('logined.profEdit', compact('user'));
+        return view('logined.profile.profEdit', compact('user'));
     }
 
     /**
@@ -145,13 +141,23 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
+        // 退会
+        // ユーザー情報を取得
         $user = User::find($id);
+        // 登録した案件の情報を取得
+        $products = $user->products()->get();
+        // 登録した案件の募集を全て終了する
+        foreach($products as $product){
+            $product->recruit_flg = 0;
+            $product->save();
+        }
+        // ユーザー情報を論理削除
         $user->delete();
         return redirect('/')->with('flash_message', '退会が完了しました。');
     }
 
     public function delete_confirm()
     {
-        return view('logined.withdraw');
+        return view('logined.profile.withdraw');
     }
 }

@@ -21,11 +21,11 @@ class productsController extends Controller
     public function index()
     {
         // 案件一覧画面を表示
-        $products = Product::where('deleted_at', null)->get();
+        $products = Product::where('deleted_at', null)->paginate(3);
         $category = new Category;
-        $categories = $category->getLists()->prepend('選択して下さい', '');
-
-        return view('logined.products.product', ['products' => $products, 'categories' => $categories]);
+        $categories = $category->getLists();
+        $category_id = 0;
+        return view('logined.index.product', ['products' => $products, 'categories' => $categories, 'category_id' => $category_id]);
     }
 
     /**
@@ -37,7 +37,7 @@ class productsController extends Controller
     {
         // 案件登録画面を表示
         $category = new Category;
-        $categories = $category->getLists()->prepend('選択して下さい', '');
+        $categories = $category->getLists();
 
         return view('logined.products.productRegister', ['categories' => $categories]);
     }
@@ -151,5 +151,22 @@ class productsController extends Controller
         Product::find($id)->delete();
 
         return redirect('/mypage')->with('flash_message', '案件を削除しました。');
+    }
+
+    public function search(Request $request)
+    {
+        //カテゴリー検索
+        $category_id = $request->input('category_id');
+        $query = Product::query();
+
+        if(isset($category_id)) {
+            $query->where('category_id', $category_id)->where('deleted_at', null);
+        }
+        $products = $query->orderBy('category_id', 'asc')->paginate(3);
+
+        $category = new Category;
+        $categories = $category->getLists();
+
+        return view('logined.index.product', compact('products', 'categories', 'category_id'));
     }
 }

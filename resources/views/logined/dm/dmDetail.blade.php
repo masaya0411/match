@@ -17,10 +17,18 @@
                 <div class="p-dm-detail__head">
                     <div class="p-dm-detail__head__wrap">
                         <div class="p-dm-detail__head__img">
+                            @if(!empty($partner_info))
                             <img src="{{ asset('storage/profile_images/'.$partner_info->pic) }}">
+                            @else
+                            <img src="{{ asset('storage/profile_images/profile.png') }}">
+                            @endif
                         </div>
                         <h2 class="p-dm-detail__head__name">
+                            @if(!empty($partner_info))
                             {{ $partner_info->name }}
+                            @else
+                            退会したユーザー
+                            @endif
                         </h2>
                     </div>
                     <h1 class="p-dm-detail__head__heading">案件情報</h1>
@@ -60,7 +68,7 @@
                                     @if(!empty($msg->from_user) && $msg->from_user == Auth::user()->id)
                                         <div class="c-comment__list">
                                             <div class="c-comment__user c-comment__user--send">
-                                                <a href="profDetail.html" class="c-comment__user__avater c-comment__user__avater--send">
+                                                <a href="{{ route('users.show', $msg->from_user) }}" class="c-comment__user__avater c-comment__user__avater--send">
                                                     <div class="c-comment__user__avater__img">
                                                         <img src="{{ asset('storage/profile_images/'.Auth::user()->pic) }}">
                                                     </div>
@@ -80,12 +88,20 @@
                                     @else
                                         <div class="c-comment__list">
                                             <div class="c-comment__user c-comment__user--receved">
-                                                <a href="profDetail.html" class="c-comment__user__avater c-comment__user__avater--receved">
+                                                <a href="@if(!empty($partner_info)) {{ route('users.show', $partner_info->id) }} @else {{ route('users.show', 0) }} @endif" class="c-comment__user__avater c-comment__user__avater--receved">
                                                     <div class="c-comment__user__avater__img">
+                                                        @if(!empty($partner_info))
                                                         <img src="{{ asset('storage/profile_images/'.$partner_info->pic) }}">
+                                                        @else
+                                                        <img src="{{ asset('storage/profile_images/profile.png') }}">
+                                                        @endif
                                                     </div>
                                                     <p class="c-comment__user__avater__name">
+                                                        @if(!empty($partner_info))
                                                         {{ $partner_info->name }}
+                                                        @else
+                                                        退会したユーザー
+                                                        @endif
                                                     </p>
                                                 </a>
                                                 <div class="c-comment__user__content">
@@ -101,8 +117,14 @@
                                 @endforeach
                             @endif
 
+                            @if(empty($partner_info))
+                            <p class="c-error">パートナーが退会しました。メッセージは送れません。</p>
+                            @endif
+
                         </div>
                     </div>
+
+                    @if(!empty($partner_info))
                     <form action="{{ route('direct.store' ,[$bord->id, $partner_info->id]) }}" method="POST" class="p-dm-detail__form js-countUp">
                         @csrf
 
@@ -120,8 +142,9 @@
                         <div class="p-dm-detail__btn">
                             <button type="submit" class="c-btn u-m-auto">送信</button>
                         </div>
-
                     </form>
+                    @endif
+
                 </div>
             </div>
         </div>

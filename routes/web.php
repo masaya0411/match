@@ -33,11 +33,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/products/{id}/edit', 'ProductsController@edit')->name('products.edit');
     Route::put('/products/{id}', 'ProductsController@update')->name('products.update');
     Route::delete('/products/{id}', 'ProductsController@destroy')->name('products.destroy');
+    Route::get('search', 'ProductsController@search')->name('products.search');
 }); 
 
 // マイページ表示、プロフィール編集・退会
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/mypage', 'UsersController@show')->name('mypage');
+    Route::get('/mypage', 'UsersController@index')->name('mypage');
+    Route::get('/user/{id}', 'UsersController@show')->name('users.show');
     Route::get('/mypage/edit', 'UsersController@edit')->name('users.edit');
     Route::put('/mypage/{id}', 'UsersController@update')->name('users.update');
     Route::get('/withdrawal', 'UsersController@delete_confirm')->name('users.delete_confirm');
@@ -59,6 +61,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/direct_messages/{id}', 'DirectMessagesController@show')->name('direct.show');
     Route::post('/direct_messages/{bord_id}/{partner_id}', 'DirectMessagesController@store')->name('direct.store');
 }); 
+
+// お気に入り機能
+    Route::get('/products/{id}/likes', 'LikesController@store');
+    Route::get('/products/{id}/unlikes', 'LikesController@destroy');
+    Route::get('/products/{id}/haslikes', 'LikesController@haslike');
 
 
 Auth::routes();

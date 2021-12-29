@@ -12,7 +12,8 @@ const glob = require('glob');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/app.js', 'public/js')
+   .js('resources/js/script.js', 'public/js')
 
 glob.sync('resources/sass/*.scss').map(function(file) {
   mix.sass(file, 'public/css')
