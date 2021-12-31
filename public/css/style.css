@@ -116,6 +116,11 @@ button:hover {
   width: 95%;
   margin: 0 auto;
 }
+@media screen and (max-width: 414px) {
+  .l-content-lg {
+    width: 90%;
+  }
+}
 
 .l-content-md {
   max-width: 800px;
@@ -224,7 +229,8 @@ button:hover {
 }
 .c-btn--apply {
   background: #FAA643;
-  width: 330px;
+  max-width: 330px;
+  width: 100%;
   text-align: center;
   color: #fff;
   font-size: 18px;
@@ -256,7 +262,8 @@ button:hover {
   background: #C0C4CE;
   cursor: default;
   color: #fff;
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
@@ -976,7 +983,11 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+}
+@media screen and (max-width: 768px) {
+  .c-pagination {
+    margin-bottom: 40px;
+  }
 }
 .c-pagination__item {
   width: 40px;
@@ -984,6 +995,12 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   margin: 4px;
   border-radius: 50%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 768px) {
+  .c-pagination__item {
+    width: 30px;
+    height: 30px;
+  }
 }
 .c-pagination__item.active .c-pagination__link {
   background: #00BCAE;
@@ -1006,6 +1023,11 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   height: 100%;
   border-radius: 50%;
 }
+@media screen and (max-width: 768px) {
+  .c-pagination__link {
+    font-size: 0.9rem;
+  }
+}
 .c-pagination__link:hover {
   background: #ebebeb;
   cursor: pointer;
@@ -1021,7 +1043,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   background: #F4F4F4;
   color: #575757;
   line-height: 100px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 .c-panel__link {
@@ -1031,12 +1053,17 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   width: 100%;
   border-radius: 4px;
 }
+@media screen and (max-width: 768px) {
+  .c-panel__link {
+    padding: 20px;
+  }
+}
 .c-panel__link.is-finished {
   overflow: hidden;
 }
 .c-panel__link.is-finished::before {
   content: "\3053\306E\6848\4EF6\306E\52DF\96C6\306F\7D42\4E86\3057\307E\3057\305F";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   position: absolute;
   color: #fff;
@@ -1064,12 +1091,19 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   border: 2px solid #97e1a7;
 }
 .c-panel__title {
-  display: inline-block;
-  font-size: 18px;
   font-weight: bold;
   color: #085591;
   margin-bottom: 15px;
   line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+@media screen and (max-width: 768px) {
+  .c-panel__title {
+    font-size: 0.8rem;
+  }
 }
 .c-panel__price-wrap {
   display: flex;
@@ -1077,13 +1111,24 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   font-weight: bold;
   margin-top: 15px;
 }
+.c-panel__price {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+@media screen and (max-width: 768px) {
+  .c-panel__price {
+    font-size: 0.8rem;
+  }
+}
 
 .c-search {
   background: #fff;
-  border-radius: 50px;
+  border-radius: 70px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   width: 100%;
-  padding: 20px 35px;
+  padding: 40px;
   margin-bottom: 50px;
   box-sizing: border-box;
   display: flex;
@@ -1092,7 +1137,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 @media screen and (max-width: 414px) {
   .c-search {
-    padding: 20px 10px;
+    padding: 20px;
   }
 }
 .c-search__head {
@@ -1101,19 +1146,20 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 @media screen and (max-width: 414px) {
   .c-search__head {
-    padding: 10px;
+    display: none;
   }
 }
 .c-search__title {
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 .c-search__body {
-  width: 60%;
+  width: 65%;
 }
 @media screen and (max-width: 414px) {
   .c-search__body {
-    width: 50%;
+    width: 60%;
+    margin-left: 10px;
   }
 }
 .c-search__select {
@@ -1247,11 +1293,13 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   color: #085591;
   margin-bottom: 15px;
   line-height: 1.2;
+  word-break: break-all;
 }
 .p-dm-detail__head__product__amount {
   color: #CC0221;
   font-weight: bold;
   margin: 15px 0;
+  word-break: break-all;
 }
 .p-dm-detail__head__product__apply {
   margin: 15px 0;
@@ -1411,6 +1459,10 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 .p-mypage__pb-msg__text {
   max-width: 70%;
   padding: 20px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 .p-mypage__pb-msg__time {
   font-size: 12px;
@@ -1448,6 +1500,10 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 .p-mypage__dm__text {
   font-size: 1rem;
   padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 .p-mypage__withdraw {
   padding: 60px;
@@ -1482,10 +1538,10 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   color: #085591;
   margin-top: 10px;
   margin-bottom: 20px;
+  word-break: break-all;
 }
 @media screen and (max-width: 768px) {
   .p-product-detail__title {
-    font-size: 1.3rem;
     line-height: 1.3;
   }
 }
@@ -1504,7 +1560,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   color: #C0C4CE;
   font-size: 30px;
 }
-.p-product-detail__heart.active {
+.p-product-detail__heart.is-active {
   color: #EAA8BF;
 }
 .p-product-detail__heart:hover {
@@ -1561,6 +1617,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 30px;
+  word-break: break-all;
 }
 .p-product-detail__price__unit {
   font-size: 1rem;
@@ -1842,6 +1899,18 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 .p-top__match__text--bold {
   font-weight: bold;
+}
+
+.p-top__works {
+  padding: 80px 0;
+}
+@media screen and (max-width: 768px) {
+  .p-top__works {
+    padding: 40px 0;
+  }
+}
+.p-top__works__wrap {
+  margin-bottom: 50px;
 }
 
 .p-top__use {

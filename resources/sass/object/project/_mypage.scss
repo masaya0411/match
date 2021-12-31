@@ -80,6 +80,10 @@
     &__pb-msg__text {
         max-width: 70%;
         padding: 20px 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
     }
     &__pb-msg__time {
         font-size: 12px;
@@ -113,6 +117,10 @@
     &__dm__text {
         font-size: 1rem;
         padding: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
 
     }
     &__withdraw {

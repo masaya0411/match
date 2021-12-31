@@ -26,11 +26,11 @@
                                 {{ $category }}
                             </span>
                             <!-- お気に入りボタン -->
-                            @if(Auth::check())
+                            @auth
                             <like-button :product="{{ json_encode($product) }}"></like-button>
                             @else
-                            <i class="fas fa-heart p-product-detail__heart"  onclick='return confirm("ログインしてお気に入りに登録して下さい");'></i>
-                            @endif
+                            <i class="fas fa-heart p-product-detail__heart"  onclick='return confirm("お気に入り機能はログインしてからご利用いただけます。");'></i>
+                            @endauth
                         </div>
 
                         <div class="p-product-detail__requester">
@@ -71,18 +71,22 @@
                         <form action="{{ route('bord.store', [$product->user_id, $product->id]) }}" method="POST" class="p-product-detail__form">
                             @csrf
 
-                            @if(empty($post_user) || $product->user_id == Auth::user()->id)
-                                <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
-                            @elseif($apply_flg)
-                                <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
+                            @guest
+                            <a href="/register" class="c-btn--apply u-m-auto">会員登録して応募する</a>
                             @else
-                                <button type="submit" class="c-btn--apply u-m-auto">応募する</button>
+                            @if(empty($post_user) || $product->user_id == Auth::user()->id)
+                            <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
+                            @elseif($apply_flg)
+                            <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
+                            @else
+                            <button type="submit" class="c-btn--apply u-m-auto">応募する</button>
                             @endif
+                            @endguest
 
                         </form>
 
                         <div class="p-product-detail__twitter">
-                            <a href="#">
+                            <a href="https://twitter.com/intent/tweet?text=<?=$product->title?>" target="blank_">
                                 <i class="fab fa-twitter"></i>
                                 ツイート
                             </a>
@@ -95,8 +99,38 @@
                     <div class="p-dm-detail__comment">
                         <div class="c-comment">
 
+                        
                             @if(!empty($messages))
                                 @foreach($messages as $msg)
+                                @guest
+                                <div class="c-comment__list">
+                                    <div class="c-comment__user c-comment__user--receved">
+                                        <a href="@if(!empty($msg->user)) {{ route('users.show', $msg->user->id) }} @else {{ route('users.show', 0) }} @endif" class="c-comment__user__avater c-comment__user__avater--receved">
+                                            <div class="c-comment__user__avater__img">
+                                                @if(!empty($msg->user))
+                                                <img src="{{ asset('storage/profile_images/'.$msg->user->pic) }}">
+                                                @else
+                                                <img src="{{ asset('storage/profile_images/profile.png') }}">
+                                                @endif
+                                            </div>
+                                            <p class="c-comment__user__avater__name">
+                                                @if(!empty($msg->user))
+                                                {{ $msg->user->name }}
+                                                @else
+                                                退会したユーザー
+                                                @endif
+                                            </p>
+                                        </a>
+                                        <div class="c-comment__user__content">
+                                            <div class="c-comment__user__message c-comment__user__message--receved">
+                                                <p class="c-comment__user__text">
+                                                    {{ $msg->public_msg }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @else
                                     @if(!empty($msg->user_id) && $msg->user_id == Auth::user()->id)
                                         <div class="c-comment__list">
                                             <div class="c-comment__user c-comment__user--send">
@@ -146,6 +180,7 @@
                                             </div>
                                         </div>
                                     @endif
+                                @endguest
                                 @endforeach
                             @endif
 
@@ -165,11 +200,15 @@
                         @enderror
 
                         <div class="p-dm-detail__btn">
+                            @guest
+                            <a href="/register" class="c-btn u-m-auto">会員登録して送信</a>
+                            @else
                             @if(empty($post_user))
                             <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">送信できません</button>
                             @else
                             <button type="submit" class="c-btn u-m-auto">送信</button>
                             @endif
+                            @endguest
                         </div>
                     </form>
                 </div>

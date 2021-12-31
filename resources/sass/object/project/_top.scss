@@ -78,6 +78,16 @@
     }
 }
 
+.p-top__works {
+    padding: 80px 0;
+    @include mq($breakpoint: md) {
+        padding: 40px 0;
+    }
+    &__wrap {
+        margin-bottom: 50px;
+    }
+}
+
 .p-top__use {
     padding: 80px 0;
     @include mq($breakpoint: md) {

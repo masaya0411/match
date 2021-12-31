@@ -2,7 +2,7 @@
     <ul class="c-panel__list">
 
         <li v-for="matter in matters" :key="matter.id" class="c-panel__item">
-            <a :href="'/products/' + matter.id" class="c-panel__link">
+            <a :href="'/products/' + matter.id" :class="{ 'is-finished': !matter.recruit_flg }" class="c-panel__link">
                 <h3 class="c-panel__title">
                     {{ matter.title }}
                 </h3>

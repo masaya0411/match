@@ -1969,6 +1969,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.result = res.data.result;
       })["catch"](function (err) {
         console.log(err);
+        window.confirm('お気に入り登録に失敗しました。再度お試し下さい。');
       });
     },
     unfavorite: function unfavorite() {
@@ -1978,6 +1979,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.result = res.data.result;
       })["catch"](function (err) {
         console.log(err);
+        window.confirm('お気に入り解除に失敗しました。再度お試し下さい。');
       });
     },
     hasLikes: function hasLikes() {
@@ -37694,7 +37696,7 @@ var render = function () {
   return _c("div", [
     _vm.result
       ? _c("i", {
-          staticClass: "fas fa-heart p-product-detail__heart active",
+          staticClass: "fas fa-heart p-product-detail__heart is-active",
           on: {
             click: function ($event) {
               return _vm.unfavorite()
@@ -37742,6 +37744,7 @@ var render = function () {
           "a",
           {
             staticClass: "c-panel__link",
+            class: { "is-finished": !matter.recruit_flg },
             attrs: { href: "/products/" + matter.id },
           },
           [

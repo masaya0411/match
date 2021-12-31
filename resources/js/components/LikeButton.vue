@@ -1,6 +1,6 @@
 <template>
     <div>
-        <i class="fas fa-heart p-product-detail__heart active" 
+        <i class="fas fa-heart p-product-detail__heart is-active" 
            @click="unfavorite()" v-if="result"></i>
         <i class="fas fa-heart p-product-detail__heart" 
            @click="favorite()" v-else></i>
@@ -26,6 +26,7 @@
                     this.result = res.data.result;
                 }).catch(function(err) {
                     console.log(err);
+                    window.confirm('お気に入り登録に失敗しました。再度お試し下さい。');
                 });
             },
             unfavorite() {
@@ -34,6 +35,7 @@
                     this.result = res.data.result;
                 }).catch(function(err) {
                     console.log(err);
+                    window.confirm('お気に入り解除に失敗しました。再度お試し下さい。');
                 });
             },
             hasLikes() {

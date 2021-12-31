@@ -19,7 +19,7 @@
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">登録済み案件</h2>
-                            <a href="#" class="p-mypage__block__link">一覧へ</a>
+                            <a href="{{ route('users.register') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">
@@ -89,6 +89,7 @@
                                 </li>
                                 @endforeach
                                 @endif
+
                             </ul>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">応募済み案件</h2>
-                            <a href="#" class="p-mypage__block__link">一覧へ</a>
+                            <a href="{{ route('users.apply') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">
@@ -147,33 +148,50 @@
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">お気に入り</h2>
-                            <a href="#" class="p-mypage__block__link">一覧へ</a>
+                            <a href="{{ route('users.like') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">
+                                
+                                @if($like_products->isEmpty())
+                                <div class="c-panel__none">
+                                    お気に入りはありません
+                                </div>
+                                @else
+                                @foreach($like_products as $like_product)
                                 <li class="c-panel__item">
-                                    <a href="#" class="c-panel__link">
-                                        <h3 class="c-panel__title">【急募】常駐でのお仕事をお願いします</h3>
+                                    <a href="{{ route('products.show',$like_product->id) }}" class="c-panel__link">
+                                        <h3 class="c-panel__title">
+                                            {{$like_product->title}}
+                                        </h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">単発</span>
+                                            <span class="c-panel__badge c-badge-sm">
+                                            @foreach($categories as $id => $category_name)
+
+                                            @if($like_product->category_id == $id)
+                                                {{ $category_name }}
+                                            @endif
+
+                                            @endforeach
+                                            </span>
                                         </div>
                                         <div class="c-panel__price-wrap">
-                                            <p class="c-panel__price">1,000~2,000</p>
-                                            <span class="c-panel__unit">円</span>
+                                            @if($like_product->category_id == 1)
+                                                <p class="c-panel__price">
+                                                    {{ number_format($like_product->min_price*1000) }} ~ {{ number_format($like_product->max_price*1000) }}
+                                                </p>
+                                                <span class="c-panel__unit">円</span>
+                                            @else
+                                                <p class="c-panel__price">
+                                                    {{ $like_product->reward }}
+                                                </p>
+                                            @endif
                                         </div>
                                     </a>
                                 </li>
-                                <li class="c-panel__item">
-                                    <a href="#" class="c-panel__link">
-                                        <h3 class="c-panel__title">【急募】常駐でのお仕事をお願いします</h3>
-                                        <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">レベニューシェア</span>
-                                        </div>
-                                        <div class="c-panel__price-wrap">
-                                            <p class="c-panel__text">要相談</p>
-                                        </div>
-                                    </a>
-                                </li>
+                                @endforeach
+                                @endif
+
                             </ul>
                         </div>
                     </div>
@@ -181,7 +199,7 @@
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">パブリックメッセージ</h2>
-                            <a href="#" class="p-mypage__block__link">一覧へ</a>
+                            <a href="{{ route('public.index') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">
@@ -217,7 +235,7 @@
                     <div class="p-mypage__block">
                         <div class="p-mypage__block__head">
                             <h2 class="p-mypage__block__title">DM</h2>
-                            <a href="#" class="p-mypage__block__link">一覧へ</a>
+                            <a href="{{ route('direct.index') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
                             <ul class="c-panel__list">

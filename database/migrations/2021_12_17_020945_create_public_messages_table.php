@@ -18,7 +18,7 @@ class CreatePublicMessagesTable extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->dateTime('send_date');
-            $table->string('public_msg');
+            $table->text('public_msg');
             $table->softDeletes();
             $table->timestamps();
         });

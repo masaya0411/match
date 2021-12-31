@@ -35,7 +35,8 @@
     }
     &--apply {
         background: #FAA643;
-        width: 330px;
+        max-width: 330px;
+        width: 100%;
         text-align: center;
         color: #fff;
         font-size: $font-size_m;
@@ -68,7 +69,8 @@
         background: #C0C4CE;
         cursor: default;
         color: #fff;
-        width: 330px;
+        width: 100%;
+        max-width: 330px;
         text-align: center;
         font-size: $font-size_m;
         font-weight: bold;

@@ -38,11 +38,13 @@
         color: $sub-color1;
         margin-bottom: 15px;
         line-height: 1.2;
+        word-break: break-all;
     }
     &__head__product__amount {
         color: #CC0221;
         font-weight: bold;
         margin: 15px 0;
+        word-break: break-all;
     }
     &__head__product__apply {
         margin: 15px 0;

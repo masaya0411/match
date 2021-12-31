@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bord;
+use App\Like;
 use App\User;
 use App\Product;
 use App\Category;
@@ -24,16 +25,24 @@ class UsersController extends Controller
         // マイページを表示
         // 登録済み案件を取得
         $user = Auth::user();
-        $products = $user->products()->where('deleted_at', null)->get();
+        $products = $user->products()->where('deleted_at', null)->take(5)->get();
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
 
 
         // 応募済み案件を取得
-        $apply_productsId = Bord::where('apply_user', $user->id)->select('product_id')->get();
+        $apply_productsId = Bord::where('apply_user', $user->id)->select('product_id')->take(5)->get();
         $apply_products = Collection::make([]);
         foreach($apply_productsId as $apply_productId) {
             $apply_products->push(Product::find($apply_productId->product_id));
+        }
+
+
+        // お気に入り案件を取得
+        $like_productsId = $user->likes()->select('product_id')->take(5)->get();
+        $like_products = Collection::make([]);
+        foreach($like_productsId as $like_productId) {
+            $like_products->push(Product::find($like_productId->product_id));
         }
 
 
@@ -49,12 +58,12 @@ class UsersController extends Controller
         foreach($public_products as $public_product) {
             $public_product->msg = PublicMessage::where('product_id', $public_product->id)->orderBy('created_at', 'desc')->first();
         }
-        // 同じ商品で複数コメントしている場合があるので、かぶりをなくす
-        $public_messages = $public_products->unique('id');
+        // 同じ商品で複数コメントしている場合があるので、かぶりをなくし、新着順に並び替える
+        $public_messages = $public_products->unique('id')->sortByDesc('msg.created_at')->take(5);
 
 
         // DMを取得
-        $direct_bords = Bord::where('post_user', $user->id)->orWhere('apply_user', $user->id)->with('direct_messages')->get();
+        $direct_bords = Bord::where('post_user', $user->id)->orWhere('apply_user', $user->id)->with('direct_messages')->orderBy('created_at', 'desc')->take(5)->get();
         foreach($direct_bords as $bord) {
             if($bord->post_user == $user->id){
                 $partner_id = $bord->apply_user;
@@ -64,7 +73,7 @@ class UsersController extends Controller
             $bord->user = User::find($partner_id);
         }
         
-        return view('logined.profile.mypage', compact('products', 'categories', 'public_messages', 'direct_bords', 'apply_products'));
+        return view('logined.profile.mypage', compact('products', 'categories', 'public_messages', 'direct_bords', 'apply_products', 'like_products'));
     }
 
     /**
@@ -158,6 +167,46 @@ class UsersController extends Controller
 
     public function delete_confirm()
     {
+        // 退会画面表示
         return view('logined.profile.withdraw');
+    }
+
+    public function register_index()
+    {
+        // 登録済み案件一覧表示
+        $user = Auth::user();
+        $products = $user->products()->where('deleted_at', null)->get();
+        $category = new Category;
+        $categories = $category->getLists();
+
+        return view('logined.index.registerProduct', compact('products', 'categories'));
+    }
+
+    public function apply_index()
+    {
+        // 応募済み案件一覧表示
+        $apply_productsId = Bord::where('apply_user', Auth::user()->id)->select('product_id')->get();
+        $apply_products = Collection::make([]);
+        foreach($apply_productsId as $apply_productId) {
+            $apply_products->push(Product::find($apply_productId->product_id));
+        }
+        $category = new Category;
+        $categories = $category->getLists();
+
+        return view('logined.index.applyProduct', compact('apply_products', 'categories'));
+    }
+
+    public function like_index()
+    {
+        // お気に入り案件一覧表示
+        $like_productsId = Auth::user()->likes()->select('product_id')->get();
+        $like_products = Collection::make([]);
+        foreach($like_productsId as $like_productId) {
+            $like_products->push(Product::find($like_productId->product_id));
+        }
+        $category = new Category;
+        $categories = $category->getLists();
+
+        return view('logined.index.likeProduct', compact('like_products', 'categories'));
     }
 }

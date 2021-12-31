@@ -9,7 +9,7 @@
         background: #F4F4F4;
         color: #575757;
         line-height: 100px;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: bold;
     }
     &__link {
@@ -18,13 +18,16 @@
         position: relative;
         width: 100%;
         border-radius: 4px;
+        @include mq($breakpoint: md) {
+            padding: 20px;
+        }
 
         &.is-finished {
             overflow: hidden;
         }
         &.is-finished::before {
             content: 'この案件の募集は終了しました';
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             position: absolute;
             color: #fff;
@@ -53,17 +56,31 @@
         border: 2px solid #97e1a7;
     }
     &__title {
-        display: inline-block;
-        font-size: $font-size_m;
         font-weight: bold;
         color: $sub-color1;
         margin-bottom: 15px;
         line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        @include mq($breakpoint: md) {
+            font-size: 0.8rem;
+        }
     }
     &__price-wrap {
         display: flex;
         color: #CC0221;
         font-weight: bold;
         margin-top: 15px;
+    }
+    &__price {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        @include mq($breakpoint: md) {
+            font-size: 0.8rem;
+        }
     }
 }

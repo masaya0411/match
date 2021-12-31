@@ -21,7 +21,7 @@ class productsController extends Controller
     public function index()
     {
         // 案件一覧画面を表示
-        $products = Product::where('deleted_at', null)->paginate(3);
+        $products = Product::where('deleted_at', null)->paginate(10);
         $category = new Category;
         $categories = $category->getLists();
         $category_id = 0;
@@ -85,11 +85,15 @@ class productsController extends Controller
         // 応募者情報を取得
         $apply_usersId = Bord::where('product_id', $product->id)->select('apply_user')->get();
         // ログインユーザーが応募済みか判定
-        $apply_flg = 0;
-        foreach($apply_usersId as $apply_id){
-            if($apply_id->apply_user == Auth::user()->id){
-                $apply_flg = 1;
+        if(Auth::check()) {
+            $apply_flg = 0;
+            foreach($apply_usersId as $apply_id){
+                if($apply_id->apply_user == Auth::user()->id){
+                    $apply_flg = 1;
+                }
             }
+        }else{
+            $apply_flg = 0;
         }
 
         return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages', 'apply_flg'));
@@ -162,7 +166,7 @@ class productsController extends Controller
         if(isset($category_id)) {
             $query->where('category_id', $category_id)->where('deleted_at', null);
         }
-        $products = $query->orderBy('category_id', 'asc')->paginate(3);
+        $products = $query->orderBy('category_id', 'asc')->paginate(10);
 
         $category = new Category;
         $categories = $category->getLists();

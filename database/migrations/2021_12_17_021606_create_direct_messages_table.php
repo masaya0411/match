@@ -19,7 +19,7 @@ class CreateDirectMessagesTable extends Migration
             $table->integer('from_user');
             $table->integer('to_user');
             $table->dateTime('send_date');
-            $table->string('msg');
+            $table->text('msg');
             $table->softDeletes();
             $table->timestamps();
         });

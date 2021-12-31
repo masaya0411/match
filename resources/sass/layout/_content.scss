@@ -2,6 +2,9 @@
     max-width: 1000px;
     width: 95%;
     margin: 0 auto;
+    @include mq() {
+        width: 90%;
+    }
 }
 .l-content-md {
     max-width: 800px;

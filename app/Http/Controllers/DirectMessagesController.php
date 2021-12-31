@@ -20,7 +20,18 @@ class DirectMessagesController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $direct_bords = Bord::where('post_user', $user->id)->orWhere('apply_user', $user->id)->with('direct_messages')->orderBy('created_at', 'desc')->get();
+        foreach($direct_bords as $bord) {
+            if($bord->post_user == $user->id){
+                $partner_id = $bord->apply_user;
+            }elseif($bord->apply_user == $user->id){
+                $partner_id = $bord->post_user;
+            }
+            $bord->user = User::find($partner_id);
+        }
+
+        return view('logined.index.dm', compact('direct_bords'));
     }
 
     /**

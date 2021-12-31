@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title', 'トップページ')
+@section('title', 'エンジニア特化の案件マッチングサイト')
 
 @section('content')
 <main class="l-main">
@@ -40,8 +40,24 @@
         </div>
     </section>
 
+    <!-- 新しいお仕事 -->
+    <section id="works" class="p-top__works">
+        <div class="l-content-lg">
+            <h2 class="p-top__works__heading c-top__heading">新着のお仕事</h2>
+            <div class="p-top__works__wrap">
+                <product-panel 
+                    :products="{{ json_encode($products) }}" 
+                    :categories="{{ json_encode($categories) }}">>
+                </product-panel>
+            </div>
+            <div class="p-top__works__btn">
+                <a href="{{ route('products.index') }}" class="c-btn u-m-auto">お仕事をもっと見る</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ご利用方法 -->
-    <section id="use" class="p-top__use">
+    <section id="use" class="p-top__use u-bg-color--gray">
         <div class="l-content-lg">
             <h2 class="p-top__use__heading c-top__heading">ご利用方法</h2>
             <div class="p-top__use__wrap">
@@ -95,7 +111,7 @@
     </section>
 
     <!-- ご利用者様の声 -->
-    <section id="customer" class="p-top__customer u-bg-color--gray">
+    <section id="customer" class="p-top__customer">
         <div class="l-content-lg">
             <h2 class="p-top__customer__heading c-top__heading">ご利用者様の声</h2>
             <div class="p-top__customer__wrap">
@@ -141,7 +157,7 @@
     </section>
 
     <!-- Q&A -->
-    <section id="question" class="p-top__question">
+    <section id="question" class="p-top__question u-bg-color--gray">
         <div class="l-content-lg">
             <h2 class="p-top__question__headeing c-top__heading">Q&A</h2>
             <div class="p-top__question__wrap">

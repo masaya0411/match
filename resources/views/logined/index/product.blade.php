@@ -6,8 +6,8 @@
     <div class="p-mypage">
         <div class="l-content-lg">
             <h1 class="p-mypage__title">案件一覧</h1>
-            <div class="l-column">
-                <div class="l-main-content">
+            
+                <div class="p-mypage_wrap">
 
                     <!-- 検索バー -->
                     <form action="{{ route('products.search') }}" method="GET" class="c-search">
@@ -48,11 +48,9 @@
                         </div>
                     </div>
                     {{ $products->appends(['category_id' => $category_id])->links() }}
+
                 </div>
-                
-                <!-- サイドバー -->
-                @include('layouts.sidebar')
-            </div>
+            
         </div>
     </div>
 </main>

@@ -40,7 +40,7 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['deleted_at'];
-    
+
     public function products()
     {
         return $this->hasMany('App\Product');
@@ -48,5 +48,9 @@ class User extends Authenticatable
     public function public_messages()
     {
         return $this->hasMany('App\PublicMessage');
+    }
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
     }
 }

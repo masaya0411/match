@@ -1,7 +1,11 @@
 <div class="l-header">
     <header class="c-header">
         <div class="c-header__logo">
+            @if(Auth::check())
+            <a href="/mypage" class="c-header__logo__link">
+            @else
             <a href="/" class="c-header__logo__link">
+            @endif
                 <img src="{{ asset('images/logo.svg') }}" alt="ロゴ：match">
             </a>
         </div>
@@ -18,6 +22,11 @@
                 <li class="c-header__item">
                     <a href="#match" class="c-header__link">
                         <span class="c-header__link--green">matchとは</span>
+                    </a>
+                </li>
+                <li class="c-header__item">
+                    <a href="#works" class="c-header__link">
+                        <span class="c-header__link">新しいお仕事</span>
                     </a>
                 </li>
                 <li class="c-header__item">
