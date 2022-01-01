@@ -2,6 +2,13 @@
 @section('title', 'パスワード再設定')
 
 @section('content')
+<!--  フラッシュメッセージ -->
+@if(session('status'))
+    <div class="c-flash-message c-flash-message--success js-flashMessage">
+        {{ session('status') }}
+    </div>
+@endif
+
 <main class="l-main u-bg-color--gray">
     <div class="l-form">
         <div class="l-content-md">

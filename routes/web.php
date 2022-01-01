@@ -45,6 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage/like', 'UsersController@like_index')->name('users.like');
     Route::get('/withdrawal', 'UsersController@delete_confirm')->name('users.delete_confirm');
     Route::delete('/withdrawal/{id}', 'UsersController@destroy')->name('users.destroy');
+    Route::post('/email', 'ChangeEmailController@sendChangeEmailLink')->name('users.email');
+    Route::get("reset/{token}", "ChangeEmailController@reset");
 }); 
 
 // パブリックメッセージ一覧表示・登録

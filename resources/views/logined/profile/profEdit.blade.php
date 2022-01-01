@@ -45,7 +45,7 @@
                                         <p class="p-profile__mail__text">
                                             {{ $user->email }}
                                         </p>
-                                        <button type="button" class="p-profile__mail__btn js-modal-open">変更する</button>
+                                        <button type="button" data-target="modal{{ $user->id }}" class="p-profile__mail__btn js-modal-open">変更する</button>
                                     </div>
                                 </div>
 
@@ -90,13 +90,15 @@
         </div>
     </div>
     <!-- モーダル -->
-    <div id="modal01" class="c-modal js-modal">
+    <div id="modal{{ $user->id }}" class="c-modal js-modal">
         <div class="c-modal__bg js-modal-close"></div>
         <div class="c-modal__content">
             <button type="button" class="c-modal__close js-modal-close">
                 <img src="{{ asset('images/close.svg') }}" alt="閉じる">
             </button>
-            <form action="" method="POST" class="c-modal__form">
+            <form action="{{ route('users.email') }}" method="POST" class="c-modal__form">
+                @csrf
+
                 <div class="c-form__list">
                     <p class="c-form__head">現在のメールアドレス</p>
                     <p class="c-modal__form__text">a@a.com</p>

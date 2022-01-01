@@ -8,7 +8,7 @@
             <form action="{{ route('register') }}" class="c-form p-signup" method="POST">
                 @csrf
 
-                <h1 class="c-form__heading">ユーザー登録</h1>
+                <h1 class="c-form__heading">会員登録</h1>
                 <div class="c-form__list">
                     <label for="email" class="c-form__head">メールアドレス</label>
                     <input id="email" type="email" name="email" class="c-form__input @error('email') is-error @enderror" value="{{ old('email') }}" required autocomplete="email">
