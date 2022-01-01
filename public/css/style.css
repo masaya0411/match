@@ -715,6 +715,7 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
     transition: all 0.3s;
     opacity: 0;
     z-index: -1;
+    visibility: hidden;
   }
 }
 @media screen and (max-width: 768px) {
@@ -760,12 +761,6 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
   color: #fff;
   background: #3479CA;
 }
-@media screen and (max-width: 768px) {
-  .c-header-nav__open {
-    opacity: 1;
-    z-index: 100;
-  }
-}
 .c-header-nav__user {
   position: relative;
 }
@@ -798,9 +793,6 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 .c-header-nav__user__list {
   text-align: center;
 }
-.c-header-nav__user__list.is-show {
-  display: block;
-}
 @media screen and (min-width: 768px) {
   .c-header-nav__user__list {
     width: 230px;
@@ -814,6 +806,11 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
     overflow: hidden;
   }
 }
+@media screen and (min-width: 768px) {
+  .c-header-nav__user__list.is-show {
+    display: block;
+  }
+}
 .c-header-nav__user__link {
   padding: 15px 20px;
   font-size: 18px;
@@ -825,6 +822,13 @@ input[type=checkbox]:checked + .c-form__checkbox__text::after {
 }
 .c-header-nav__user__link--logout {
   width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .c-header-nav.is-navOpen {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+  }
 }
 
 .c-header {

@@ -16,7 +16,7 @@
                     <a href="{{ route('mypage') }}" class="c-footer__nav__link">マイページ</a>
                 </li>
                 <li class="c-footer__nav__item">
-                    <a href="" class="c-footer__nav__link">お仕事を探す</a>
+                    <a href="{{ route('products.index') }}" class="c-footer__nav__link">お仕事を探す</a>
                 </li>
             </ul>
         </div>

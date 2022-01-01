@@ -15,6 +15,7 @@
         transition: all 0.3s;
         opacity: 0;
         z-index: -1;
+        visibility: hidden;
     }
     &__content {
         @include mq($breakpoint: md) {
@@ -55,12 +56,6 @@
         color: #fff;
         background: #3479CA;
     }
-    &__open {
-        @include mq($breakpoint: md) {
-            opacity: 1;
-            z-index: 100;
-        }
-    }
     &__user {
         position: relative;
     }
@@ -90,9 +85,6 @@
     }
     &__user__list {
         text-align: center;
-        &.is-show {
-            display: block;
-        }
         @include mq($breakpoint: min-md) {
             width: 230px;
             background: #fff;
@@ -103,6 +95,11 @@
             right: 0;
             border-radius: 10px;
             overflow: hidden;
+        }
+        &.is-show {
+            @include mq($breakpoint: min-md) {
+                display: block;
+            }
         }
     }
     &__user__link {
@@ -117,4 +114,11 @@
     &__user__link--logout {
         width: 100%;
     }
+    &.is-navOpen {
+        @include mq($breakpoint: md) {
+            opacity: 1;
+            z-index: 100;
+            visibility: visible;
+            }
+        }
 }

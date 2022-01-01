@@ -2,7 +2,7 @@ $(function() {
     // SPメニュー
     $('.js-toggle-sp-menu').on('click', function () {
         $(this).toggleClass('c-header__menu--active');
-        $('.js-toggle-sp-menu-target').toggleClass('c-header-nav__open');
+        $('.js-toggle-sp-menu-target').toggleClass('is-navOpen');
     });
 
 

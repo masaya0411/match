@@ -78,6 +78,11 @@
                             </a>
                         </li>
                         <li class="c-header-nav__user__item">
+                            <a href="{{ route('products.create') }}" class="c-header-nav__user__link js-header-link">
+                                案件を登録する
+                            </a>
+                        </li>
+                        <li class="c-header-nav__user__item">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="c-header-nav__user__link c-header-nav__user__link--logout js-header-link">

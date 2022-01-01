@@ -23,10 +23,10 @@
             <p class="c-side__heading">メッセージ</p>
             <ul class="c-side__list">
                 <li class="c-side__item">
-                    <a href="#" class="c-side__link">パブリック</a>
+                    <a href="{{ route('public.index') }}" class="c-side__link">パブリック</a>
                 </li>
                 <li class="c-side__item">
-                    <a href="#" class="c-side__link">DM</a>
+                    <a href="{{ route('direct.index') }}" class="c-side__link">DM</a>
                 </li>
             </ul>
         </div>
