@@ -19,6 +19,10 @@
     }
     &__head__img > img {
         border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
     }
     &__head__name {
         color: $sub-color1;
