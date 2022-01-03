@@ -60,6 +60,17 @@
             width: 60px;
         }
     }
+    &__img > img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        @include mq() {
+            width: 60px;
+            height: 60px;
+        }
+    }
     &__name {
         font-size: 1.3rem;
         color: $sub-color1;

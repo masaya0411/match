@@ -15,7 +15,20 @@
         border-radius: 50%;
         overflow: hidden;
         margin-bottom: 8px;
-        max-width: 200px;
+        width: 200px;
+        @include mq($breakpoint: md) {
+            width: 100px;
+        }
+    }
+    &__img > img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+        @include mq($breakpoint: md) {
+            width: 100px;
+            height: 100px;
+        }
     }
     &__name {
         color: #085591;

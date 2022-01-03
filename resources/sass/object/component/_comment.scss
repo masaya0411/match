@@ -37,6 +37,16 @@
             width: 40px;
         }
     }
+    &__user__avater__img > img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 80px;
+        height: 80px;
+        @include mq() {
+            width: 40px;
+            height: 40px;
+        }
+    }
     &__user__avater__name {
         max-width: 80px;
         font-weight: bold;

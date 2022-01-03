@@ -144,6 +144,7 @@ return [
     */
 
     'attributes' => [
+        "password" => 'パスワード',
         "title" => "案件名",
         "category_id" => "案件種類",
         "max_price" => "上限金額",

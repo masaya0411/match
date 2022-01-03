@@ -52,7 +52,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,NULL,id,deleted_at,NULL'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ],
+            [
+                'email.unique' => 'このメールアドレスまたはパスワードはご利用できません。現在、入力しているものとは異なるメールアドレスまたはパスワードを設定してください。'
+            ]);
     }
 
     /**

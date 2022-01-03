@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title', 'ユーザー登録')
+@section('title', '会員登録')
 
 @section('content')
 <main class="l-main u-bg-color--gray">
