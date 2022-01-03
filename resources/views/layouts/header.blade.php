@@ -61,7 +61,7 @@
                 <div class="c-headr-nav__user">
                     <button type="button" class="c-header-nav__user__btn js-userListBtn">
                         <span class="c-header-nav__user__icon">
-                            <img src="storage/profile_images/{{ Auth::user()->pic }}" alt="アイコン：プロフィール画像">
+                            <img src="{{ asset('/storage/profile_images'.Auth::user()->pic) }}" alt="アイコン：プロフィール画像">
                         </span>
                         {{ Auth::user()->name }}さん
                     </button>
