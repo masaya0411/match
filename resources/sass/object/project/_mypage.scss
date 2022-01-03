@@ -104,6 +104,12 @@
         overflow: hidden;
         border-radius: 50%;
     }
+    &__dm__link > img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 80px;
+        height: 80px;
+    }
     &__dm__body {
         width: 82.5%;
     }
