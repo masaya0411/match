@@ -86,7 +86,7 @@
                         </form>
 
                         <div class="p-product-detail__twitter">
-                            <a href="https://twitter.com/intent/tweet?text=<?=$product->title?> / 誰でも、気軽に仕事が見つかるエンジニア特化の案件マッチングサービス『match』" target="blank_">
+                            <a href="https://twitter.com/intent/tweet?url=https://match-engineer.com/products/<?=$product->id?>&text=<?=$product->title?> / 誰でも、気軽に仕事が見つかるエンジニア特化の案件マッチングサービス『match』" target="blank_">
                                 <i class="fab fa-twitter"></i>
                                 ツイート
                             </a>
