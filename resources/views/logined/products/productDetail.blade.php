@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title', '案件詳細')
+@section('title', $product->title)
 
 @section('content')
 <main class="l-main u-bg-color--gray">

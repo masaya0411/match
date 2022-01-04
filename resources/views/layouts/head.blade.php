@@ -1,10 +1,19 @@
     <meta charset="utf-8">
+    <title>@yield('title') | match</title>
+    <meta name="description" content="@yield('title') | 誰でも、気軽に仕事が見つかるエンジニア特化の案件マッチングサービス『match』">
+    <meta name="keywords" content="仕事,案件,エンジニア,match">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:title" content="@yield('title') | match">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="@yield('title') | 誰でも、気軽に仕事が見つかるエンジニア特化の案件マッチングサービス『match』">
+    <meta property="og:url" content="https://match-engineer.com/">
+    <meta property="og:image" content="{{ asset('storage/profile_images/profile.png') }}">
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | match</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
