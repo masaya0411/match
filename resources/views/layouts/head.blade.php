@@ -9,7 +9,7 @@
     <meta property="og:description" content="@yield('title') | 誰でも、気軽に仕事が見つかるエンジニア特化の案件マッチングサービス『match』">
     <meta property="og:url" content="https://match-engineer.com/">
     <meta property="og:image" content="{{ asset('/ogp.png') }}">
-
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
