@@ -105,8 +105,10 @@
     &__card {
         width: 30%;
         padding: 10px;
+        margin-bottom: 20px;
         box-sizing: border-box;
         border-radius: 10px;
+        background: #fff;
         @include mq($breakpoint: md) {
             width: 100%;
         }
@@ -131,9 +133,10 @@
         font-weight: bold;
         font-size: 26px;
         margin: 15px 0;
+        padding: 0 10px;
     }
     &__card-text {
-        padding: 10px 0;
+        padding: 10px;
         line-height: 1.4;
         font-size: $font-size_s;
     }
