@@ -21,7 +21,7 @@ class productsController extends Controller
     public function index()
     {
         // 案件一覧画面を表示
-        $products = Product::where('deleted_at', null)->paginate(10);
+        $products = Product::where('deleted_at', null)->orderBy('created_at', 'desc')->paginate(10);
         $category = new Category;
         $categories = $category->getLists();
         $category_id = 0;

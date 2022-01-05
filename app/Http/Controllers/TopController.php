@@ -11,7 +11,7 @@ class TopController extends Controller
     public function __invoke()
     {
         // TOPページを表示
-        $products = Product::where('deleted_at', null)->paginate(5);
+        $products = Product::where('deleted_at', null)->orderBy('created_at', 'desc')->paginate(5);
         $category = new Category;
         $categories = $category->getLists();
         
