@@ -41,10 +41,10 @@
         }
     }
     &__panel__btn {
-        width: 15%;
+        width: 20%;
         padding: 20px 10px;
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         justify-content: center;
         @include mq($breakpoint: md) {
             width: 100%;
