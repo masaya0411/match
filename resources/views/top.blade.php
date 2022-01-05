@@ -96,7 +96,7 @@
                         <h3 class="p-top__use__card-heading">STEP.<span class="p-top__use__font-size">3</span></h3>
                     </div>
                     <div class="p-top__use__card-body">
-                        <img src="{{ asset('images/undraw_Chatting_re_j55r.png') }}" alt="チャットをするイラスト" class="p-top__use__card-img">
+                        <img src="" alt="チャットをするイラスト" class="p-top__use__card-img">
                     </div>
                     <div class="p-top__use__card-foot">
                         <h3 class="p-top__use__card-title">DMで連絡する</h3>
