@@ -25,6 +25,7 @@ img {
   width: 100%;
   height: auto;
   vertical-align: bottom;
+  flex-shrink: 0;
 }
 input,button,textarea,select {
   margin: 0;
