@@ -24,7 +24,7 @@
         <div class="l-content-lg">
             <h2 class="p-top__match__heading c-top__heading ">matchとは</h2>
             <div class="p-top__match__wrap">
-                <img class="p-top__match__img" src="{{ asset('images/undraw_working_re_ddwy.svg') }}" alt="仕事をするイラスト">
+                <img class="p-top__match__img" src="{{ asset('images/undraw_Working_re_ddwy.png') }}" alt="仕事をするイラスト">
                 <p class="p-top__match__text">
                     みなさんは、案件に応募するとき、<br>
                     「色々入力したりするの面倒だなぁ...」<br>
@@ -66,7 +66,7 @@
                         <h3 class="p-top__use__card-heading">STEP.<span class="p-top__use__font-size">1</span></h3>
                     </div>
                     <div class="p-top__use__card-body">
-                        <img src="{{ asset('images/undraw_programmer_re_owql.svg') }}" alt="会員登録をするイラスト" class="p-top__use__card-img u-top__img--width">
+                        <img src="{{ asset('images/undraw_Programmer_re_owql.png) }}" alt="会員登録をするイラスト" class="p-top__use__card-img u-top__img--width">
                     </div>
                     <div class="p-top__use__card-foot">
                         <h3 class="p-top__use__card-title">会員登録する</h3>
@@ -81,7 +81,7 @@
                         <h3 class="p-top__use__card-heading">STEP.<span class="p-top__use__font-size">2</span></h3>
                     </div>
                     <div class="p-top__use__card-body">
-                        <img src="{{ asset('images/undraw_business_deal_re_up4u.svg') }}" alt="仕事を見つけるイラスト" class="p-top__use__card-img">
+                        <img src="{{ asset('images/undraw_Business_deal_re_up4u.png') }}" alt="仕事を見つけるイラスト" class="p-top__use__card-img">
                     </div>
                     <div class="p-top__use__card-foot">
                         <h3 class="p-top__use__card-title">お仕事を見つける</h3>
@@ -96,7 +96,7 @@
                         <h3 class="p-top__use__card-heading">STEP.<span class="p-top__use__font-size">3</span></h3>
                     </div>
                     <div class="p-top__use__card-body">
-                        <img src="{{ asset('images/undraw_chatting_re_j55r.svg') }}" alt="チャットをするイラスト" class="p-top__use__card-img">
+                        <img src="{{ asset('images/undraw_Chatting_re_j55r.png') }}" alt="チャットをするイラスト" class="p-top__use__card-img">
                     </div>
                     <div class="p-top__use__card-foot">
                         <h3 class="p-top__use__card-title">DMで連絡する</h3>
