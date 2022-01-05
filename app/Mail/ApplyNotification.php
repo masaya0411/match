@@ -7,6 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+// 案件応募時、お知らせメール送信クラス
 class ApplyNotification extends Mailable
 {
     use Queueable, SerializesModels;

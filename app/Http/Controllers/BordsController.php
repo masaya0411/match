@@ -28,6 +28,7 @@ class BordsController extends Controller
         $dm_bord = new Bord;
         $dm_bord->fill($bordSaveData)->save();
 
+        // 応募時にお知らせメールを送信
         Mail::to($post_user->email)->send(new ApplyNotification($post_user, $apply_user, $product));
         
         return redirect()->route('direct.show', ['id' => $dm_bord->id])->with('flash_message', '案件に応募しました。');

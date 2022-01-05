@@ -63,7 +63,9 @@ class UsersController extends Controller
 
 
         // DMを取得
+        // ログインユーザーが関わるDMボードとメッセージを取得
         $direct_bords = Bord::where('post_user', $user->id)->orWhere('apply_user', $user->id)->with('direct_messages')->orderBy('created_at', 'desc')->take(5)->get();
+        // DMパートナーの情報を取得
         foreach($direct_bords as $bord) {
             if($bord->post_user == $user->id){
                 $partner_id = $bord->apply_user;

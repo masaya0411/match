@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+// メールアドレス変更時、確認メール送信クラス
 class ChangeEmail extends Notification
 {
     use Queueable;

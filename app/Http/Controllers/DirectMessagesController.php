@@ -20,8 +20,12 @@ class DirectMessagesController extends Controller
      */
     public function index()
     {
+        // DM一覧画面表示
         $user = Auth::user();
+
+        // ログインユーザーが関わるDMボードとメッセージを取得
         $direct_bords = Bord::where('post_user', $user->id)->orWhere('apply_user', $user->id)->with('direct_messages')->orderBy('created_at', 'desc')->get();
+        // DMのパートナーの情報を取得
         foreach($direct_bords as $bord) {
             if($bord->post_user == $user->id){
                 $partner_id = $bord->apply_user;
@@ -32,16 +36,6 @@ class DirectMessagesController extends Controller
         }
 
         return view('logined.index.dm', compact('direct_bords'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -106,39 +100,5 @@ class DirectMessagesController extends Controller
         $category = $product->category()->value('category_name');
 
         return view('logined.dm.dmDetail', compact('bord', 'messages', 'partner_info', 'product', 'category'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

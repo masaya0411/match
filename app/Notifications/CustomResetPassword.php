@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+// パスワードリセット時、確認メール送信クラス
 class CustomResetPassword extends Notification
 {
     use Queueable;

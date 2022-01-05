@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+// 案件登録バリデーション
 class ProductRequest extends FormRequest
 {
     /**

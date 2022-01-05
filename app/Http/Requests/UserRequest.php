@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+// プロフィール編集バリデーションクラス
 class UserRequest extends FormRequest
 {
     /**
