@@ -206,7 +206,7 @@
 
                             @if($public_messages->isEmpty())
                             <div class="c-panel__none">
-                                パブリックメッセージはありません
+                                メッセージはありません
                             </div>
                             @else
                             @foreach($public_messages as $public_message)
@@ -242,7 +242,7 @@
 
                                 @if($direct_bords->isEmpty())
                                 <div class="c-panel__none">
-                                    DMはありません
+                                    メッセージはありません
                                 </div>
                                 @else
                                 @foreach($direct_bords as $bord)

@@ -14,7 +14,7 @@
                                 
                                 @if($direct_bords->isEmpty())
                                 <div class="c-panel__none">
-                                    DMはありません
+                                    メッセージはありません
                                 </div>
                                 @else
                                 @foreach($direct_bords as $bord)

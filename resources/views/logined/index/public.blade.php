@@ -14,7 +14,7 @@
 
                                 @if($public_messages->isEmpty())
                                 <div class="c-panel__none">
-                                    パブリックメッセージはありません
+                                    メッセージはありません
                                 </div>
                                 @else
                                 @foreach($public_messages as $public_message)
