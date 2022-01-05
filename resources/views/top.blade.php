@@ -81,7 +81,7 @@
                         <h3 class="p-top__use__card-heading">STEP.<span class="p-top__use__font-size">2</span></h3>
                     </div>
                     <div class="p-top__use__card-body">
-                        <img src="{{ asset('images/undraw_Business_deal_re_up4u.png') }}" alt="仕事を見つけるイラスト" class="p-top__use__card-img">
+                        <img src="" alt="仕事を見つけるイラスト" class="p-top__use__card-img">
                     </div>
                     <div class="p-top__use__card-foot">
                         <h3 class="p-top__use__card-title">お仕事を見つける</h3>
