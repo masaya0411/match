@@ -221,6 +221,10 @@
     }
     &__q {
         padding: 0 10px;
+        width: 85%;
+        @include mq() {
+            font-size: 0.8rem;
+        }
     }
     &__acdn-text {
         display: none;
