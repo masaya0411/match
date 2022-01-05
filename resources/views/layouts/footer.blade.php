@@ -4,7 +4,11 @@
             <p class="c-footer__nav__heading">サービスメニュー</p>
             <ul class="c-footer__nav__list">
                 <li class="c-footer__nav__item">
+                    @guest
                     <a href="/" class="c-footer__nav__link">トップページ</a>
+                    @else
+                    <a href="/mypage" class="c-footer__nav__link">トップページ</a>
+                    @endguest
                 </li>
                 <li class="c-footer__nav__item">
                     <a href="{{ route('register') }}" class="c-footer__nav__link">会員登録</a>
