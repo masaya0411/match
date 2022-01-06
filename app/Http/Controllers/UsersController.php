@@ -31,7 +31,7 @@ class UsersController extends Controller
 
 
         // 応募済み案件を取得
-        $apply_productsId = Bord::where('apply_user', $user->id)->select('product_id')->take(5)->get();
+        $apply_productsId = Bord::where('apply_user', $user->id)->select('product_id')->orderBy('created_at', 'desc')->take(5)->get();
         $apply_products = Collection::make([]);
         foreach($apply_productsId as $apply_productId) {
             $apply_products->push(Product::find($apply_productId->product_id));
