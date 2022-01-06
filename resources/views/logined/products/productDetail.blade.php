@@ -65,7 +65,7 @@
                         </div>
                         <h3 class="p-product-detail__content">内容</h3>
                         <p class="p-product-detail__content__text">
-                            {{ $product->description }}
+                            {!! nl2br(e($product->description)) !!}
                         </p>
 
                         <form action="{{ route('bord.store', [$product->user_id, $product->id]) }}" method="POST" class="p-product-detail__form">
