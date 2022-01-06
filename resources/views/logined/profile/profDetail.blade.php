@@ -15,7 +15,7 @@
                     </h2>
                     <div class="p-user__content">
                         <p class="p-user__content__text">
-                            {{ $user->introduction }}
+                            {!! nl2br(e($user->introduction)) !!}
                         </p>
                     </div>
                 </div>
