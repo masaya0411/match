@@ -31,7 +31,6 @@ $(function() {
 
     // モーダル
     $('.js-modal-open').on('click', function() {
-        // $('.js-modal').fadeIn();
         var modalTarget = $(this).data('target');
         $('#' + modalTarget).fadeIn();
     });

@@ -101,7 +101,7 @@
 
                 <div class="c-form__list">
                     <p class="c-form__head">現在のメールアドレス</p>
-                    <p class="c-modal__form__text">a@a.com</p>
+                    <p class="c-modal__form__text">{{ $user->email }}</p>
                 </div>
                 <div class="c-form__list">
                     <p class="c-form__head">新しいメールアドレス</p>
