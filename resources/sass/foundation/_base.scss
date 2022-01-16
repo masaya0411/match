@@ -4,6 +4,10 @@ html,body {
     font-family: $font-family;
     color: $font-color;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
 * {
   box-sizing: border-box;
 }
