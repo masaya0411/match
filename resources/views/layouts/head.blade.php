@@ -22,4 +22,3 @@
     <!-- Styles -->
     <link rel="icon" href="{{ asset('/favicon.png') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="./footerFixed.js"></script>
