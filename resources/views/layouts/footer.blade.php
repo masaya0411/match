@@ -1,4 +1,4 @@
-<footer class="c-footer">
+<footer id="footer" class="c-footer">
     <div class="l-content-lg">
         <div class="c-footer__nav">
             <p class="c-footer__nav__heading">サービスメニュー</p>
