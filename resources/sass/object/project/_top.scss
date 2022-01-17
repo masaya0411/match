@@ -4,14 +4,14 @@
 .p-top__hero {
     position: relative;
     background: url('../images/undraw_Work_chat_re_qes4.png');
-    background-size: 60vw 500px;
-    background-position: bottom right;
+    background-size: 900px 640px;
+    background-position: center right;
     background-repeat: no-repeat;
     padding: 150px 0;
     @include mq($breakpoint: md) {
         padding-top: 40px;
         padding-bottom: 0;
-        background-size: 90vw 350px;
+        background-size: 400px 350px;
         background-position: bottom center;
     }
     @include mq() {
