@@ -27,8 +27,8 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required|string|max:30',
             'category_id' => 'required|integer',
-            'min_price' => 'integer|min:0|max:100000',
-            'max_price' => 'integer|min:0|max:100000|gt:min_price',
+            'min_price' => 'integer|min:1|max:100000',
+            'max_price' => 'integer|min:1|max:100000|gt:min_price',
             'reward' => 'string|max:50',
             'description' => 'required|string|max:5000',
             'recruit_flg' => 'integer'
