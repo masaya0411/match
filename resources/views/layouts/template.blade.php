@@ -13,6 +13,5 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/script.js') }}"></script>
-    <script src="{{ mix('js/footerFixed.js') }}"></script>
 </body>
 </html>
