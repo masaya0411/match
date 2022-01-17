@@ -160,7 +160,13 @@ class productsController extends Controller
             return redirect('/mypage')->with('flash_message', '不正な操作が行われました。');
         }
 
-        Product::find($id)->delete();
+        $product = Product::find($id);
+
+        // 削除したい案件がなければ404へ
+        if(empty($product)) {
+            abort(404);
+        }
+        $product->delete();
 
         return redirect('/mypage')->with('flash_message', '案件を削除しました。');
     }
