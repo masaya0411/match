@@ -115,18 +115,18 @@ class productsController extends Controller
                 abort(404);
         }
         
-        $product = Product::find($id);
-        
         // 登録されていないもしくは削除済みの案件だったら404へ
-        if(empty($product)) {
+        if(empty($product = Product::find($id))) {
             abort(404);
-        // 自分の登録した案件でなければ403へ
-        } elseif ($product->user_id !== Auth::user()->id) {
-            abort(403);
-        } else {
-            $category = Category::find($product->category_id);
-            return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
-        }
+            // 自分の登録した案件でなければ403へ
+            if ($product->user_id !== Auth::user()->id) {
+                abort(403);
+            } else {
+                $category = Category::find($product->category_id);
+            }
+        } 
+        
+        return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
     }
 
     /**
