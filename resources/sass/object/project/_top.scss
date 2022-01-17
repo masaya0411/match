@@ -20,6 +20,9 @@
     &__content {
         width: 90%;
         margin: 0 auto;
+        @include mq($breakpoint: min-md) {
+            max-width: 1200px;
+        }
     }
     &__title {
         font-size: 2.8rem;
