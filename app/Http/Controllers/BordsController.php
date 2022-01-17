@@ -19,6 +19,14 @@ class BordsController extends Controller
         $apply_user = Auth::user();
         $product = Product::find($p_id);
 
+        // 案件登録者が自分だった場合は、リダイレクト
+        if($product->user_id === $apply_user->id) {
+            return redirect()->route('product.show', ['id' => $product->id])->with('flash_message', 'この案件には応募できません。');
+        // 案件の募集が終了していた場合は、リダイレクト
+        } elseif(!$product->recruit_flg) {
+            return redirect()->route('product.show', ['id' => $product->id])->with('flash_message', 'この案件には応募できません。');
+        }
+        
         $bordSaveData = [
             'post_user' => $post_user->id,
             'apply_user' => $apply_user->id,

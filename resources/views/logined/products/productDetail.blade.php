@@ -75,9 +75,9 @@
                             <a href="/register" class="c-btn--apply u-m-auto">会員登録して応募する</a>
                             @else
                             @if(empty($post_user) || $product->user_id == Auth::user()->id)
-                            <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
+                            <button type="button" class="c-btn--disabled u-m-auto" disabled="disabled">応募できません</button>
                             @elseif($apply_flg)
-                            <button type="submit" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
+                            <button type="button" class="c-btn--disabled u-m-auto" disabled="disabled">応募完了</button>
                             @else
                             <button type="submit" class="c-btn--apply u-m-auto">応募する</button>
                             @endif
