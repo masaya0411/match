@@ -115,14 +115,15 @@ class productsController extends Controller
         if(!Auth::check) {
         // ログインしていなかったら404へ
             abort(404);
-        // 登録されていない案件だったら404へ
+        // 登録されていないもしくは削除済みの案件だったら404へ
         } elseif(empty($product)) {
             abort(404);
         // 自分の登録した案件でなければ403へ
         } elseif ($product->user_id !== Auth::user()->id) {
             abort(403);
+        } else {
+            $category = Category::find($product->category_id);
         }
-        $category = Category::find($product->category_id);
 
         return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
     }
