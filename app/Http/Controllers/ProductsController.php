@@ -112,8 +112,11 @@ class productsController extends Controller
             abort(404);
         }
         $product = Product::find($id);
+        if(!Auth::check) {
+        // ログインしていなかったら404へ
+            abort(404);
         // 登録されていない案件だったら404へ
-        if(empty($product)) {
+        } elseif(empty($product)) {
             abort(404);
         // 自分の登録した案件でなければ403へ
         } elseif ($product->user_id !== Auth::user()->id) {
