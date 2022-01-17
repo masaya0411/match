@@ -108,12 +108,17 @@ class productsController extends Controller
     public function edit($id)
     {
         // 案件編集画面を表示
-
         if(!ctype_digit($id)){
             abort(404);
         }
 
-        $product = Auth::user()->products()->find($id);
+        // $product = Auth::user()->products()->find($id);
+        $product = Product::find($id);
+        if(empty($product)) {
+            abort(404);
+        } elseif ($product->user_id !== Auth::user()->id) {
+            abort(403);
+        }
         $category = Category::find($product->category_id);
 
         return view('logined.products.productEdit', ['product' => $product, 'category' => $category]);
