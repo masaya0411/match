@@ -16,7 +16,11 @@
                     移動もしくは削除された可能性があります。
                 </p>
                 <div class="p-error__btn">
+                    @guest
                     <a href="/" class="c-btn u-m-auto">トップへ戻る</a>
+                    @else
+                    <a href="/mypage" class="c-btn u-m-auto">トップへ戻る</a>
+                    @endguest
                 </div>
             </div>
         </div>

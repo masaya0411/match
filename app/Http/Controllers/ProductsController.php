@@ -111,11 +111,11 @@ class productsController extends Controller
         if(!ctype_digit($id)){
             abort(404);
         }
-
-        // $product = Auth::user()->products()->find($id);
         $product = Product::find($id);
+        // 登録されていない案件だったら404へ
         if(empty($product)) {
             abort(404);
+        // 自分の登録した案件でなければ403へ
         } elseif ($product->user_id !== Auth::user()->id) {
             abort(403);
         }
