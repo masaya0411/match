@@ -31,7 +31,7 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/mypage';
 
-    protected function redirectTo()
+    public function redirectTo()
     {
         return parse_url(url()->previous(), PHP_URL_PASS);
     }
