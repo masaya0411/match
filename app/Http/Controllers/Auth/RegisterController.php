@@ -29,7 +29,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = parse_url(url()->previous(), PHP_URL_PASS);
+    protected $redirectTo = '/mypage';
+
+    protected function redirectTo()
+    {
+        return parse_url(url()->previous(), PHP_URL_PASS);
+    }
 
     /**
      * Create a new controller instance.
