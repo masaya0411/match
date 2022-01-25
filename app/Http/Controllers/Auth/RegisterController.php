@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/mypage';
+    protected $redirectTo = parse_url(url()->previous();, PHP_URL_PASS);
 
     /**
      * Create a new controller instance.
@@ -74,8 +74,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function redirectPath()
-    {
-        return back();
-    }
 }
