@@ -73,4 +73,9 @@ class RegisterController extends Controller
             'pic' => 'profile.png'
         ]);
     }
+
+    public function redirectPath()
+    {
+        return back();
+    }
 }
