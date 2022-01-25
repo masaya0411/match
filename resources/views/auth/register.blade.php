@@ -8,6 +8,12 @@
             <form action="{{ route('register') }}" class="c-form p-signup" method="POST">
                 @csrf
 
+                @if( count( $errors->all() ) < 1)
+                    <input type="hidden" name="previous_url" value="{{ url()->previous() }}">
+                @else
+                    <input type="hidden" name="previous_url" value="{{ old('previous_url') }}">
+                @endif
+                
                 <h1 class="c-form__heading">会員登録</h1>
                 <div class="c-form__list">
                     <label for="email" class="c-form__head">メールアドレス</label>

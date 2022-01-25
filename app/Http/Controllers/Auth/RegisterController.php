@@ -31,11 +31,6 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/mypage';
 
-    public function redirectTo()
-    {
-        return url()->previous();
-    }
-
     /**
      * Create a new controller instance.
      *
@@ -80,4 +75,15 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * The user has been registered.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function registered(Request $request)
+    {
+        //会員登録する前に見ていたページに遷移
+        return redirect($request->previous_url);
+    }
 }
