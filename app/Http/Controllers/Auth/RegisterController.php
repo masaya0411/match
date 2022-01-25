@@ -33,7 +33,7 @@ class RegisterController extends Controller
 
     public function redirectTo()
     {
-        return parse_url(url()->previous(), PHP_URL_PASS);
+        return url()->previous();
     }
 
     /**
@@ -44,6 +44,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        // $this->redirectTo = url()->previous();
     }
 
     /**
