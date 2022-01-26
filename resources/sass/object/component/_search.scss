@@ -65,9 +65,9 @@
         @include mq() {
             padding: 8px 30px;
         }
-    }
-    &__btn:hover {
-        cursor: pointer;
-        opacity: .8;
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
     }
 }

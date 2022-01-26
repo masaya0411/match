@@ -11,9 +11,9 @@
         text-align: center;
         padding: 15px;
         margin-bottom: 15px;
-    }
-    &__mypage:hover {
-        background: #F0F4F8;
+        &:hover {
+            background: #F0F4F8;
+        }
     }
     &__block {
         padding: 10px 0;
@@ -34,8 +34,8 @@
         display: block;
         text-align: center;
         border-radius: 6px;
-    }
-    &__link:hover {
-        background: #F0F4F8;
+        &:hover {
+            background: #F0F4F8;
+        }
     }
 }
