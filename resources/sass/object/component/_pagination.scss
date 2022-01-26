@@ -15,15 +15,15 @@
             width: 30px;
             height: 30px;
         }
-    }
-    &__item.active .c-pagination__link {
-        background: #00BCAE;
-        color: #fff;
-    }
-    &__item.active .c-pagination__link:hover {
-        background: #fff;
-        color: #000;
-        border: 1px solid #00BCAE;
+        &.active .c-pagination__link {
+            background: #00BCAE;
+            color: #fff;
+            &:hover {
+                background: #fff;
+                color: #000;
+                border: 1px solid #00BCAE;
+            }
+        }
     }
     &__link {
         border: 1px solid #C0C4CE;
@@ -40,9 +40,9 @@
             font-size: 0.9rem;
             line-height: 30px;
         }
-    }
-    &__link:hover {
-        background: #ebebeb;
-        cursor: pointer;
+        &:hover {
+            background: #ebebeb;
+            cursor: pointer;
+        }
     }
 }
