@@ -1,14 +1,16 @@
-.c-badge--sm {
-    padding: 5px 15px;
-    background: #66A3C2;
-    color: #fff;
-    font-size: 12px;
-    border-radius: 2px;
-}
-.c-badge--lg {
-    padding: 8px 20px;
-    background: #66A3C2;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 2px;
+.c-badge {
+    &--sm {
+        padding: 5px 15px;
+        background: #66A3C2;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 2px;
+    }
+    &--lg {
+        padding: 8px 20px;
+        background: #66A3C2;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 2px;
+    }
 }
