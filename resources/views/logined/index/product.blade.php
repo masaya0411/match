@@ -16,6 +16,8 @@
                             <h2 class="c-search__title">検索</h2>
                         </div>
                         <div class="c-search__body">
+                            <input type="text" name="keyword" placeholder="キーワードで検索" class="c-search__keyword">
+                            
                             <select name="category_id" class="c-search__select">
 
                                 <option value="" @if(empty($category_id)) selected @endif>

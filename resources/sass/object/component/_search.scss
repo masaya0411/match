@@ -30,6 +30,17 @@
             margin-left: 10px;
         }
     }
+    &__keyword {
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #f4f4f4;
+        background: #f4f4f4;
+        @include mq() {
+            font-size: .8rem;
+        }
+    }
     &__select {
         border: 1px solid #C0C4CE;
         border-radius: 6px;
