@@ -1,5 +1,7 @@
-.u-acdn-arrow::after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    transition: all 0.2s ease-in-out;
+.u-acdn-arrow {
+    &::after {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        transition: all 0.2s ease-in-out;
+    }
 }

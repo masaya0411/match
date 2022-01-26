@@ -19,15 +19,15 @@
         @include mq($breakpoint: md) {
             width: 100px;
         }
-    }
-    &__img > img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 200px;
-        height: 200px;
-        @include mq($breakpoint: md) {
-            width: 100px;
-            height: 100px;
+        > img {
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 200px;
+            height: 200px;
+            @include mq($breakpoint: md) {
+                width: 100px;
+                height: 100px;
+            }
         }
     }
     &__name {
@@ -38,19 +38,21 @@
     }
     &__content {
         margin-top: 50px;
+        &__text {
+            font-size: 1rem;
+            word-break: break-all;
+            line-height: 1.2;
+        }
     }
-    &__content__text {
-        font-size: 1rem;
-        word-break: break-all;
-        line-height: 1.2;
-    }
-    &__product__heading {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 30px;
-        @include mq($breakpoint: md) {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+    &__product {
+        &__heading {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            @include mq($breakpoint: md) {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
         }
     }
 }
