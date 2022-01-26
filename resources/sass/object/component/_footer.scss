@@ -6,51 +6,51 @@
     }
     &__nav {
         margin-bottom: 50px;
-    }
-    &__nav__heading {
-        color: #fff;
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
-    &__nav__item {
-        position: relative;
-        padding-left: 16px;
-        margin-left: 16px;
-    }
-    &__nav__item:first-child::after {
-        @include mq($breakpoint: min-md) {
-            content: '';
-        }
-    }
-    &__nav__item::after {
-        content: "|";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #fff;
-        font-size: 14px;
-        @include mq($breakpoint: md) {
-            font-size: 12px;
-            content: "-";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+        &__heading {
             color: #fff;
+            font-size: 16px;
+            margin-bottom: 15px;
         }
-    }
-    &__nav__list {
-        display: flex;
-        @include mq($breakpoint: md) {
-            flex-wrap: wrap;
+        &__item {
+            position: relative;
+            padding-left: 16px;
+            margin-left: 16px;
+            &:first-child::after {
+                @include mq($breakpoint: min-md) {
+                    content: '';
+                }
+            }
+            &::after {
+                content: "|";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #fff;
+                font-size: 14px;
+                @include mq($breakpoint: md) {
+                    font-size: 12px;
+                    content: "-";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #fff;
+                }
+            }
         }
-    }
-    &__nav__link {
-        color: #fff;
-        font-size: 14px;
-        position: relative;
-        @include mq() {
-            font-size: 12px;
+        &__list {
+            display: flex;
+            @include mq($breakpoint: md) {
+                flex-wrap: wrap;
+            }
+        }
+        &__link {
+            color: #fff;
+            font-size: 14px;
+            position: relative;
+            @include mq() {
+                font-size: 12px;
+            }
         }
     }
     &__copy {
