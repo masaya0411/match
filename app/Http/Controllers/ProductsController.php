@@ -90,13 +90,15 @@ class productsController extends Controller
             foreach($apply_usersId as $apply_id){
                 if($apply_id->apply_user == Auth::user()->id){
                     $apply_flg = 1;
+                    $bord_id = Bord::where('product_id', $product->id)->value('id');
                 }
             }
         }else{
             $apply_flg = 0;
+            $bord_id = 0;
         }
 
-        return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages', 'apply_flg'));
+        return view('logined.products.productDetail', compact('product', 'post_user', 'category', 'messages', 'apply_flg', 'bord_id'));
     }
 
     /**

@@ -53,6 +53,12 @@
                             </a>
                         </div>
 
+                        @if(!empty($bord_id))
+                        <div class="p-product-detail__dm">
+                            <a href="/direct_messages/<?=$bord_id?>" class="p-product-detail__dm__link">この案件のDMへ</a>
+                        </div>
+                        @endif
+
                         <div class="p-product-detail__price">
 
                             @if($product->category_id == 1)
