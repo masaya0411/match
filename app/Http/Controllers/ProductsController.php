@@ -87,6 +87,7 @@ class productsController extends Controller
         // ログインユーザーが応募済みか判定
         if(Auth::check()) {
             $apply_flg = 0;
+            $bord_id = 0;
             foreach($apply_usersId as $apply_id){
                 if($apply_id->apply_user == Auth::user()->id){
                     $apply_flg = 1;

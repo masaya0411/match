@@ -84,9 +84,9 @@
     &__dm {
         margin-bottom: 14px;
         text-align: right;
-        color: $main-color;
     }
     &__dm__link:hover {
+        color: $main-color;
         text-decoration: underline;
     }
     &__price {
