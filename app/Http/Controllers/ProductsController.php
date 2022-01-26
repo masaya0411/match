@@ -90,7 +90,7 @@ class productsController extends Controller
             foreach($apply_usersId as $apply_id){
                 if($apply_id->apply_user == Auth::user()->id){
                     $apply_flg = 1;
-                    $bord_id = Bord::where('product_id', $product->id)->value('id');
+                    $bord_id = Bord::where('product_id', $product->id)->where('apply_user', $apply_id->apply_user)->value('id');
                 }
             }
         }else{
