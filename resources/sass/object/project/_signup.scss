@@ -2,26 +2,26 @@
     &__btn {
         margin-top: 35px;
         text-align: center;
-    }
-    &__btn__text {
-        margin-top: 40px;
-        font-size: $font-size_s;
-        line-height: 1.4;
-    }
-    &__btn__link {
-        color: $main-color;
-    }
-    &__btn__link:hover {
-        cursor: pointer;
-        text-decoration: underline;
+        &__text {
+            margin-top: 40px;
+            font-size: $font-size_s;
+            line-height: 1.4;
+        }
+        &__link {
+            color: $main-color;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
     }
     &__link {
         margin-top: 30px;
-    }
-    &__link__forget {
-        color: $main-color;
-    }
-    &__link__forget:hover {
-        text-decoration: underline;
+        &__forget {
+            color: $main-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }

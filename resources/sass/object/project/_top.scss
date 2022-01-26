@@ -1,241 +1,235 @@
 .p-top {
     position: relative;
-}
-.p-top__hero {
-    position: relative;
-    background: url('../images/undraw_Work_chat_re_qes4.png');
-    background-size: 900px 640px;
-    background-position: center right;
-    background-repeat: no-repeat;
-    padding: 150px 0;
-    @include mq($breakpoint: md) {
-        padding-top: 40px;
-        padding-bottom: 0;
-        background-size: 400px 350px;
-        background-position: bottom center;
-    }
-    @include mq() {
-        background-size: 90vw 300px;
-    }
-    &__content {
-        width: 90%;
-        margin: 0 auto;
-        @include mq($breakpoint: min-md) {
-            max-width: 1200px;
-        }
-    }
-    &__title {
-        font-size: 2.8rem;
-        font-weight: bold;
-        line-height: 1.8;
-        padding-bottom: 200px;
+    &__hero {
+        position: relative;
+        background: url('../images/undraw_Work_chat_re_qes4.png');
+        background-size: 900px 640px;
+        background-position: center right;
+        background-repeat: no-repeat;
+        padding: 150px 0;
         @include mq($breakpoint: md) {
-            font-size: 1.6rem;
-            padding-bottom: 0px;
-        }
-    }
-    &__btn {
-        margin-left: 50px;
-        @include mq($breakpoint: md) {
-            margin: 250px auto 0;
-        }
-    }
-}
-
-.p-top__match {
-    padding: 80px 0;
-    @include mq($breakpoint: md) {
-        padding: 40px 0;
-    }
-    &__wrap {
-        display: flex;
-        @include mq($breakpoint: md) {
-            display: block;
-            margin: 0 auto;
-        }
-    }
-    &__img {
-        width: 50%;
-        @include mq($breakpoint: md) {
-            width: 100%;
-        }
-    }
-    &__text {
-        width: 50%;
-        padding: 10px 15px;
-        text-align: center;
-        line-height: 2;
-        @include mq($breakpoint: md) {
-            width: 95%;
-            padding: 20px 10px;
-            margin: 0 auto;
-            line-height: 1.8;
+            padding-top: 40px;
+            padding-bottom: 0;
+            background-size: 400px 350px;
+            background-position: bottom center;
         }
         @include mq() {
-            font-size: .8rem;
+            background-size: 90vw 300px;
         }
-        
-    }
-    &__text--bold {
-        font-weight: bold;
-    }
-}
-
-.p-top__works {
-    padding: 80px 0;
-    @include mq($breakpoint: md) {
-        padding: 40px 0;
-    }
-    &__wrap {
-        margin-bottom: 50px;
-    }
-}
-
-.p-top__use {
-    padding: 80px 0;
-    @include mq($breakpoint: md) {
-        padding: 40px 0;
-    }
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        @include mq($breakpoint: md) {
-            display: block;
+        &__content {
+            width: 90%;
             margin: 0 auto;
+            @include mq($breakpoint: min-md) {
+                max-width: 1200px;
+            }
+        }
+        &__title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            line-height: 1.8;
+            padding-bottom: 200px;
+            @include mq($breakpoint: md) {
+                font-size: 1.6rem;
+                padding-bottom: 0px;
+            }
+        }
+        &__btn {
+            margin-left: 50px;
+            @include mq($breakpoint: md) {
+                margin: 250px auto 0;
+            }
         }
     }
-    &__card {
-        width: 30%;
-        padding: 10px;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-        border-radius: 10px;
-        background: #fff;
+    &__match {
+        padding: 80px 0;
         @include mq($breakpoint: md) {
-            width: 100%;
+            padding: 40px 0;
+        }
+        &__wrap {
+            display: flex;
+            @include mq($breakpoint: md) {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__img {
+            width: 50%;
+            @include mq($breakpoint: md) {
+                width: 100%;
+            }
+        }
+        &__text {
+            width: 50%;
+            padding: 10px 15px;
+            text-align: center;
+            line-height: 2;
+            @include mq($breakpoint: md) {
+                width: 95%;
+                padding: 20px 10px;
+                margin: 0 auto;
+                line-height: 1.8;
+            }
+            @include mq() {
+                font-size: .8rem;
+            }
+            &--bold {
+                font-weight: bold;
+            }
         }
     }
-    &__card-heading {
-        text-align: center;
-        font-size: $font-size_xl;
-        font-weight: bold;
-        color: $sub-color1;
-        padding: 20px 0;
-    }
-    &__font-size {
-        font-size: 40px;
-    }
-    &__card-body {
-        text-align: center;
-        min-height: 250px;
-    }
-    &__card-title {
-        font-weight: bold;
-        font-size: 26px;
-        margin: 15px 0;
-        padding: 0 10px;
-    }
-    &__card-text {
-        padding: 10px;
-        line-height: 1.4;
-        font-size: $font-size_s;
-    }
-}
-
-.p-top__customer {
-    padding: 80px 0;
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 80px;
+    &__works {
+        padding: 80px 0;
         @include mq($breakpoint: md) {
-            display: block;
-            margin: 0 auto;
+            padding: 40px 0;
+        }
+        &__wrap {
+            margin-bottom: 50px;
         }
     }
-    &__panel {
-        width: 30%;
-        box-sizing: border-box;
-        border-radius: 13px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    &__use {
+        padding: 80px 0;
         @include mq($breakpoint: md) {
-            width: 100%;
+            padding: 40px 0;
+        }
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            @include mq($breakpoint: md) {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__card {
+            width: 30%;
+            padding: 10px;
             margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: #fff;
+            @include mq($breakpoint: md) {
+                width: 100%;
+            }
+            &-heading {
+                text-align: center;
+                font-size: $font-size_xl;
+                font-weight: bold;
+                color: $sub-color1;
+                padding: 20px 0;
+            }
+            &-body {
+                text-align: center;
+                min-height: 250px;
+            }
+            &-title {
+                font-weight: bold;
+                font-size: 26px;
+                margin: 15px 0;
+                padding: 0 10px;
+            }
+            &-text {
+                padding: 10px;
+                line-height: 1.4;
+                font-size: $font-size_s;
+            }
+        }
+        &__font-size {
+            font-size: 40px;
         }
     }
-    &__panel-body {
-        padding: 15px 40px;
-    }
-    &__panel-title {
-        font-size: 22px;
-        font-weight: bold;
-        margin: 10px 0;
-    }
-    &__panel-sub-title {
-        color: #878787;
-        font-size: $font-size_s;
-        margin-bottom: 20px;
-    }
-    &__panel-text {
-        font-size: $font-size_s;
-        line-height: 1.2;
-        margin-bottom: 30px;
-    }
-}
-
-.p-top__question {
-    padding: 80px 0;
-    &__wrap {
-        padding: 0 20px;
-        box-sizing: border-box;
-        margin: 0 auto 80px;
-    }
-    &__acdn {
-        position: relative;
-        border-top: 1px solid #C4C4C4;
-        border-bottom: 1px solid #C4C4C4;
-    }
-    &__acdn-title {
-        position: relative;
-        line-height: 3;
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 10px 30px;
-        display: flex;
-        @include mq($breakpoint: md) {
-            line-height: 1.8;
+    &__customer {
+        padding: 80px 0;
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            @include mq($breakpoint: md) {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__panel {
+            width: 30%;
+            box-sizing: border-box;
+            border-radius: 13px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+            @include mq($breakpoint: md) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            &-body {
+                padding: 15px 40px;
+            }
+            &-title {
+                font-size: 22px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            &-sub-title {
+                color: #878787;
+                font-size: $font-size_s;
+                margin-bottom: 20px;
+            }
+            &-text {
+                font-size: $font-size_s;
+                line-height: 1.2;
+                margin-bottom: 30px;
+            }
         }
     }
-    &__acdn-title:hover {
-        cursor: pointer;
-    }
-    &__acdn-title::after {
-        position: absolute;
-        content: '';
-        width: 14px;
-        height: 14px;
-        right: 25px;
-        top: calc(50% - 10px);
-        border-top: 3px solid #BCBABA;
-        border-right: 3px solid #BCBABA;
-        -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
-        transition: all 0.2s ease-in-out;
-    }
-    &__q {
-        padding: 0 10px;
-        width: 85%;
-        @include mq() {
-            font-size: 0.8rem;
+    &__question {
+        padding: 80px 0;
+        &__wrap {
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin: 0 auto 80px;
         }
-    }
-    &__acdn-text {
-        display: none;
-        padding: 30px 80px;
-        line-height: 1.5;
-        border-top: 1px solid #C4C4C4;
-        @include mq($breakpoint: md) {
-            padding: 30px;
+        &__acdn {
+            position: relative;
+            border-top: 1px solid #C4C4C4;
+            border-bottom: 1px solid #C4C4C4;
+            &-title {
+                position: relative;
+                line-height: 3;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 10px 30px;
+                display: flex;
+                @include mq($breakpoint: md) {
+                    line-height: 1.8;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 14px;
+                    height: 14px;
+                    right: 25px;
+                    top: calc(50% - 10px);
+                    border-top: 3px solid #BCBABA;
+                    border-right: 3px solid #BCBABA;
+                    -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg);
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+            &-text {
+                display: none;
+                padding: 30px 80px;
+                line-height: 1.5;
+                border-top: 1px solid #C4C4C4;
+                @include mq($breakpoint: md) {
+                    padding: 30px;
+                }
+            }
+        }
+        &__q {
+            padding: 0 10px;
+            width: 85%;
+            @include mq() {
+                font-size: 0.8rem;
+            }
         }
     }
 }

@@ -14,8 +14,8 @@
     &__radio {
         display: flex;
         align-items: center;
-    }
-    &__radio .c-form__radio {
-        margin-left: 24px;
+        .c-form__radio {
+            margin-left: 24px;
+        }
     }
 }
