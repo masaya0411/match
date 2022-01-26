@@ -44,10 +44,10 @@
         padding: 15px;
         border-radius: 4px;
         display: block;
-    }
-    &--apply:hover {
-        background: #f6bf7c;
-        cursor: pointer;
+        &:hover {
+            background: #f6bf7c;
+            cursor: pointer;
+        }
     }
     &--danger {
         background: #f52152;
@@ -59,11 +59,10 @@
         padding: 15px;
         border-radius: 4px;
         display: block;
-
-    }
-    &--danger:hover {
-        background: #fb7292;
-        cursor: pointer;
+        &:hover {
+            background: #fb7292;
+            cursor: pointer;
+        }
     }
     &--disabled {
         background: #C0C4CE;
@@ -77,12 +76,12 @@
         padding: 15px;
         border-radius: 4px;
         display: block;
+        &:hover {
+            cursor: default;
+        }
     }
-    &--disabled:hover {
-        cursor: default;
+    &:hover {
+        background: #80ddd5;
+        cursor: pointer;
     }
-}
-.c-btn:hover {
-    background: #80ddd5;
-    cursor: pointer;
 }
