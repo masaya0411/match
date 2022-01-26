@@ -7,51 +7,53 @@
         @include mq($breakpoint: md) {
             padding: 30px 10px;
         }
-    }
-    &__head__wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 50px;
-    }
-    &__head__img {
-        width: 100px;
-    }
-    &__head__img > img {
-        border-radius: 50%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 100px;
-        height: 100px;
-    }
-    &__head__name {
-        color: $sub-color1;
-        font-size: 1.5rem;
-        margin-left: 30px;
-    }
-    &__head__heading {
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-bottom: 15px;
-        border-bottom: 1px solid #000;
-        display: inline-block;
-    }
-    &__head__product__title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: $sub-color1;
-        margin-bottom: 15px;
-        line-height: 1.2;
-        word-break: break-all;
-    }
-    &__head__product__amount {
-        color: #CC0221;
-        font-weight: bold;
-        margin: 15px 0;
-        word-break: break-all;
-    }
-    &__head__product__apply {
-        margin: 15px 0;
+        &__wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        &__img {
+            width: 100px;
+            > img {
+                border-radius: 50%;
+                -o-object-fit: cover;
+                object-fit: cover;
+                width: 100px;
+                height: 100px;
+            }
+        }
+        &__name {
+            color: $sub-color1;
+            font-size: 1.5rem;
+            margin-left: 30px;
+        }
+        &__heading {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #000;
+            display: inline-block;
+        }
+        &__product {
+            &__title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: $sub-color1;
+                margin-bottom: 15px;
+                line-height: 1.2;
+                word-break: break-all;
+            }
+            &__amount {
+                color: #CC0221;
+                font-weight: bold;
+                margin: 15px 0;
+                word-break: break-all;
+            }
+            &__apply {
+                margin: 15px 0;
+            }
+        }
     }
     &__body {
         padding: 40px;
@@ -60,11 +62,11 @@
         @include mq($breakpoint: md) {
             padding: 30px 10px;
         }
-    }
-    &__body__title {
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-bottom: 40px;
+        &__title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
     }
     &__comment {
         overflow: auto;

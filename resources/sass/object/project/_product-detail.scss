@@ -25,32 +25,31 @@
         &.is-active {
             color: #EAA8BF;
         }
-    }
-    &__heart:hover {
-        cursor: pointer;
-        opacity: 0.7;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
     }
     &__requester {
         margin: 50px 0 30px;
-    }
-    &__requester__link {
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        border: 1px solid #C0C4CE;
-        border-radius: 6px;
-        @include mq() {
-            padding: 20px 10px;
+        &__link {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #C0C4CE;
+            border-radius: 6px;
+            @include mq() {
+                padding: 20px 10px;
+            }
+            &:hover {
+                background: #f7f7f7;
+            }
         }
-    }
-    &__requester__link:hover {
-        background: #f7f7f7;
-    }
-    &__requester__title {
-        @include mq() {
-            font-size: .8rem;
+        &__title {
+            @include mq() {
+                font-size: .8rem;
+            }
         }
-
     }
     &__img {
         width: 80px;
@@ -59,16 +58,16 @@
         @include mq() {
             width: 60px;
         }
-    }
-    &__img > img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        @include mq() {
-            width: 60px;
-            height: 60px;
+        > img {
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            @include mq() {
+                width: 60px;
+                height: 60px;
+            }
         }
     }
     &__name {
@@ -84,10 +83,12 @@
     &__dm {
         margin-bottom: 14px;
         text-align: right;
-    }
-    &__dm__link:hover {
-        color: $main-color;
-        text-decoration: underline;
+        &__link {
+            &:hover {
+                color: $main-color;
+                text-decoration: underline;
+            }
+        }
     }
     &__price {
         color: #CC0221;
@@ -95,23 +96,23 @@
         font-size: 1.2rem;
         margin-bottom: 30px;
         word-break: break-all;
-    }
-    &__price__unit {
-        font-size: 1rem;
+        &__unit {
+            font-size: 1rem;
+        }
     }
     &__content {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 10px;
-    }
-    &__content__text {
-        padding: 20px;
-        font-size: 1.2rem;
-        background: #eee;
-        border-radius: 4px;
-        min-height: 200px;
-        word-break: break-all;
-        line-height: 1.5;
+        &__text {
+            padding: 20px;
+            font-size: 1.2rem;
+            background: #eee;
+            border-radius: 4px;
+            min-height: 200px;
+            word-break: break-all;
+            line-height: 1.5;
+        }
     }
     &__form {
         margin-top: 60px;
@@ -125,7 +126,7 @@
         .fa-twitter {
             margin-right: 4px;
         }
-        a{
+        a {
             font-size: .9rem;
             line-height: 1.7;
             color: #fff;

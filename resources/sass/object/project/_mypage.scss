@@ -10,27 +10,25 @@
         background: #fff;
         margin-bottom: 50px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-
-    }
-    &__block__head {
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 5px solid $main-color;
-        border-bottom: 1px solid #d9d9d9;
-
-    }
-    &__block__title {
-        font-size: $font-size_l;
-        font-weight: bold;
-    }
-    &__block__link {
-        color: $main-color;
-        font-size: $font-size_s;
-    }
-    &__block__link:hover {
-        text-decoration: underline;
+        &__head {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 5px solid $main-color;
+            border-bottom: 1px solid #d9d9d9;
+        }
+        &__title {
+            font-size: $font-size_l;
+            font-weight: bold;
+        }
+        &__link {
+            color: $main-color;
+            font-size: $font-size_s;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     &__panel {
         display: flex;
@@ -39,95 +37,98 @@
         @include mq($breakpoint: md) {
             display: block;
         }
-    }
-    &__panel__btn {
-        width: 20%;
-        padding: 20px 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        @include mq($breakpoint: md) {
-            width: 100%;
-            padding: 8px 20px;
-            justify-content: end;
+        &__btn {
+            width: 20%;
+            padding: 20px 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            @include mq($breakpoint: md) {
+                width: 100%;
+                padding: 8px 20px;
+                justify-content: end;
+            }
+            &--edit {
+                font-size: 2rem;
+                color: #565555;
+                margin: 0 8px;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+            &--delete {
+                font-size: 2rem;
+                color: #E3352E;
+                margin: 0 4px;
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
         }
     }
-    &__panel__btn--edit {
-        font-size: 2rem;
-        color: #565555;
-        margin: 0 8px;
-    }
-    &__panel__btn--edit:hover {
-        opacity: 0.5;
-    }
-    &__panel__btn--delete {
-        font-size: 2rem;
-        color: #E3352E;
-        margin: 0 4px;
-    }
-    &__panel__btn--delete:hover {
-        opacity: 0.5;
-    }
-    &__pb-msg__wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        @include mq($breakpoint: md) {
-            display: block;
+    &__pb-msg {
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            @include mq($breakpoint: md) {
+                display: block;
+                overflow: hidden;
+            }
+        }
+        &__text {
+            max-width: 70%;
+            padding: 20px 10px;
             overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+        }
+        &__time {
+            font-size: 12px;
+            @include mq($breakpoint: md) {
+                float: right;
+            }
         }
     }
-    &__pb-msg__text {
-        max-width: 70%;
-        padding: 20px 10px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-    }
-    &__pb-msg__time {
-        font-size: 12px;
-        @include mq($breakpoint: md) {
-            float: right;
+    &__dm {
+        &__wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include mq($breakpoint: md) {
+                padding: 10px 20px;
+            }
         }
-    }
-    &__dm__wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @include mq($breakpoint: md) {
-            padding: 10px 20px;
+        &__link {
+            width: 80px;
+            overflow: hidden;
+            border-radius: 50%;
+            > img {
+                -o-object-fit: cover;
+                object-fit: cover;
+                width: 80px;
+                height: 80px;
+            }
         }
-    }
-    &__dm__link {
-        width: 80px;
-        overflow: hidden;
-        border-radius: 50%;
-    }
-    &__dm__link > img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 80px;
-        height: 80px;
-    }
-    &__dm__body {
-        width: 82.5%;
-    }
-    &__dm__name {
-        font-size: 1.2rem;
-        padding: 0 15px;
-        margin-bottom: 5px;
-        color: $sub-color1;
-        font-weight: bold;
-    }
-    &__dm__text {
-        font-size: 1rem;
-        padding: 15px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-
+        &__body {
+            width: 82.5%;
+        }
+        &__name {
+            font-size: 1.2rem;
+            padding: 0 15px;
+            margin-bottom: 5px;
+            color: $sub-color1;
+            font-weight: bold;
+        }
+        &__text {
+            font-size: 1rem;
+            padding: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+        }
     }
     &__withdraw {
         padding: 60px;
@@ -138,19 +139,19 @@
         @include mq() {
             padding: 40px 20px;
         }
-    }
-    &__withdraw__heading {
-        font-size: 1.8rem;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    &__withdraw__text {
-        text-align: center;
-        margin-bottom: 40px;
-        line-height: 1.2;
-    }
-    &__withdraw__btn {
-        margin-top: 30px;
+        &__heading {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        &__text {
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        &__btn {
+            margin-top: 30px;
+        }
     }
 }
