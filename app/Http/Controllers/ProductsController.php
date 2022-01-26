@@ -193,6 +193,6 @@ class productsController extends Controller
         $category = new Category;
         $categories = $category->getLists();
 
-        return view('logined.index.product', compact('products', 'categories', 'category_id'));
+        return view('logined.index.product', compact('products', 'categories', 'category_id', 'keyword'));
     }
 }
