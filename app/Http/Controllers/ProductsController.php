@@ -175,12 +175,18 @@ class productsController extends Controller
 
     public function search(Request $request)
     {
-        //カテゴリー検索
+        //検索機能
         $category_id = $request->input('category_id');
+        $keyword = $request->input('keyword');
         $query = Product::query();
 
+        // カテゴリー検索
         if(isset($category_id)) {
             $query->where('category_id', $category_id)->where('deleted_at', null);
+        }
+        // キーワード検索
+        if(!empty($keyword)) {
+            $query->where('title', 'like', '%'.$keyword.'%')->orWhere('description', 'like', '%'.$keyword.'%');
         }
         $products = $query->orderBy('category_id', 'asc')->paginate(10);
 
