@@ -81,6 +81,14 @@
             max-width: 50%;
         }
     }
+    &__dm {
+        margin-bottom: 14px;
+        text-align: right;
+        color: $main-color;
+    }
+    &__dm__link:hover {
+        text-decoration: underline;
+    }
     &__price {
         color: #CC0221;
         font-weight: bold;
