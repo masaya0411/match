@@ -47,6 +47,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/withdrawal/{id}', 'UsersController@destroy')->name('users.destroy');
     Route::post('/email', 'ChangeEmailController@sendChangeEmailLink')->name('users.email');
     Route::get("reset/{token}", "ChangeEmailController@reset");
+    Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.update');
+    Route::get('/password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
 }); 
 
 // パブリックメッセージ一覧表示・登録

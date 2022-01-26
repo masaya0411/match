@@ -78,7 +78,7 @@ class RegisterController extends Controller
 
     protected function registered(Request $request)
     {
-        //会員登録する前に見ていたページに遷移
+        //会員登録後、登録する前に見ていたページに遷移
         return redirect($request->previous_url);
     }
 }

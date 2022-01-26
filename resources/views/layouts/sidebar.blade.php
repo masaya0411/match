@@ -37,6 +37,9 @@
                     <a href="{{ route('users.edit') }}" class="c-side__link">プロフィールを編集</a>
                 </li>
                 <li class="c-side__item">
+                    <a href="{{ route('pass.show') }}" class="c-side__link">パスワード変更</a>
+                </li>
+                <li class="c-side__item">
                     <a href="{{ route('users.delete_confirm') }}" class="c-side__link">退会</a>
                 </li>
             </ul>
