@@ -36,16 +36,18 @@
         top: 16px;
         right: 16px;
     }
-    &__form__text {
-        margin: 20px 0;
-        line-height: 1.2;
-    }
-    &__form__text--sub {
-        font-size: 0.8rem;
-        color: #707070;
-        margin: 20px 0;
-    }
-    &__form__btn {
-        margin-top: 30px;
+    &__form {
+        &__text {
+            margin: 20px 0;
+            line-height: 1.2;
+            &--sub {
+                font-size: 0.8rem;
+                color: #707070;
+                margin: 20px 0;
+            }
+        }
+        &__btn {
+            margin-top: 30px;
+        }
     }
 }
