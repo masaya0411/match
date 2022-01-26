@@ -10,7 +10,7 @@
 @endif
 <main class="l-main u-bg-color--gray">
     <div class="l-form">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <form action="{{ route('password.update') }}" class="c-form p-signup" method="POST">
                 @csrf
 

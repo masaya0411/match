@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="p-mypage">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h1 class="p-mypage__title">登録済み案件一覧</h1>
             <div class="l-column">
                 <div class="l-main-content">
@@ -22,7 +22,7 @@
                                     <a href="{{ route('products.show',$product->id) }}" class="c-panel__link">
                                         <h3 class="c-panel__title">{{ $product->title }}</h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
                                             @foreach($categories as $id => $category_name)
 
                                                 @if($product->category_id == $id)

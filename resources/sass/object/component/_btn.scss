@@ -28,10 +28,10 @@
         height: 40px;
         max-width: 250px;
         transition: .3s;
-    }
-    &--upload:hover {
-        background: #80ddd5;
-        transition: .3s;
+        &:hover {
+            background: #80ddd5;
+            transition: .3s;
+        }
     }
     &--apply {
         background: #FAA643;

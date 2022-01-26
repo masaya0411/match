@@ -21,7 +21,7 @@
 
     <!-- matchとは -->
     <section id="match" class="p-top__match u-bg-color--gray">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h2 class="p-top__match__heading c-top__heading ">matchとは</h2>
             <div class="p-top__match__wrap">
                 <img class="p-top__match__img" src="{{ asset('images/undraw_Working_re_ddwy.png') }}" alt="仕事をするイラスト">
@@ -42,7 +42,7 @@
 
     <!-- 新しいお仕事 -->
     <section id="works" class="p-top__works">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h2 class="p-top__works__heading c-top__heading">新着のお仕事</h2>
             <div class="p-top__works__wrap">
                 <product-panel 
@@ -58,7 +58,7 @@
 
     <!-- ご利用方法 -->
     <section id="use" class="p-top__use u-bg-color--gray">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h2 class="p-top__use__heading c-top__heading">ご利用方法</h2>
             <div class="p-top__use__wrap">
                 <div class="p-top__use__card">
@@ -112,7 +112,7 @@
 
     <!-- ご利用者様の声 -->
     <section id="customer" class="p-top__customer">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h2 class="p-top__customer__heading c-top__heading">ご利用者様の声</h2>
             <div class="p-top__customer__wrap">
                 <div class="p-top__customer__panel">
@@ -158,7 +158,7 @@
 
     <!-- Q&A -->
     <section id="question" class="p-top__question u-bg-color--gray">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h2 class="p-top__question__headeing c-top__heading">Q&A</h2>
             <div class="p-top__question__wrap">
                 <dl class="p-top__question__acdn">

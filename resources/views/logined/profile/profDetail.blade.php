@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <div class="p-user">
                 <div class="p-user__info">
                     <div class="p-user__img">
@@ -38,7 +38,7 @@
                                             {{ $product->title }}
                                         </h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
 
                                             @foreach($categories as $id => $category_name)
                                                 @if($product->category_id == $id)

@@ -11,7 +11,7 @@
     @endif
 
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <div class="p-dm-detail">
 
                 <div class="p-dm-detail__head">
@@ -36,7 +36,7 @@
                         <h2 class="p-dm-detail__head__product__title">
                             {{ $product->title }}
                         </h2>
-                        <span class="c-badge-sm">
+                        <span class="c-badge--sm">
                             {{ $category }}
                         </span>
 

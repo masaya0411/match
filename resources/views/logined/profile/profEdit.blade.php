@@ -11,7 +11,7 @@
     @endif
 
     <div class="l-project">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <div class="l-column">
                 <div class="l-main-content">
                     <div class="p-profile">

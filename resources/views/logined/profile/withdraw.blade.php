@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="p-mypage">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <div class="l-column">
                 <div class="l-main-content">
                     <div class="p-mypage__withdraw">

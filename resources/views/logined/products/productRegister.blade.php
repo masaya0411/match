@@ -5,7 +5,7 @@
 
 <main class="l-main u-bg-color--gray">
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <form action="{{ route('products.store') }}" method="POST" class="p-product-register">
                 @csrf
 

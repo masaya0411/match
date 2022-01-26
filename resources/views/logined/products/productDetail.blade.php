@@ -11,7 +11,7 @@
     @endif
     
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <div class="p-dm-detail">
 
                 <div class="p-dm-detail__head">
@@ -22,7 +22,7 @@
                         </h2>
 
                         <div class="p-product-detail__wrap">
-                            <span class="c-badge-lg">
+                            <span class="c-badge--lg">
                                 {{ $category }}
                             </span>
                             <!-- お気に入りボタン -->

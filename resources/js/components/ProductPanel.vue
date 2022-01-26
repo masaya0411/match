@@ -7,10 +7,10 @@
                     {{ matter.title }}
                 </h3>
                 <div class="c-panel__badge-wrap">
-                    <span v-if="matter.category_id == 1" class="c-panel__badge c-badge-sm">
+                    <span v-if="matter.category_id == 1" class="c-panel__badge c-badge--sm">
                         {{ categories[1] }}
                     </span>
-                    <span v-if="matter.category_id == 2" class="c-panel__badge c-badge-sm">
+                    <span v-if="matter.category_id == 2" class="c-panel__badge c-badge--sm">
                         {{ categories[2] }}
                     </span>
                 </div>

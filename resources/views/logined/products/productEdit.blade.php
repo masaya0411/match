@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <form action="{{ route('products.update', $product->id) }}" method="POST" class="p-product-register">
                 @method('PUT')
                 @csrf

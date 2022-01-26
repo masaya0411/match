@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <div class="p-terms">
                 <h1 class="p-terms__heading">個人情報保護方針</h1>
                 <ul class="p-terms__list">

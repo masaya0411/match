@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="l-form">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <form action="{{ route('register') }}" class="c-form p-signup" method="POST">
                 @csrf
 
@@ -13,7 +13,7 @@
                 @else
                     <input type="hidden" name="previous_url" value="{{ old('previous_url') }}">
                 @endif
-                
+
                 <h1 class="c-form__heading">会員登録</h1>
                 <div class="c-form__list">
                     <label for="email" class="c-form__head">メールアドレス</label>

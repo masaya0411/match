@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="l-project">
-        <div class="l-content-md">
+        <div class="l-content--md">
             <div class="p-error">
                 <h2 class="p-error__heading">
                     アクセス権がありません。

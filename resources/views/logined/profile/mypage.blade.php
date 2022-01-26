@@ -11,7 +11,7 @@
     @endif
 
     <div class="p-mypage">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h1 class="p-mypage__title">マイページ</h1>
             <div class="l-column">
                 <div class="l-main-content">
@@ -34,7 +34,7 @@
                                     <a href="{{ route('products.show',$product->id) }}" class="c-panel__link">
                                         <h3 class="c-panel__title">{{ $product->title }}</h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
                                             @foreach($categories as $id => $category_name)
 
                                                 @if($product->category_id == $id)
@@ -114,7 +114,7 @@
                                             {{$apply_product->title}}
                                         </h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
                                             @foreach($categories as $id => $category_name)
 
                                             @if($apply_product->category_id == $id)
@@ -165,7 +165,7 @@
                                             {{$like_product->title}}
                                         </h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
                                             @foreach($categories as $id => $category_name)
 
                                             @if($like_product->category_id == $id)

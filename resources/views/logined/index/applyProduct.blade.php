@@ -4,7 +4,7 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <div class="p-mypage">
-        <div class="l-content-lg">
+        <div class="l-content--lg">
             <h1 class="p-mypage__title">応募済み案件一覧</h1>
             <div class="l-column">
                 <div class="l-main-content">
@@ -24,7 +24,7 @@
                                             {{$apply_product->title}}
                                         </h3>
                                         <div class="c-panel__badge-wrap">
-                                            <span class="c-panel__badge c-badge-sm">
+                                            <span class="c-panel__badge c-badge--sm">
                                             @foreach($categories as $id => $category_name)
 
                                             @if($apply_product->category_id == $id)
