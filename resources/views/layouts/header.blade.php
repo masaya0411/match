@@ -50,8 +50,8 @@
         <nav class="c-header-nav js-toggle-sp-menu-target">
             <div class="c-header-nav__content">
                 <div class="c-header-nav__btn__wrap">
-                    <a href="{{ route('login') }}" class="c-header-nav__btn c-header-nav__login__btn">ログイン</a>
-                    <a href="{{ route('register') }}" class="c-header-nav__btn c-header-nav__register__btn">会員登録</a>
+                    <a href="{{ route('login') }}" class="c-header-nav__btn c-header-nav__btn--login">ログイン</a>
+                    <a href="{{ route('register') }}" class="c-header-nav__btn c-header-nav__btn--register">会員登録</a>
                 </div>
             </div>
         </nav>

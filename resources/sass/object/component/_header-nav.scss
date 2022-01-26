@@ -22,14 +22,6 @@
             width: 100%;
         }
     }
-    &__btn__wrap {
-        display: flex;
-        align-items: center;
-        @include mq($breakpoint: md) {
-            display: block;
-            padding: 20px;
-        }
-    }
     &__btn {
         display: block;
         padding: 8px;
@@ -37,6 +29,9 @@
         font-size: 12px;
         border-radius: 4px;
         margin: 0 5px;
+        &:hover {
+            opacity: .6;
+        }
         @include mq($breakpoint: md) {
             width: 100%;
             margin: 0 0 10px;
@@ -44,75 +39,80 @@
             text-align: center;
             padding: 18px 0;
         }
-    }
-    &__btn:hover {
-        opacity: .6;
-    }
-    &__login__btn {
-        color: $sub-color1;
-        border: solid 1px $sub-color1;
-    }
-    &__register__btn {
-        color: #fff;
-        background: #3479CA;
+        &__wrap {
+            display: flex;
+            align-items: center;
+            @include mq($breakpoint: md) {
+                display: block;
+                padding: 20px;
+            }
+        }
+        &--login {
+            color: $sub-color1;
+            border: solid 1px $sub-color1;
+        }
+        &--register {
+            color: #fff;
+            background: #3479CA;
+        }
     }
     &__user {
         position: relative;
-    }
-    &__user__btn {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        color: #587170;
-        font-size: 1.4rem;
-        @include mq($breakpoint: md) {
-            display: none;
-        }
-    }
-    &__user__btn:hover {
-        cursor: pointer;
-    }
-    &__user__icon {
-        width: 40px;
-        margin-right: 10px;
-    }
-    &__user__icon > img{
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-    }
-    &__user__list {
-        text-align: center;
-        @include mq($breakpoint: min-md) {
-            width: 230px;
-            background: #fff;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        &.is-show {
-            @include mq($breakpoint: min-md) {
-                display: block;
+        &__btn {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #587170;
+            font-size: 1.4rem;
+            @include mq($breakpoint: md) {
+                display: none;
+            }
+            &:hover {
+                cursor: pointer;
             }
         }
-    }
-    &__user__link {
-        padding: 15px 20px;
-        font-size: 18px;
-        display: block;
-        border-bottom: 1px solid #d9d9d9;
-    }
-    &__user__link:hover {
-        background: #F0F4F8;
-    }
-    &__user__link--logout {
-        width: 100%;
+        &__icon {
+            width: 40px;
+            margin-right: 10px;
+            > img {
+                -o-object-fit: cover;
+                object-fit: cover;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+        }
+        &__list {
+            text-align: center;
+            @include mq($breakpoint: min-md) {
+                width: 230px;
+                background: #fff;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            &.is-show {
+                @include mq($breakpoint: min-md) {
+                    display: block;
+                }
+            }
+        }
+        &__link {
+            padding: 15px 20px;
+            font-size: 18px;
+            display: block;
+            border-bottom: 1px solid #d9d9d9;
+            &:hover {
+                background: #F0F4F8;
+            }
+            &--logout {
+                width: 100%;
+            }
+        }
     }
     &.is-navOpen {
         @include mq($breakpoint: md) {
