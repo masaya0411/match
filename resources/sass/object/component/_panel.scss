@@ -24,36 +24,36 @@
 
         &.is-finished {
             overflow: hidden;
+            &::before {
+                content: 'この案件の募集は終了しました';
+                font-size: 1.1rem;
+                font-weight: bold;
+                position: absolute;
+                color: #fff;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                letter-spacing: 0.05em;
+                z-index: 20;
+                }
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 10;
+                }
         }
-        &.is-finished::before {
-            content: 'この案件の募集は終了しました';
-            font-size: 1.1rem;
-            font-weight: bold;
-            position: absolute;
-            color: #fff;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            text-align: center;
-            transform: translate(-50%, -50%);
-            letter-spacing: 0.05em;
-            z-index: 20;
-            }
-        &.is-finished::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 10;
-            }
-    }
-    &__link:hover {
-        background: #F0F4F8;
-        border: 2px solid #97e1a7;
+        &:hover {
+            background: #F0F4F8;
+            border: 2px solid #97e1a7;
+        }
     }
     &__title {
         font-weight: bold;
@@ -68,12 +68,6 @@
             font-size: 0.8rem;
         }
     }
-    &__price-wrap {
-        display: flex;
-        color: #CC0221;
-        font-weight: bold;
-        margin-top: 15px;
-    }
     &__price {
         overflow: hidden;
         text-overflow: ellipsis;
@@ -81,6 +75,12 @@
         -o-text-overflow: ellipsis;
         @include mq($breakpoint: md) {
             font-size: 0.8rem;
+        }
+        &-wrap {
+            display: flex;
+            color: #CC0221;
+            font-weight: bold;
+            margin-top: 15px;
         }
     }
 }
