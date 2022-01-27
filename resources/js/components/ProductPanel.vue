@@ -45,10 +45,6 @@
                 var sum = num*1000;
                 return sum.toLocaleString();
             }
-        },
-        mounted () {
-            console.log(this.products);
-            console.log(this.categories);
         }
     }
 </script>
