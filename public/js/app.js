@@ -37884,7 +37884,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.authId !== _vm.comment.user.id || _vm.authid === null
+  return _vm.authId !== _vm.comment.user_id || _vm.authId === null
     ? _c("div", { staticClass: "c-comment__list" }, [
         _c("div", { staticClass: "c-comment__user c-comment__user--receved" }, [
           _vm.comment.user !== null
@@ -37977,7 +37977,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.authId === _vm.comment.user.id
+  return _vm.authId === _vm.comment.user_id
     ? _c("div", { staticClass: "c-comment__list" }, [
         _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
           _c(

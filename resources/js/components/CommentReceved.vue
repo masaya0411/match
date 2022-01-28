@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="authId !== comment.user.id || authid === null" class="c-comment__list">
+    <div v-if="authId !== comment.user_id || authId === null" class="c-comment__list">
 
         <div class="c-comment__user c-comment__user--receved">
             <a v-if="comment.user !== null" :href="'/user/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--receved">
