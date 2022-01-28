@@ -38,7 +38,7 @@
             },
         data: function() {
             return {
-                product: this.matter
+                product: this.product
             }
         },
         filters:{
