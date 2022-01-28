@@ -3,13 +3,13 @@
         
         <CommentSend 
             v-for="comment in comments"
-            :key="comment.id"
+            :key="`send-${comment.id}`"
             :comment="comment"
             :auth-id="auth"
             />
         <CommentReceved 
             v-for="comment in comments"
-            :key="comment.id"
+            :key="`receve-${comment.id}`"
             :comment="comment"
             :auth-id="auth"
             />
