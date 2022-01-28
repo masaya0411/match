@@ -2243,11 +2243,6 @@ __webpack_require__.r(__webpack_exports__);
     product: Object,
     categories: Object
   },
-  data: function data() {
-    return {
-      product: this.product
-    };
-  },
   filters: {
     numberFormat: function numberFormat(num) {
       var sum = num * 1000;

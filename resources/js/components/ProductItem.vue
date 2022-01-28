@@ -36,11 +36,6 @@
             product: Object, 
             categories: Object
             },
-        data: function() {
-            return {
-                product: this.product
-            }
-        },
         filters:{
             numberFormat: function(num) {
                 var sum = num*1000;
