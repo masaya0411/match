@@ -1,27 +1,39 @@
 <template>
-    <div class="c-comment">
+    <div v-if="comments !== null" class="c-comment">
         
-        <!-- <CommentSend />
-        <CommentReceved /> -->
+        <CommentSend 
+            v-for="comment in comments"
+            :key="comment.id"
+            :comment="comment"
+            :auth-id="authId"
+            />
+        <CommentReceved 
+            v-for="comment in comments"
+            :key="comment.id"
+            :comment="comment"
+            :auth-id="authId"
+            />
 
     </div>
 </template>
 
 <script>
-    // import CommentSend from "./CommentSend";
-    // import CommentReceved from "./CommentReceved";
+    import CommentSend from "./CommentSend";
+    import CommentReceved from "./CommentReceved";
 
     export default {
-        // components: {
-        //     CommentSend,
-        //     CommentReceved
-        // },
+        components: {
+            CommentSend,
+            CommentReceved
+        },
         props: {
             comments: Object,
+            authId: Number
         },
         data: function() {
             return {
                 comments: this.comments,
+                authId: this.authId
             }
         }
     }

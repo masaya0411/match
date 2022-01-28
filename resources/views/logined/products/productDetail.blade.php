@@ -104,7 +104,7 @@
                     <h2 class="p-dm-detail__body__title">パブリックメッセージ</h2>
                     <div class="p-dm-detail__comment">
 
-                        <comment :comments="{{ json_encode($messages) }}"></comment>
+                        <comment :comments="{{ json_encode($messages) }}" :authId="{{ Auth::user()->id }}"></comment>
 
                         <!-- <div class="c-comment">
                         
@@ -193,7 +193,7 @@
                             @endif
 
                         </div> -->
-                        
+
                     </div>
                     <form action="{{ route('public.store', $product->id) }}" method="POST" class="p-dm-detail__form js-countUp">
                         @csrf

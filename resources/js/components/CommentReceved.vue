@@ -1,0 +1,48 @@
+<template>
+
+    <div v-if="authId !== comment.user.id || authid === null" class="c-comment__list">
+
+        <div class="c-comment__user c-comment__user--receved">
+            <a v-if="comment.user !== null" :href="'/direct_messages/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--receved">
+                <div class="c-comment__user__avater__img">
+                    <img :src="'storage/profile_images/' + comment.user.pic">
+                </div>
+                <p class="c-comment__user__avater__name">
+                    {{ comment.user.name }}
+                </p>
+            </a>
+            <a v-else :href="'/direct_messages/0'" class="c-comment__user__avater c-comment__user__avater--receved">
+                <div class="c-comment__user__avater__img">
+                    <img :src="'storage/profile_images/profile.png'">
+                </div>
+                <p class="c-comment__user__avater__name">
+                    退会したユーザー
+                </p>
+            </a>
+            <div class="c-comment__user__content">
+                <div class="c-comment__user__message c-comment__user__message--receved">
+                    <p class="c-comment__user__text">
+                        {{ comment.public_msg }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</template>
+
+<script>
+    export default {
+        props: {
+            comment: Object, 
+            authId: Number
+            },
+        data: function() {
+            return {
+                comment: this.comment,
+                authId: this.authId
+            }
+        }
+    }
+</script>
