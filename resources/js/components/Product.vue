@@ -12,7 +12,12 @@
 </template>
 
 <script>
+    import ProductItem from "./ProductItem";
+
     export default {
+        components: {
+            ProductItem
+        },
         props: ['getProducts', 'getCategories'],
         data: function() {
             return {

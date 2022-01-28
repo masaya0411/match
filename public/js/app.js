@@ -2005,6 +2005,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProductItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductItem */ "./resources/js/components/ProductItem.vue");
 //
 //
 //
@@ -2018,7 +2019,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ProductItem: _ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   props: ['getProducts', 'getCategories'],
   data: function data() {
     return {
