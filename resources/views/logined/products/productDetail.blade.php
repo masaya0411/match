@@ -104,7 +104,7 @@
                     <h2 class="p-dm-detail__body__title">パブリックメッセージ</h2>
                     <div class="p-dm-detail__comment">
 
-                        <comment :comments="{{ json_encode($messages) }}" auth="{{ (int)Auth::id() }}"></comment>
+                        <comment :comments="{{ json_encode($messages) }}" :auth="{{ (int)Auth::id() }}"></comment>
 
                         <!-- <div class="c-comment">
                         
