@@ -3,7 +3,7 @@
     <div v-if="authId === comment.user.id" class="c-comment__list">
 
         <div class="c-comment__user c-comment__user--send">
-            <a :href="'/direct_messages/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--send">
+            <a :href="'/user/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--send">
                 <div class="c-comment__user__avater__img">
                     <img :src="'storage/profile_images/' + comment.user.pic">
                 </div>

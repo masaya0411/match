@@ -37,7 +37,6 @@ Route::get('search', 'ProductsController@search')->name('products.search');
 // マイページ表示、プロフィール編集・退会
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage', 'UsersController@index')->name('mypage');
-    Route::get('/user/{id}', 'UsersController@show')->name('users.show');
     Route::get('/mypage/edit', 'UsersController@edit')->name('users.edit');
     Route::put('/mypage/{id}', 'UsersController@update')->name('users.update');
     Route::get('/mypage/register', 'UsersController@register_index')->name('users.register');
@@ -48,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/email', 'ChangeEmailController@sendChangeEmailLink')->name('users.email');
     Route::get("reset/{token}", "ChangeEmailController@reset");
 }); 
+Route::get('/user/{id}', 'UsersController@show')->name('users.show');
 
 // パブリックメッセージ一覧表示・登録
 Route::group(['middleware' => 'auth'], function () {

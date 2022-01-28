@@ -3,7 +3,7 @@
     <div v-if="authId !== comment.user.id || authid === null" class="c-comment__list">
 
         <div class="c-comment__user c-comment__user--receved">
-            <a v-if="comment.user !== null" :href="'/direct_messages/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--receved">
+            <a v-if="comment.user !== null" :href="'/user/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--receved">
                 <div class="c-comment__user__avater__img">
                     <img :src="'storage/profile_images/' + comment.user.pic">
                 </div>
@@ -11,7 +11,7 @@
                     {{ comment.user.name }}
                 </p>
             </a>
-            <a v-else :href="'/direct_messages/0'" class="c-comment__user__avater c-comment__user__avater--receved">
+            <a v-else :href="'/user/0'" class="c-comment__user__avater c-comment__user__avater--receved">
                 <div class="c-comment__user__avater__img">
                     <img :src="'storage/profile_images/profile.png'">
                 </div>

@@ -37898,7 +37898,7 @@ var render = function () {
                 {
                   staticClass:
                     "c-comment__user__avater c-comment__user__avater--receved",
-                  attrs: { href: "/direct_messages/" + _vm.comment.user.id },
+                  attrs: { href: "/user/" + _vm.comment.user.id },
                 },
                 [
                   _c("div", { staticClass: "c-comment__user__avater__img" }, [
@@ -37923,7 +37923,7 @@ var render = function () {
                 {
                   staticClass:
                     "c-comment__user__avater c-comment__user__avater--receved",
-                  attrs: { href: "/direct_messages/0" },
+                  attrs: { href: "/user/0" },
                 },
                 [
                   _c("div", { staticClass: "c-comment__user__avater__img" }, [
@@ -37990,7 +37990,7 @@ var render = function () {
             {
               staticClass:
                 "c-comment__user__avater c-comment__user__avater--send",
-              attrs: { href: "/direct_messages/" + _vm.comment.user.id },
+              attrs: { href: "/user/" + _vm.comment.user.id },
             },
             [
               _c("div", { staticClass: "c-comment__user__avater__img" }, [
