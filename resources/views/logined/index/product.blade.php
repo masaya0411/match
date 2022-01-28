@@ -43,10 +43,10 @@
                     <div class="p-mypage__block">
                         <div class="c-panel">
                             <!-- 案件パネル -->
-                            <product-panel
-                                :products="{{ json_encode($products) }}" 
-                                :categories="{{ json_encode($categories) }}">
-                            </product-panel>
+                            <product
+                                :get-products="{{ json_encode($products) }}" 
+                                :get-categories="{{ json_encode($categories) }}">
+                            </product>
                         </div>
                     </div>
                     {{ $products->appends(['category_id' => $category_id])->links() }}
