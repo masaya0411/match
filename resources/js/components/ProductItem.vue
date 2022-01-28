@@ -32,7 +32,10 @@
 
 <script>
     export default {
-        props: ['matter', 'categories'],
+        props: {
+            product: Object, 
+            categories: Object
+            },
         data: function() {
             return {
                 product: this.matter

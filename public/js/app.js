@@ -2024,10 +2024,13 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     ProductItem: _ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['getProducts', 'getCategories'],
+  props: {
+    getProducts: Object,
+    getCategories: Object
+  },
   data: function data() {
     return {
-      matters: this.getProducts.data,
+      products: this.getProducts.data,
       categories: this.getCategories
     };
   }
@@ -2077,7 +2080,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['matter', 'categories'],
+  props: {
+    product: Object,
+    categories: Object
+  },
   data: function data() {
     return {
       product: this.matter
@@ -37771,10 +37777,10 @@ var render = function () {
   return _c(
     "ul",
     { staticClass: "c-panel__list" },
-    _vm._l(_vm.matters, function (matter) {
+    _vm._l(_vm.products, function (product) {
       return _c("ProductItem", {
-        key: matter.id,
-        attrs: { matter: matter, categories: _vm.categories },
+        key: product.id,
+        attrs: { product: product, categories: _vm.categories },
       })
     }),
     1
@@ -50112,7 +50118,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('like-button', __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue")["default"]);
 Vue.component('product', __webpack_require__(/*! ./components/Product.vue */ "./resources/js/components/Product.vue")["default"]);
-Vue.component('product-item', __webpack_require__(/*! ./components/ProductItem.vue */ "./resources/js/components/ProductItem.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

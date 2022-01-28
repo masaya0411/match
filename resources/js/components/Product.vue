@@ -2,9 +2,9 @@
     <ul class="c-panel__list">
 
         <ProductItem 
-            v-for="matter in matters" 
-            :key="matter.id" 
-            :matter="matter" 
+            v-for="product in products" 
+            :key="product.id" 
+            :product="product" 
             :categories="categories"
         />
 
@@ -18,10 +18,13 @@
         components: {
             ProductItem
         },
-        props: ['getProducts', 'getCategories'],
+        props: {
+            getProducts: Object, 
+            getCategories: Object
+        },
         data: function() {
             return {
-                matters: this.getProducts.data,
+                products: this.getProducts.data,
                 categories: this.getCategories
             }
         }
