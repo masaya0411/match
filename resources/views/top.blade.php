@@ -46,8 +46,8 @@
             <h2 class="p-top__works__heading c-top__heading">新着のお仕事</h2>
             <div class="p-top__works__wrap">
                 <product 
-                    :products="{{ json_encode($products) }}" 
-                    :categories="{{ json_encode($categories) }}">>
+                    :get-products="{{ json_encode($products) }}" 
+                    :get-categories="{{ json_encode($categories) }}">>
                 </product>
             </div>
             <div class="p-top__works__btn">
