@@ -5,13 +5,13 @@
             v-for="comment in comments"
             :key="comment.id"
             :comment="comment"
-            :auth-id="authId"
+            :auth-id="auth"
             />
         <CommentReceved 
             v-for="comment in comments"
             :key="comment.id"
             :comment="comment"
-            :auth-id="authId"
+            :auth-id="auth"
             />
 
     </div>

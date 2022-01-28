@@ -37847,14 +37847,14 @@ var render = function () {
           _vm._l(_vm.comments, function (comment) {
             return _c("CommentSend", {
               key: comment.id,
-              attrs: { comment: comment, "auth-id": _vm.authId },
+              attrs: { comment: comment, "auth-id": _vm.auth },
             })
           }),
           _vm._v(" "),
           _vm._l(_vm.comments, function (comment) {
             return _c("CommentReceved", {
               key: comment.id,
-              attrs: { comment: comment, "auth-id": _vm.authId },
+              attrs: { comment: comment, "auth-id": _vm.auth },
             })
           }),
         ],
