@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="authId === comment.user_id" class="c-comment__list">
+    <div v-if="isMyid" class="c-comment__list">
 
         <div class="c-comment__user c-comment__user--send">
             <a :href="'/user/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--send">
@@ -32,8 +32,16 @@
             },
         data: function() {
             return {
-                comment: this.comment,
                 auth_id: this.authId
+            }
+        },
+        computed: {
+            isMyid () {
+                if(this.auth_id === this.comment.user_id) {
+                    return true;
+                }else{
+                    return false;
+                }
             }
         }
     }

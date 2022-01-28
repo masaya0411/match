@@ -2050,9 +2050,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      comment: this.comment,
       auth_id: this.authId
     };
+  },
+  computed: {
+    isMyid: function isMyid() {
+      if (this.auth_id === this.comment.user_id) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 });
 
@@ -37977,7 +37985,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.authId === _vm.comment.user_id
+  return _vm.isMyid
     ? _c("div", { staticClass: "c-comment__list" }, [
         _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
           _c(
