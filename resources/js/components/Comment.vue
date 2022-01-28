@@ -1,19 +1,17 @@
 <template>
     <div v-if="comments !== null" class="c-comment">
+        <div v-for="comment in comments" :key="comment.id" class="c-comment__list">
         
         <CommentSend 
-            v-for="comment in comments"
-            :key="`send-${comment.id}`"
             :comment="comment"
             :auth-id="auth"
             />
         <CommentReceved 
-            v-for="comment in comments"
-            :key="`receve-${comment.id}`"
             :comment="comment"
             :auth-id="auth"
             />
 
+        </div>
     </div>
 </template>
 
