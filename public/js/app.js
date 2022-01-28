@@ -37904,7 +37904,7 @@ var render = function () {
                   _c("div", { staticClass: "c-comment__user__avater__img" }, [
                     _c("img", {
                       attrs: {
-                        src: "storage/profile_images/" + _vm.comment.user.pic,
+                        src: "/storage/profile_images/" + _vm.comment.user.pic,
                       },
                     }),
                   ]),
@@ -37928,7 +37928,7 @@ var render = function () {
                 [
                   _c("div", { staticClass: "c-comment__user__avater__img" }, [
                     _c("img", {
-                      attrs: { src: "storage/profile_images/profile.png" },
+                      attrs: { src: "/storage/profile_images/profile.png" },
                     }),
                   ]),
                   _vm._v(" "),
@@ -37996,7 +37996,7 @@ var render = function () {
               _c("div", { staticClass: "c-comment__user__avater__img" }, [
                 _c("img", {
                   attrs: {
-                    src: "storage/profile_images/" + _vm.comment.user.pic,
+                    src: "/storage/profile_images/" + _vm.comment.user.pic,
                   },
                 }),
               ]),
