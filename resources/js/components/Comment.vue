@@ -28,12 +28,12 @@
         },
         props: {
             comments: Array,
-            authId: null
+            auth: null
         },
         data: function() {
             return {
                 comments: this.comments,
-                authId: this.authId
+                auth_id: this.auth
             }
         }
     }

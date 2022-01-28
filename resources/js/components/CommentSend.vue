@@ -33,7 +33,7 @@
         data: function() {
             return {
                 comment: this.comment,
-                authId: this.authId
+                auth_id: this.authId
             }
         }
     }

@@ -1938,12 +1938,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     comments: Array,
-    authId: null
+    auth: null
   },
   data: function data() {
     return {
       comments: this.comments,
-      authId: this.authId
+      auth_id: this.auth
     };
   }
 });
@@ -2001,7 +2001,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       comment: this.comment,
-      authId: this.authId
+      auth_id: this.authId
     };
   }
 });
@@ -2051,7 +2051,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       comment: this.comment,
-      authId: this.authId
+      auth_id: this.authId
     };
   }
 });
