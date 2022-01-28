@@ -103,8 +103,10 @@
                 <div class="p-dm-detail__body">
                     <h2 class="p-dm-detail__body__title">パブリックメッセージ</h2>
                     <div class="p-dm-detail__comment">
-                        <div class="c-comment">
 
+                        <comment :comments="{{ json_encode($messages) }}"></comment>
+
+                        <!-- <div class="c-comment">
                         
                             @if(!empty($messages))
                                 @foreach($messages as $msg)
@@ -190,7 +192,8 @@
                                 @endforeach
                             @endif
 
-                        </div>
+                        </div> -->
+                        
                     </div>
                     <form action="{{ route('public.store', $product->id) }}" method="POST" class="p-dm-detail__form js-countUp">
                         @csrf
