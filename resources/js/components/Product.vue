@@ -1,9 +1,12 @@
 <template>
     <ul class="c-panel__list">
 
-        <product-item
-         v-for="matter in matters" :key="matter.id" 
-         :matter="matter" :categories="categories"></product-item>
+        <ProductItem 
+            v-for="matter in matters" 
+            :key="matter.id" 
+            :matter="matter" 
+            :categories="this.categories"
+        />
 
     </ul>
 </template>
@@ -13,7 +16,8 @@
         props: ['getProducts', 'getCategories'],
         data: function() {
             return {
-                matters: this.getProducts.data
+                matters: this.getProducts.data,
+                categories: this.getCategories
             }
         }
     }
