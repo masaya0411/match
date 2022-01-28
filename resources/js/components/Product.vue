@@ -5,7 +5,7 @@
             v-for="matter in matters" 
             :key="matter.id" 
             :matter="matter" 
-            :categories="this.categories"
+            :categories="categories"
         />
 
     </ul>

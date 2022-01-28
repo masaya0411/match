@@ -37774,7 +37774,7 @@ var render = function () {
     _vm._l(_vm.matters, function (matter) {
       return _c("ProductItem", {
         key: matter.id,
-        attrs: { matter: matter, categories: this.categories },
+        attrs: { matter: matter, categories: _vm.categories },
       })
     }),
     1
