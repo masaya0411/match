@@ -27,8 +27,8 @@
             CommentReceved
         },
         props: {
-            comments: Object,
-            authId: Number
+            comments: Array,
+            authId: null
         },
         data: function() {
             return {

@@ -1937,8 +1937,8 @@ __webpack_require__.r(__webpack_exports__);
     CommentReceved: _CommentReceved__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    comments: Object,
-    authId: Number
+    comments: Array,
+    authId: null
   },
   data: function data() {
     return {
@@ -1996,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     comment: Object,
-    authId: Number
+    authId: null
   },
   data: function data() {
     return {
@@ -2046,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     comment: Object,
-    authId: Number
+    authId: null
   },
   data: function data() {
     return {

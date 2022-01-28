@@ -36,7 +36,7 @@
     export default {
         props: {
             comment: Object, 
-            authId: Number
+            authId: null
             },
         data: function() {
             return {
