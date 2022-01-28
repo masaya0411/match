@@ -35,7 +35,7 @@
         props: ['matter', 'categories'],
         data: function() {
             return {
-                product: this.matter.data
+                product: this.matter
             }
         },
         filters:{

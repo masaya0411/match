@@ -2080,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['matter', 'categories'],
   data: function data() {
     return {
-      product: this.matter.data
+      product: this.matter
     };
   },
   filters: {
