@@ -1940,7 +1940,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      comments: this.comments,
       auth_id: this.auth
     };
   }

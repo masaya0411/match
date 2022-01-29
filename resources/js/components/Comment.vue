@@ -30,7 +30,6 @@
         },
         data: function() {
             return {
-                comments: this.comments,
                 auth_id: this.auth
             }
         }
