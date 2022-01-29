@@ -38480,21 +38480,17 @@ var render = function () {
           {
             staticClass:
               "c-comment__user__avater c-comment__user__avater--send",
-            attrs: { href: "/user/" + _vm.partnerInfo.id },
+            attrs: { href: "/user/" + _vm.myInfo.id },
           },
           [
             _c("div", { staticClass: "c-comment__user__avater__img" }, [
               _c("img", {
-                attrs: {
-                  src: "/storage/profile_images/" + _vm.partnerInfo.pic,
-                },
+                attrs: { src: "/storage/profile_images/" + _vm.myInfo.pic },
               }),
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "c-comment__user__avater__name" }, [
-              _vm._v(
-                "\n            " + _vm._s(_vm.partnerInfo.name) + "\n        "
-              ),
+              _vm._v("\n            " + _vm._s(_vm.myInfo.name) + "\n        "),
             ]),
           ]
         ),

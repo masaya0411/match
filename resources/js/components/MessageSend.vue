@@ -1,12 +1,12 @@
 <template>
 
     <div v-if="isMyid" class="c-comment__user c-comment__user--send">
-        <a :href="'/user/' + partnerInfo.id" class="c-comment__user__avater c-comment__user__avater--send">
+        <a :href="'/user/' + myInfo.id" class="c-comment__user__avater c-comment__user__avater--send">
             <div class="c-comment__user__avater__img">
-                <img :src="'/storage/profile_images/' + partnerInfo.pic">
+                <img :src="'/storage/profile_images/' + myInfo.pic">
             </div>
             <p class="c-comment__user__avater__name">
-                {{ partnerInfo.name }}
+                {{ myInfo.name }}
             </p>
         </a>
         <div class="c-comment__user__content">
