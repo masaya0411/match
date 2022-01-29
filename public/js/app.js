@@ -2117,9 +2117,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     directBords: Array
@@ -2132,8 +2129,13 @@ __webpack_require__.r(__webpack_exports__);
       var sortMessages = _.sortBy(messages, 'created_at').reverse();
 
       console.log(sortMessages);
-      var latestMessage = sortMessages[0].msg;
-      return latestMessage;
+
+      if (sortMessages.length) {
+        var latestMessage = sortMessages[0].msg;
+        return latestMessage;
+      } else {
+        return 'まだメッセージはありません';
+      }
     }
   }
 });
@@ -38349,21 +38351,13 @@ var render = function () {
                           ),
                         ]),
                     _vm._v(" "),
-                    bord.direct_messages === null
-                      ? _c("p", { staticClass: "p-mypage__dm__text" }, [
-                          _vm._v(
-                            "\n                    まだメッセージはありません\n                "
-                          ),
-                        ])
-                      : _c("p", { staticClass: "p-mypage__dm__text" }, [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(
-                                _vm.getLatestMessage(bord.direct_messages)
-                              ) +
-                              "\n                "
-                          ),
-                        ]),
+                    _c("p", { staticClass: "p-mypage__dm__text" }, [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.getLatestMessage(bord.direct_messages)) +
+                          "\n                "
+                      ),
+                    ]),
                   ]),
                 ]
               ),

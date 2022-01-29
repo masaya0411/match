@@ -18,10 +18,7 @@
                     <p v-else class="p-mypage__dm__name">
                         {{ bord.user.name }}
                     </p>
-                    <p v-if="bord.direct_messages === null" class="p-mypage__dm__text">
-                        まだメッセージはありません
-                    </p>
-                    <p v-else class="p-mypage__dm__text">
+                    <p class="p-mypage__dm__text">
                         {{ getLatestMessage(bord.direct_messages) }}
                     </p>
                 </div>
@@ -46,8 +43,12 @@
             getLatestMessage(messages) {
                 var sortMessages = _.sortBy(messages, 'created_at').reverse();
                 console.log(sortMessages);
-                var latestMessage = sortMessages[0].msg;
-                return latestMessage;
+                if(sortMessages.length) {
+                    var latestMessage = sortMessages[0].msg;
+                    return latestMessage;
+                }else{
+                    return 'まだメッセージはありません';
+                }
             }
         }
     }
