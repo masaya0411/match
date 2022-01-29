@@ -2,14 +2,14 @@
     <div v-if="comments !== null" class="c-comment">
         <div v-for="comment in comments" :key="comment.id" class="c-comment__list">
         
-        <CommentSend 
-            :comment="comment"
-            :auth-id="auth"
-            />
-        <CommentReceved 
-            :comment="comment"
-            :auth-id="auth"
-            />
+            <CommentSend 
+                :comment="comment"
+                :auth-id="auth"
+                />
+            <CommentReceved 
+                :comment="comment"
+                :auth-id="auth"
+                />
 
         </div>
     </div>

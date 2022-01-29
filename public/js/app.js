@@ -1998,6 +1998,15 @@ __webpack_require__.r(__webpack_exports__);
       comment: this.comment,
       auth_id: this.authId
     };
+  },
+  computed: {
+    isMyid: function isMyid() {
+      if (this.auth_id === this.comment.user_id) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 });
 
@@ -37884,76 +37893,74 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "c-comment__user c-comment__user--receved" },
-    [
-      _vm.comment.user !== null
-        ? _c(
-            "a",
+  return !_vm.isMyid
+    ? _c("div", { staticClass: "c-comment__user c-comment__user--receved" }, [
+        _vm.comment.user !== null
+          ? _c(
+              "a",
+              {
+                staticClass:
+                  "c-comment__user__avater c-comment__user__avater--receved",
+                attrs: { href: "/user/" + _vm.comment.user.id },
+              },
+              [
+                _c("div", { staticClass: "c-comment__user__avater__img" }, [
+                  _c("img", {
+                    attrs: {
+                      src: "/storage/profile_images/" + _vm.comment.user.pic,
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "c-comment__user__avater__name" }, [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.comment.user.name) +
+                      "\n        "
+                  ),
+                ]),
+              ]
+            )
+          : _c(
+              "a",
+              {
+                staticClass:
+                  "c-comment__user__avater c-comment__user__avater--receved",
+                attrs: { href: "/user/0" },
+              },
+              [
+                _c("div", { staticClass: "c-comment__user__avater__img" }, [
+                  _c("img", {
+                    attrs: { src: "/storage/profile_images/profile.png" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "c-comment__user__avater__name" }, [
+                  _vm._v("\n            退会したユーザー\n        "),
+                ]),
+              ]
+            ),
+        _vm._v(" "),
+        _c("div", { staticClass: "c-comment__user__content" }, [
+          _c(
+            "div",
             {
               staticClass:
-                "c-comment__user__avater c-comment__user__avater--receved",
-              attrs: { href: "/user/" + _vm.comment.user.id },
+                "c-comment__user__message c-comment__user__message--receved",
             },
             [
-              _c("div", { staticClass: "c-comment__user__avater__img" }, [
-                _c("img", {
-                  attrs: {
-                    src: "/storage/profile_images/" + _vm.comment.user.pic,
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "c-comment__user__avater__name" }, [
+              _c("p", { staticClass: "c-comment__user__text" }, [
                 _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.comment.user.name) +
-                    "\n        "
+                  "\n                " +
+                    _vm._s(_vm.comment.public_msg) +
+                    "\n            "
                 ),
               ]),
             ]
-          )
-        : _c(
-            "a",
-            {
-              staticClass:
-                "c-comment__user__avater c-comment__user__avater--receved",
-              attrs: { href: "/user/0" },
-            },
-            [
-              _c("div", { staticClass: "c-comment__user__avater__img" }, [
-                _c("img", {
-                  attrs: { src: "/storage/profile_images/profile.png" },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "c-comment__user__avater__name" }, [
-                _vm._v("\n            退会したユーザー\n        "),
-              ]),
-            ]
           ),
-      _vm._v(" "),
-      _c("div", { staticClass: "c-comment__user__content" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "c-comment__user__message c-comment__user__message--receved",
-          },
-          [
-            _c("p", { staticClass: "c-comment__user__text" }, [
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.comment.public_msg) +
-                  "\n            "
-              ),
-            ]),
-          ]
-        ),
-      ]),
-    ]
-  )
+        ]),
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37977,47 +37984,52 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
-    _c(
-      "a",
-      {
-        staticClass: "c-comment__user__avater c-comment__user__avater--send",
-        attrs: { href: "/user/" + _vm.comment.user.id },
-      },
-      [
-        _c("div", { staticClass: "c-comment__user__avater__img" }, [
-          _c("img", {
-            attrs: { src: "/storage/profile_images/" + _vm.comment.user.pic },
-          }),
-        ]),
+  return _vm.isMyid
+    ? _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
+        _c(
+          "a",
+          {
+            staticClass:
+              "c-comment__user__avater c-comment__user__avater--send",
+            attrs: { href: "/user/" + _vm.comment.user.id },
+          },
+          [
+            _c("div", { staticClass: "c-comment__user__avater__img" }, [
+              _c("img", {
+                attrs: {
+                  src: "/storage/profile_images/" + _vm.comment.user.pic,
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "c-comment__user__avater__name" }, [
+              _vm._v(
+                "\n            " + _vm._s(_vm.comment.user.name) + "\n        "
+              ),
+            ]),
+          ]
+        ),
         _vm._v(" "),
-        _c("p", { staticClass: "c-comment__user__avater__name" }, [
-          _vm._v(
-            "\n            " + _vm._s(_vm.comment.user.name) + "\n        "
+        _c("div", { staticClass: "c-comment__user__content" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "c-comment__user__message c-comment__user__message--send",
+            },
+            [
+              _c("p", { staticClass: "c-comment__user__text" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.comment.public_msg) +
+                    "\n            "
+                ),
+              ]),
+            ]
           ),
         ]),
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "c-comment__user__content" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "c-comment__user__message c-comment__user__message--send",
-        },
-        [
-          _c("p", { staticClass: "c-comment__user__text" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.comment.public_msg) +
-                "\n            "
-            ),
-          ]),
-        ]
-      ),
-    ]),
-  ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

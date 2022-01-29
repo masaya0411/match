@@ -1,6 +1,6 @@
 <template>
 
-    <div class="c-comment__user c-comment__user--receved">
+    <div v-if="!isMyid" class="c-comment__user c-comment__user--receved">
         <a v-if="comment.user !== null" :href="'/user/' + comment.user.id" class="c-comment__user__avater c-comment__user__avater--receved">
             <div class="c-comment__user__avater__img">
                 <img :src="'/storage/profile_images/' + comment.user.pic">
@@ -39,6 +39,15 @@
             return {
                 comment: this.comment,
                 auth_id: this.authId
+            }
+        },
+        computed: {
+            isMyid () {
+                if(this.auth_id === this.comment.user_id) {
+                    return true;
+                }else{
+                    return false;
+                }
             }
         }
     }
