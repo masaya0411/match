@@ -44,11 +44,10 @@
         },
         methods: {
             getLatestMessage(messages) {
-                var sortMessages = _.sortBy(messages, 'created_at');
+                var sortMessages = _.sortBy(messages, 'created_at').reverse();
                 console.log(sortMessages);
-                return 'aaa';
-                // var latestMessage = sortMessages[0].msg;
-                // return latestMessage;
+                var latestMessage = sortMessages[0].msg;
+                return latestMessage;
             }
         }
     }
