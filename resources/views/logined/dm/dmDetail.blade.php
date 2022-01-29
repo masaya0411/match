@@ -61,7 +61,7 @@
 
                 <div class="p-dm-detail__body">
                     <div class="p-dm-detail__comment">
-                        <comment  :messages="{{ json_encode($messages) }}" :auth="{{ (int)Auth::id() }}"></comment>
+                        <message  :messages="{{ json_encode($messages) }}" :user="{{ json_encode($user) }}" :partner="{{ json_encode($partner_info) }}"></message>
                         <!-- <div class="c-comment">
 
                             @if(!$messages->isEmpty())

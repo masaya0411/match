@@ -79,14 +79,15 @@ class DirectMessagesController extends Controller
         $bord = Bord::find($id);
         // ボードに紐づくメッセージを取得
         $messages = $bord->direct_messages()->get();
+        $user = Auth::user();
         
         // パートナーと自分以外のユーザーはDM画面を見られないよう403ページへリダイレクト
-        if($bord->post_user != Auth::user()->id &&  $bord->apply_user != Auth::user()->id) {
+        if($bord->post_user != $user->id &&  $bord->apply_user != $user->id) {
             abort(403);
         }
 
         // 相手のユーザーのIDを取り出す
-        if($bord->post_user == Auth::user()->id) {
+        if($bord->post_user == $user->id) {
             $partner_id = $bord->apply_user;
         }else{
             $partner_id = $bord->post_user;
@@ -94,12 +95,11 @@ class DirectMessagesController extends Controller
 
         // 相手のユーザー情報を取得
         $partner_info = User::find($partner_id);
-        $messages->user = $partner_info;
         // 案件情報を取得
         $product = Product::find($bord->product_id);
         // カテゴリー情報を取得
         $category = $product->category()->value('category_name');
 
-        return view('logined.dm.dmDetail', compact('bord', 'messages', 'partner_info', 'product', 'category'));
+        return view('logined.dm.dmDetail', compact('bord', 'messages', 'partner_info', 'product', 'category', 'user'));
     }
 }
