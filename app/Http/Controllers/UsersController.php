@@ -25,7 +25,7 @@ class UsersController extends Controller
         // マイページを表示
         // 登録済み案件を取得
         $user = Auth::user();
-        $products = $user->products()->where('deleted_at', null)->orderBy('created_at', 'desc')->take(5)->get();
+        $products = $user->products()->where('deleted_at', null)->orderBy('created_at', 'desc')->paginate(5);
         $category = new Category;
         $categories = $category->getLists()->prepend('選択して下さい', '');
 
