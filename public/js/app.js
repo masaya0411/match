@@ -2249,6 +2249,15 @@ __webpack_require__.r(__webpack_exports__);
     product: Object,
     categories: Object
   },
+  computed: {
+    ischeckCategory: function ischeckCategory() {
+      if (this.product.category_id === 1) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
   filters: {
     numberFormat: function numberFormat(num) {
       var sum = num * 1000;
@@ -38188,7 +38197,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "c-panel__badge-wrap" }, [
-          _vm.product.category_id === 1
+          _vm.ischeckCategory
             ? _c("span", { staticClass: "c-panel__badge c-badge--sm" }, [
                 _vm._v(
                   "\n                " +
@@ -38196,21 +38205,17 @@ var render = function () {
                     "\n            "
                 ),
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.product.category_id === 2
-            ? _c("span", { staticClass: "c-panel__badge c-badge--sm" }, [
+            : _c("span", { staticClass: "c-panel__badge c-badge--sm" }, [
                 _vm._v(
                   "\n                " +
                     _vm._s(_vm.categories[2]) +
                     "\n            "
                 ),
-              ])
-            : _vm._e(),
+              ]),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "c-panel__price-wrap" }, [
-          _vm.product.category_id === 1
+          _vm.ischeckCategory
             ? _c("p", { staticClass: "c-panel__price" }, [
                 _vm._v(
                   "\n                " +
@@ -38222,17 +38227,15 @@ var render = function () {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _vm.product.category_id === 1
+          _vm.ischeckCategory
             ? _c("span", { staticClass: "c-panel__unit" }, [_vm._v("円")])
-            : _vm.product.category_id === 2
-            ? _c("p", { staticClass: "c-panel__price" }, [
+            : _c("p", { staticClass: "c-panel__price" }, [
                 _vm._v(
                   "\n                " +
                     _vm._s(_vm.product.reward) +
                     "\n            "
                 ),
-              ])
-            : _vm._e(),
+              ]),
         ]),
       ]
     ),

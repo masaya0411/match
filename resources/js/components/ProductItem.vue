@@ -6,21 +6,21 @@
                 {{ product.title }}
             </h3>
             <div class="c-panel__badge-wrap">
-                <span v-if="product.category_id === 1" class="c-panel__badge c-badge--sm">
+                <span v-if="ischeckCategory" class="c-panel__badge c-badge--sm">
                     {{ categories[1] }}
                 </span>
-                <span v-if="product.category_id === 2" class="c-panel__badge c-badge--sm">
+                <span v-else class="c-panel__badge c-badge--sm">
                     {{ categories[2] }}
                 </span>
             </div>
             <div class="c-panel__price-wrap">
 
-                <p v-if="product.category_id === 1" class="c-panel__price">
+                <p v-if="ischeckCategory" class="c-panel__price">
                     {{ product.min_price | numberFormat }}~{{ product.max_price | numberFormat }}
                 </p>
-                <span v-if="product.category_id === 1" class="c-panel__unit">円</span>
+                <span v-if="ischeckCategory" class="c-panel__unit">円</span>
 
-                <p v-else-if="product.category_id === 2" class="c-panel__price">
+                <p v-else class="c-panel__price">
                     {{ product.reward }}
                 </p>
 
@@ -36,6 +36,15 @@
             product: Object, 
             categories: Object
             },
+        computed: {
+            ischeckCategory() {
+                if(this.product.category_id === 1) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        },
         filters:{
             numberFormat: function(num) {
                 var sum = num*1000;
