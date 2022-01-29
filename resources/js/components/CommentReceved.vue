@@ -37,7 +37,6 @@
             },
         data: function() {
             return {
-                comment: this.comment,
                 auth_id: this.authId
             }
         },
