@@ -49,7 +49,7 @@
                 }
             },
             isWithdraw() {
-                if(this.this.comment.user === null) {
+                if(this.comment.user === null) {
                     return true;
                 }else{
                     return false;
