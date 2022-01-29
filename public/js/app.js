@@ -2127,16 +2127,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  computed: {
-    sortDesc: function sortDesc(messages) {
-      // var sortMessages = _.sortBy(messages, 'created_at');
-      // var lastMessage = sortMessages[0].msg;
-      // return lastMessage;
-      console.log(messages);
+  methods: {
+    getLatestMessage: function getLatestMessage(messages) {
+      var sortMessages = _.sortBy(messages, 'created_at');
+
+      var lastMessage = sortMessages[0].msg;
+      return latestMessage;
     }
-  },
-  mounted: function mounted() {
-    console.log(window);
   }
 });
 
@@ -38360,7 +38357,9 @@ var render = function () {
                       : _c("p", { staticClass: "p-mypage__dm__text" }, [
                           _vm._v(
                             "\n                    " +
-                              _vm._s(_vm.sortDesc(bord.direct_messages)) +
+                              _vm._s(
+                                _vm.getLatestMessage(bord.direct_messages)
+                              ) +
                               "\n                "
                           ),
                         ]),

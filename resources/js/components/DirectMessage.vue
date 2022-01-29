@@ -22,7 +22,7 @@
                         まだメッセージはありません
                     </p>
                     <p v-else class="p-mypage__dm__text">
-                        {{ sortDesc(bord.direct_messages) }}
+                        {{ getLatestMessage(bord.direct_messages) }}
                     </p>
                 </div>
             </a>
@@ -42,16 +42,12 @@
                 
             }
         },
-        computed: {
-            sortDesc(messages) {
-                // var sortMessages = _.sortBy(messages, 'created_at');
-                // var lastMessage = sortMessages[0].msg;
-                // return lastMessage;
-                console.log(messages);
+        methods: {
+            getLatestMessage(messages) {
+                var sortMessages = _.sortBy(messages, 'created_at');
+                var lastMessage = sortMessages[0].msg;
+                return latestMessage;
             }
-        },
-        mounted() {
-            console.log(window)
         }
     }
 </script>
