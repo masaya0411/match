@@ -11,8 +11,12 @@
 </template>
 
 <script>
+    import DirectMessageItem from "./DirectMessageItem";
 
     export default {
+        components: {
+            DirectMessageItem
+        },
         props: {
             directBords: Array, 
         }
