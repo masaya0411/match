@@ -50,7 +50,7 @@
             }
         },
         mounted() {
-            console.log(this.window)
+            console.log(window)
         }
     }
 </script>
