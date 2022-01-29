@@ -2065,6 +2065,13 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return false;
       }
+    },
+    isWithdraw: function isWithdraw() {
+      if (this.comment.user === null) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 });
@@ -38003,7 +38010,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.isMyid
+  return _vm.isMyid && !_vm.isWithdraw
     ? _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
         _c(
           "a",
