@@ -2203,6 +2203,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2214,9 +2215,6 @@ __webpack_require__.r(__webpack_exports__);
     messages: Array,
     user: Object,
     partner: Object
-  },
-  data: function data() {
-    return {};
   }
 });
 
@@ -2327,9 +2325,6 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     comment: Object,
     myInfo: Object
-  },
-  data: function data() {
-    return {};
   },
   computed: {
     isMyid: function isMyid() {
@@ -38351,7 +38346,11 @@ var render = function () {
               }),
               _vm._v(" "),
               _c("MessageReceved", {
-                attrs: { comment: message, "partner-info": _vm.partner },
+                attrs: {
+                  comment: message,
+                  "partner-info": _vm.partner,
+                  "my-info": _vm.user,
+                },
               }),
             ],
             1

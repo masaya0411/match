@@ -27,11 +27,6 @@
             comment: Object, 
             myInfo: Object
             },
-        data: function() {
-            return {
-                
-            }
-        },
         computed: {
             isMyid () {
                 if(this.myInfo.id === this.comment.from_user) {

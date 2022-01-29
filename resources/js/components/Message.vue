@@ -9,6 +9,7 @@
             <MessageReceved 
                 :comment="message"
                 :partner-info="partner"
+                :my-info="user"
                 />
 
         </div>
@@ -28,11 +29,6 @@
             messages: Array,
             user: Object,
             partner: Object
-        },
-        data: function() {
-            return {
-                
-            }
         }
     }
 </script>
