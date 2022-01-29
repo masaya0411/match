@@ -107,7 +107,11 @@
                                     応募済み案件はありません
                                 </div>
                                 @else
-                                @foreach($apply_products as $apply_product)
+                                <product 
+                                    :get-products="{{ json_encode($apply_products) }}" 
+                                    :get-categories="{{ json_encode($categories) }}">
+                                </product>
+                                <!-- @foreach($apply_products as $apply_product)
                                 <li class="c-panel__item">
                                     <a href="{{ route('products.show',$apply_product->id) }}" class="c-panel__link">
                                         <h3 class="c-panel__title">
@@ -138,7 +142,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                @endforeach
+                                @endforeach -->
                                 @endif
 
                             </ul>

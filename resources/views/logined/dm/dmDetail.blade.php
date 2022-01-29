@@ -61,66 +61,11 @@
 
                 <div class="p-dm-detail__body">
                     <div class="p-dm-detail__comment">
+                        
                         <message  :messages="{{ json_encode($messages) }}" :user="{{ json_encode($user) }}" :partner="{{ json_encode($partner_info) }}"></message>
-                        <!-- <div class="c-comment">
-
-                            @if(!$messages->isEmpty())
-                                @foreach($messages as $msg)
-                                    @if(!empty($msg->from_user) && $msg->from_user == Auth::user()->id)
-                                        <div class="c-comment__list">
-                                            <div class="c-comment__user c-comment__user--send">
-                                                <a href="{{ route('users.show', $msg->from_user) }}" class="c-comment__user__avater c-comment__user__avater--send">
-                                                    <div class="c-comment__user__avater__img">
-                                                        <img src="{{ asset('storage/profile_images/'.Auth::user()->pic) }}">
-                                                    </div>
-                                                    <p class="c-comment__user__avater__name">
-                                                        {{ Auth::user()->name }}
-                                                    </p>
-                                                </a>
-                                                <div class="c-comment__user__content">
-                                                    <div class="c-comment__user__message c-comment__user__message--send">
-                                                        <p class="c-comment__user__text">
-                                                            {{ $msg->msg }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="c-comment__list">
-                                            <div class="c-comment__user c-comment__user--receved">
-                                                <a href="@if(!empty($partner_info)) {{ route('users.show', $partner_info->id) }} @else {{ route('users.show', 0) }} @endif" class="c-comment__user__avater c-comment__user__avater--receved">
-                                                    <div class="c-comment__user__avater__img">
-                                                        @if(!empty($partner_info))
-                                                        <img src="{{ asset('storage/profile_images/'.$partner_info->pic) }}">
-                                                        @else
-                                                        <img src="{{ asset('storage/profile_images/profile.png') }}">
-                                                        @endif
-                                                    </div>
-                                                    <p class="c-comment__user__avater__name">
-                                                        @if(!empty($partner_info))
-                                                        {{ $partner_info->name }}
-                                                        @else
-                                                        退会したユーザー
-                                                        @endif
-                                                    </p>
-                                                </a>
-                                                <div class="c-comment__user__content">
-                                                    <div class="c-comment__user__message c-comment__user__message--receved">
-                                                        <p class="c-comment__user__text">
-                                                            {{ $msg->msg }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            @endif
-                            
-                        </div> -->
+                        
                         @if(empty($partner_info))
-                        <p class="c-error">パートナーが退会しました。メッセージは送れません。</p>
+                        <p class="c-error">パートナーが退会しました。メッセージは送信できません。</p>
                         @endif
                     </div>
 
