@@ -2106,7 +2106,7 @@ __webpack_require__.r(__webpack_exports__);
     DirectMessageItem: _DirectMessageItem__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    directBords: Array
+    directBords: Object
   }
 });
 
