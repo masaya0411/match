@@ -34,7 +34,7 @@
         },
         computed: {
             isMyid () {
-                if(this.myInfo === this.comment.from_user) {
+                if(this.myInfo.id === this.comment.from_user) {
                     return true;
                 }else{
                     return false;
