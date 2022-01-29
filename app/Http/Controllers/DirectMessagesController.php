@@ -94,6 +94,7 @@ class DirectMessagesController extends Controller
 
         // 相手のユーザー情報を取得
         $partner_info = User::find($partner_id);
+        $messages->user = $partner_info;
         // 案件情報を取得
         $product = Product::find($bord->product_id);
         // カテゴリー情報を取得

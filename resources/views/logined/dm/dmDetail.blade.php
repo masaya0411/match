@@ -61,7 +61,8 @@
 
                 <div class="p-dm-detail__body">
                     <div class="p-dm-detail__comment">
-                        <div class="c-comment">
+                        <comment  :messages="{{ json_encode($messages) }}" :auth="{{ (int)Auth::id() }}"></comment>
+                        <!-- <div class="c-comment">
 
                             @if(!$messages->isEmpty())
                                 @foreach($messages as $msg)
@@ -116,12 +117,11 @@
                                     @endif
                                 @endforeach
                             @endif
-
-                            @if(empty($partner_info))
-                            <p class="c-error">パートナーが退会しました。メッセージは送れません。</p>
-                            @endif
-
-                        </div>
+                            
+                        </div> -->
+                        @if(empty($partner_info))
+                        <p class="c-error">パートナーが退会しました。メッセージは送れません。</p>
+                        @endif
                     </div>
 
                     @if(!empty($partner_info))
