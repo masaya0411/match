@@ -35,7 +35,7 @@
 
     export default {
         props: {
-            directBords: Objects, 
+            directBords: Object, 
         },
         data: function() {
             return {
