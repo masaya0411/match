@@ -10,7 +10,9 @@
                 <div class="l-main-content">
                     <div class="p-mypage__block">
                         <div class="c-panel">
-                            <ul class="c-panel__list">
+
+                            <direct-message :direct-bords="{{ json_encode($direct_bords) }}"></direct-message>
+                            <!-- <ul class="c-panel__list">
                                 
                                 @if($direct_bords->isEmpty())
                                 <div class="c-panel__none">
@@ -48,7 +50,7 @@
                                 @endforeach
                                 @endif
 
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>

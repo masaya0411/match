@@ -19,7 +19,7 @@
             ProductItem
         },
         props: {
-            getProducts: null, 
+            getProducts: Objects, 
             getCategories: Object
         },
         data: function() {

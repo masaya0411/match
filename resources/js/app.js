@@ -24,6 +24,7 @@ Vue.component('like-button', require('./components/LikeButton.vue').default);
 Vue.component('product', require('./components/Product.vue').default);
 Vue.component('comment', require('./components/Comment.vue').default);
 Vue.component('message', require('./components/Message.vue').default);
+Vue.component('direct-message', require('./components/DirectMessage.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
