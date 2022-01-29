@@ -2099,42 +2099,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     directBords: Array
-  },
-  data: function data() {
-    return {};
-  },
-  methods: {
-    getLatestMessage: function getLatestMessage(messages) {
-      var sortMessages = _.sortBy(messages, 'created_at').reverse();
-
-      if (sortMessages.length) {
-        var latestMessage = sortMessages[0].msg;
-        return latestMessage;
-      } else {
-        return 'まだメッセージはありません';
-      }
-    }
   }
 });
 
@@ -38309,57 +38276,15 @@ var render = function () {
     "ul",
     { staticClass: "c-panel__list" },
     [
-      _vm.directBords === null
+      !_vm.directBords.length
         ? _c("div", { staticClass: "c-panel__none" }, [
             _vm._v("\n        メッセージはありません\n    "),
           ])
         : _vm._l(_vm.directBords, function (bord) {
-            return _c("li", { key: bord.id, staticClass: "c-panel__item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "c-panel__link p-mypage__dm__wrap",
-                  attrs: { href: "/direct_messages/" + bord.id },
-                },
-                [
-                  _c("div", { staticClass: "p-mypage__dm__link" }, [
-                    bord.user === null
-                      ? _c("img", {
-                          attrs: { src: "/storage/profile_images/profile.png" },
-                        })
-                      : _c("img", {
-                          attrs: {
-                            src: "/storage/profile_images/" + bord.user.pic,
-                          },
-                        }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "p-mypage__dm__body" }, [
-                    bord.user === null
-                      ? _c("p", { staticClass: "p-mypage__dm__name" }, [
-                          _vm._v(
-                            "\n                    退会したユーザー\n                "
-                          ),
-                        ])
-                      : _c("p", { staticClass: "p-mypage__dm__name" }, [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(bord.user.name) +
-                              "\n                "
-                          ),
-                        ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "p-mypage__dm__text" }, [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(_vm.getLatestMessage(bord.direct_messages)) +
-                          "\n                "
-                      ),
-                    ]),
-                  ]),
-                ]
-              ),
-            ])
+            return _c("DirectMessageItem", {
+              key: bord.id,
+              attrs: { bord: bord },
+            })
           }),
     ],
     2

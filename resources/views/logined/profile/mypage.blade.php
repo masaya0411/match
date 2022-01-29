@@ -238,46 +238,11 @@
                             <a href="{{ route('direct.index') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
-                            <direct-message :direct-bords="{{ json_encode($direct_bords) }}"></direct-message>
-                            <!-- <ul class="c-panel__list">
-
-                                @if($direct_bords->isEmpty())
-                                <div class="c-panel__none">
-                                    メッセージはありません
-                                </div>
-                                @else
-                                @foreach($direct_bords as $bord)
-                                <li class="c-panel__item">
-                                    <a href="{{ route('direct.show', $bord->id) }}" class="c-panel__link p-mypage__dm__wrap">
-                                        <div class="p-mypage__dm__link">
-                                            @if(!empty($bord->user))
-                                            <img src="{{ asset('storage/profile_images/'.$bord->user->pic) }}">
-                                            @else
-                                            <img src="{{ asset('storage/profile_images/profile.png') }}">
-                                            @endif
-                                        </div>
-                                        <div class="p-mypage__dm__body">
-                                            <p class="p-mypage__dm__name">
-                                                @if(!empty($bord->user))
-                                                {{ $bord->user->name }}
-                                                @else
-                                                退会したユーザー
-                                                @endif
-                                            </p>
-                                            <p class="p-mypage__dm__text">
-                                                @if($bord->direct_messages->isEmpty())
-                                                まだメッセージはありません
-                                                @else
-                                                {{ $bord->direct_messages->sortByDesc('created_at')->first()->msg }}
-                                                @endif
-                                            </p>
-                                        </div>
-                                    </a>
-                                </li>
-                                @endforeach
-                                @endif
-
-                            </ul> -->
+                            
+                            <direct-message 
+                                :direct-bords="{{ json_encode($direct_bords) }}">
+                            </direct-message>
+                
                         </div>
                     </div>
                 </div>
