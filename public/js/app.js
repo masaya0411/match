@@ -2429,7 +2429,7 @@ __webpack_require__.r(__webpack_exports__);
     ProductItem: _ProductItem__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    getProducts: Objects,
+    getProducts: Object,
     getCategories: Object
   },
   data: function data() {
