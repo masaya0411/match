@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="isMyid" class="c-comment__user c-comment__user--receved">
+    <div v-if="!isMyid" class="c-comment__user c-comment__user--receved">
         <a v-if="isWithdraw" :href="'/user/0'" class="c-comment__user__avater c-comment__user__avater--receved">
             <div class="c-comment__user__avater__img">
                 <img :src="'/storage/profile_images/profile.png'">
@@ -33,7 +33,8 @@
     export default {
         props: {
             comment: Object, 
-            partnerInfo: Object
+            partnerInfo: Object,
+            myInfo: Object
             },
         data: function() {
             return {
@@ -42,7 +43,7 @@
         },
         computed: {
             isMyid () {
-                if(this.partnerInfo.id === this.comment.from_user) {
+                if(this.myInfo.id === this.comment.from_user) {
                     return true;
                 }else{
                     return false;
