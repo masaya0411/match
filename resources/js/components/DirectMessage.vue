@@ -42,7 +42,6 @@
         methods: {
             getLatestMessage(messages) {
                 var sortMessages = _.sortBy(messages, 'created_at').reverse();
-                console.log(sortMessages);
                 if(sortMessages.length) {
                     var latestMessage = sortMessages[0].msg;
                     return latestMessage;

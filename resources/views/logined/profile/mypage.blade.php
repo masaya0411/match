@@ -238,7 +238,8 @@
                             <a href="{{ route('direct.index') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
-                            <ul class="c-panel__list">
+                            <direct-message :direct-bords="{{ json_encode($direct_bords) }}"></direct-message>
+                            <!-- <ul class="c-panel__list">
 
                                 @if($direct_bords->isEmpty())
                                 <div class="c-panel__none">
@@ -276,7 +277,7 @@
                                 @endforeach
                                 @endif
 
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
