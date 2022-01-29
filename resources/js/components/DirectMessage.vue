@@ -44,9 +44,10 @@
         },
         computed: {
             sortDesc(messages) {
-                var sortMessages = _.sortBy(messages, 'created_at');
-                var lastMessage = sortMessages[0].msg;
-                return lastMessage;
+                // var sortMessages = _.sortBy(messages, 'created_at');
+                // var lastMessage = sortMessages[0].msg;
+                // return lastMessage;
+                console.log(messages);
             }
         },
         mounted() {

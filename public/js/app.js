@@ -2129,10 +2129,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     sortDesc: function sortDesc(messages) {
-      var sortMessages = _.sortBy(messages, 'created_at');
-
-      var lastMessage = sortMessages[0].msg;
-      return lastMessage;
+      // var sortMessages = _.sortBy(messages, 'created_at');
+      // var lastMessage = sortMessages[0].msg;
+      // return lastMessage;
+      console.log(messages);
     }
   },
   mounted: function mounted() {
