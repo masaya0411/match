@@ -1,13 +1,13 @@
 <template>
-    <div v-if="comments !== null" class="c-comment">
-        <div v-for="comment in comments" :key="comment.id" class="c-comment__list">
+    <div v-if="messages !== null" class="c-comment">
+        <div v-for="message in messages" :key="message.id" class="c-comment__list">
         
             <CommentSend 
-                :comment="comment"
+                :comment="message"
                 :auth-id="auth"
                 />
             <CommentReceved 
-                :comment="comment"
+                :comment="message"
                 :auth-id="auth"
                 />
 
@@ -25,7 +25,7 @@
             CommentReceved
         },
         props: {
-            comments: Array,
+            messages: Array,
             auth: null
         },
         data: function() {

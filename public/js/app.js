@@ -1935,7 +1935,7 @@ __webpack_require__.r(__webpack_exports__);
     CommentReceved: _CommentReceved__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    comments: Array,
+    messages: Array,
     auth: null
   },
   data: function data() {
@@ -37845,21 +37845,21 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.comments !== null
+  return _vm.messages !== null
     ? _c(
         "div",
         { staticClass: "c-comment" },
-        _vm._l(_vm.comments, function (comment) {
+        _vm._l(_vm.messages, function (message) {
           return _c(
             "div",
-            { key: comment.id, staticClass: "c-comment__list" },
+            { key: message.id, staticClass: "c-comment__list" },
             [
               _c("CommentSend", {
-                attrs: { comment: comment, "auth-id": _vm.auth },
+                attrs: { comment: message, "auth-id": _vm.auth },
               }),
               _vm._v(" "),
               _c("CommentReceved", {
-                attrs: { comment: comment, "auth-id": _vm.auth },
+                attrs: { comment: message, "auth-id": _vm.auth },
               }),
             ],
             1
