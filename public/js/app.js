@@ -2257,10 +2257,10 @@ __webpack_require__.r(__webpack_exports__);
         return false;
       }
     },
-    isfinished: function isfinished() {
-      if (this.product.recruit_flg === false) {
-        return 'is-finished';
-      }
+    checkfinished: function checkfinished() {
+      return {
+        'is-finished': !this.product.recruit_flg
+      };
     }
   },
   filters: {
@@ -38193,7 +38193,7 @@ var render = function () {
       "a",
       {
         staticClass: "c-panel__link",
-        class: _vm.isfinished,
+        class: _vm.checkfinished,
         attrs: { href: "/products/" + _vm.product.id },
       },
       [
