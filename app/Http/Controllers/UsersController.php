@@ -164,6 +164,8 @@ class UsersController extends Controller
         }
         // ユーザー情報を論理削除
         $user->delete();
+        Auth::logout();
+        
         return redirect('/')->with('flash_message', '退会が完了しました。');
     }
 

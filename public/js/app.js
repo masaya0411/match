@@ -38010,7 +38010,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.isMyid && !_vm.isWithdraw
+  return _vm.isMyid
     ? _c("div", { staticClass: "c-comment__user c-comment__user--send" }, [
         _c(
           "a",
