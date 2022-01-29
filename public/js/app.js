@@ -2256,6 +2256,11 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return false;
       }
+    },
+    isfinished: function isfinished() {
+      if (this.product.recruit_flg === false) {
+        return 'is-finished';
+      }
     }
   },
   filters: {
@@ -38188,7 +38193,7 @@ var render = function () {
       "a",
       {
         staticClass: "c-panel__link",
-        class: { "is-finished": !_vm.product.recruit_flg },
+        class: _vm.isfinished,
         attrs: { href: "/products/" + _vm.product.id },
       },
       [

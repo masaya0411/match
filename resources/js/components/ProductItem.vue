@@ -1,7 +1,7 @@
 <template>
 
     <li class="c-panel__item">
-        <a :href="'/products/' + product.id" :class="{ 'is-finished': !product.recruit_flg }" class="c-panel__link">
+        <a :href="'/products/' + product.id" :class="isfinished" class="c-panel__link">
             <h3 class="c-panel__title">
                 {{ product.title }}
             </h3>
@@ -42,6 +42,11 @@
                     return true;
                 }else{
                     return false;
+                }
+            },
+            isfinished() {
+                if(this.product.recruit_flg === false) {
+                    return 'is-finished'
                 }
             }
         },
