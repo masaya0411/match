@@ -2004,6 +2004,13 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return false;
       }
+    },
+    isWithdraw: function isWithdraw() {
+      if (this["this"].comment.user === null) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 });
@@ -37907,8 +37914,27 @@ var render = function () {
   var _c = _vm._self._c || _h
   return !_vm.isMyid
     ? _c("div", { staticClass: "c-comment__user c-comment__user--receved" }, [
-        _vm.comment.user !== null
+        _vm.isWithdraw
           ? _c(
+              "a",
+              {
+                staticClass:
+                  "c-comment__user__avater c-comment__user__avater--receved",
+                attrs: { href: "/user/0" },
+              },
+              [
+                _c("div", { staticClass: "c-comment__user__avater__img" }, [
+                  _c("img", {
+                    attrs: { src: "/storage/profile_images/profile.png" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "c-comment__user__avater__name" }, [
+                  _vm._v("\n            退会したユーザー\n        "),
+                ]),
+              ]
+            )
+          : _c(
               "a",
               {
                 staticClass:
@@ -37930,25 +37956,6 @@ var render = function () {
                       _vm._s(_vm.comment.user.name) +
                       "\n        "
                   ),
-                ]),
-              ]
-            )
-          : _c(
-              "a",
-              {
-                staticClass:
-                  "c-comment__user__avater c-comment__user__avater--receved",
-                attrs: { href: "/user/0" },
-              },
-              [
-                _c("div", { staticClass: "c-comment__user__avater__img" }, [
-                  _c("img", {
-                    attrs: { src: "/storage/profile_images/profile.png" },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "c-comment__user__avater__name" }, [
-                  _vm._v("\n            退会したユーザー\n        "),
                 ]),
               ]
             ),
