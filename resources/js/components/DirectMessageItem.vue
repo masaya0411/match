@@ -26,7 +26,7 @@
 
     export default {
         props: {
-            bord: Array, 
+            bord: Object, 
         },
         methods: {
             getLatestMessage(messages) {

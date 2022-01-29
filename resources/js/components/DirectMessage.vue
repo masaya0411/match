@@ -18,7 +18,7 @@
             DirectMessageItem
         },
         props: {
-            directBords: Object, 
+            directBords: Array, 
         }
     }
 </script>

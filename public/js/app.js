@@ -2106,7 +2106,7 @@ __webpack_require__.r(__webpack_exports__);
     DirectMessageItem: _DirectMessageItem__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    directBords: Object
+    directBords: Array
   }
 });
 
@@ -2147,7 +2147,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    bord: Array
+    bord: Object
   },
   methods: {
     getLatestMessage: function getLatestMessage(messages) {
