@@ -2131,9 +2131,8 @@ __webpack_require__.r(__webpack_exports__);
     getLatestMessage: function getLatestMessage(messages) {
       var sortMessages = _.sortBy(messages, 'created_at');
 
-      console.log(sortMessages);
-      var latestMessage = sortMessages[0].msg;
-      return latestMessage;
+      console.log(sortMessages); // var latestMessage = sortMessages[0].msg;
+      // return latestMessage;
     }
   }
 });
