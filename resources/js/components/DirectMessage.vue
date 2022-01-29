@@ -35,7 +35,7 @@
 
     export default {
         props: {
-            directBords: Object, 
+            directBords: Array, 
         },
         data: function() {
             return {
@@ -48,6 +48,9 @@
                 var lastMessage = sortMessages[0].msg;
                 return lastMessage;
             }
+        },
+        mounted() {
+            console.log(this.window)
         }
     }
 </script>
