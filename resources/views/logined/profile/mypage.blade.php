@@ -6,7 +6,6 @@
     <!--  フラッシュメッセージ -->
     <!-- @if(session('flash_message')) -->
         <div class="c-flash-message c-flash-message--success js-flashMessage">
-            <!-- {{ session('flash_message') }} -->
             aaaaaaaaaa
         </div>
     <!-- @endif -->
