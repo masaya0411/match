@@ -5,7 +5,7 @@
 <main class="l-main u-bg-color--gray">
     <!--  フラッシュメッセージ -->
     
-        <div class="c-flash-message c-flash-message--success js-flashMessage">
+        <div class="c-flash-message c-flash-message--success">
             aaaaaaaaaa
         </div>
 
