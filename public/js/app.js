@@ -2581,7 +2581,7 @@ __webpack_require__.r(__webpack_exports__);
   //     PublicMessageItem
   // },
   props: {
-    publicMessages: Object
+    publicMessages: null
   },
   computed: {
     isEmptyObject: function isEmptyObject() {
