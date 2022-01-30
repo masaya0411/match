@@ -4,11 +4,12 @@
 @section('content')
 <main class="l-main u-bg-color--gray">
     <!--  フラッシュメッセージ -->
-    @if(session('flash_message'))
+    <!-- @if(session('flash_message')) -->
         <div class="c-flash-message c-flash-message--success js-flashMessage">
-            {{ session('flash_message') }}
+            <!-- {{ session('flash_message') }} -->
+            aaaaaaaaaa
         </div>
-    @endif
+    <!-- @endif -->
 
     <div class="p-mypage">
         <div class="l-content--lg">
