@@ -835,6 +835,7 @@ input[type=checkbox]:checked + input[type=checkbox] + .c-form__checkbox__text__c
 }
 .c-header-nav__user__link--logout {
   width: 100%;
+  color: #000;
 }
 @media screen and (max-width: 768px) {
   .c-header-nav.is-navOpen {
