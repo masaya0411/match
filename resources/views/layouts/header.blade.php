@@ -85,9 +85,7 @@
                         <li class="c-header-nav__user__item">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="c-header-nav__user__link c-header-nav__user__link--logout js-header-link">
-                                    ログアウト
-                                </button>
+                                <button type="submit" class="c-header-nav__user__link c-header-nav__user__link--logout js-header-link">ログアウト</button>
                             </form>
                         </li>
                     </ul>
