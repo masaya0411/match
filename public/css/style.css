@@ -91,6 +91,10 @@ input, button, textarea, select {
   appearance: none;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 input[type=checkbox] {
   opacity: 0;
   position: absolute;

@@ -42,6 +42,11 @@ input,button,textarea,select {
   -moz-appearance: none;
   appearance: none;
 }
+select {
+  &::-ms-expand {
+    display: none;
+  }
+}
 input[type=checkbox] {
   opacity: 0;
   position: absolute;
