@@ -11,7 +11,6 @@
 </template>
 
 <script>
-    import moment from "moment"
     import PublicMessageItem from "./PublicMessageItem";
 
     export default {
