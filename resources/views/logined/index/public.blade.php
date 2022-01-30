@@ -10,9 +10,12 @@
                 <div class="l-main-content">
                     <div class="p-mypage__block">
                         <div class="c-panel">
-                            <ul class="c-panel__list">
+                            
+                            <public-message 
+                                :public-messages="{{ json_encode($public_messages) }}">
+                            </public-message>
 
-                                @if($public_messages->isEmpty())
+                                <!-- @if($public_messages->isEmpty())
                                 <div class="c-panel__none">
                                     メッセージはありません
                                 </div>
@@ -34,9 +37,8 @@
                                     </a>
                                 </li>
                                 @endforeach
-                                @endif
+                                @endif -->
 
-                            </ul>
                         </div>
                     </div>
                 </div>
