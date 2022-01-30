@@ -202,33 +202,11 @@
                             <a href="{{ route('public.index') }}" class="p-mypage__block__link">一覧へ</a>
                         </div>
                         <div class="c-panel">
-                            <ul class="c-panel__list">
 
-                            @if($public_messages->isEmpty())
-                            <div class="c-panel__none">
-                                メッセージはありません
-                            </div>
-                            @else
-                            @foreach($public_messages as $public_message)
-                                <li class="c-panel__item">
-                                    <a href="{{ route('products.show', $public_message->id) }}" class="c-panel__link">
-                                        <h3 class="c-panel__title">
-                                            {{ $public_message->title }}
-                                        </h3>
-                                        <div class="p-mypage__pb-msg__wrap">
-                                            <p class="p-mypage__pb-msg__text">
-                                                {{ $public_message->msg->public_msg }}
-                                            </p>
-                                            <span class="p-mypage__pb-msg__time">
-                                                {{ $public_message->msg->created_at->format('Y/m/d H:i') }}
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                            @endif
-
-                            </ul>
+                            <public-message 
+                                :public-messages="{{ json_encode($public_messages) }}">
+                            </public-message>
+                            
                         </div>
                     </div>
 
