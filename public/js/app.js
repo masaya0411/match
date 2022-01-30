@@ -2138,6 +2138,11 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     bord: Object
   },
+  computed: {
+    isWithdraw: function isWithdraw() {
+      return this.bord.user === null;
+    }
+  },
   methods: {
     getLatestMessage: function getLatestMessage(messages) {
       var sortMessages = _.sortBy(messages, 'created_at').reverse();
@@ -60027,7 +60032,7 @@ var render = function () {
       },
       [
         _c("div", { staticClass: "p-mypage__dm__link" }, [
-          _vm.bord.user === null
+          _vm.isWithdraw
             ? _c("img", {
                 attrs: { src: "/storage/profile_images/profile.png" },
               })
@@ -60037,7 +60042,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "p-mypage__dm__body" }, [
-          _vm.bord.user === null
+          _vm.isWithdraw
             ? _c("p", { staticClass: "p-mypage__dm__name" }, [
                 _vm._v("\n                退会したユーザー\n            "),
               ])

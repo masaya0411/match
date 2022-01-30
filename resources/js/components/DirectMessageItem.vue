@@ -3,11 +3,11 @@
     <li class="c-panel__item">
         <a :href="'/direct_messages/' + bord.id" class="c-panel__link p-mypage__dm__wrap">
             <div class="p-mypage__dm__link">
-                <img v-if="bord.user === null" :src="'/storage/profile_images/profile.png'">
+                <img v-if="isWithdraw" :src="'/storage/profile_images/profile.png'">
                 <img v-else :src="'/storage/profile_images/' + bord.user.pic">
             </div>
             <div class="p-mypage__dm__body">
-                <p v-if="bord.user === null" class="p-mypage__dm__name">
+                <p v-if="isWithdraw" class="p-mypage__dm__name">
                     退会したユーザー
                 </p>
                 <p v-else class="p-mypage__dm__name">
@@ -26,6 +26,11 @@
     export default {
         props: {
             bord: Object, 
+        },
+        computed: {
+            isWithdraw() {
+                return this.bord.user === null
+            }
         },
         methods: {
             getLatestMessage(messages) {
