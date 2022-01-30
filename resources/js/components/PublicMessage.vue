@@ -22,11 +22,7 @@
         },
         computed: {
             isEmptyObject() {
-                if(Object.keys(this.publicMessages).length === 0) {
-                    return true;
-                }else{
-                    return false;
-                }
+                return Object.keys(this.publicMessages).length === 0;
             }
         }
     }

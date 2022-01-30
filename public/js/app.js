@@ -2352,18 +2352,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isMyid: function isMyid() {
-      if (this.myInfo.id === this.comment.from_user) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.myInfo.id === this.comment.from_user;
     },
     isWithdraw: function isWithdraw() {
-      if (this.partnerInfo === null) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.partnerInfo === null;
     }
   }
 });
@@ -2409,11 +2401,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isMyid: function isMyid() {
-      if (this.myInfo.id === this.comment.from_user) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.myInfo.id === this.comment.from_user;
     }
   }
 });
@@ -2510,11 +2498,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     ischeckCategory: function ischeckCategory() {
-      if (this.product.category_id === 1) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.product.category_id === 1;
     },
     checkfinished: function checkfinished() {
       return {
@@ -2564,11 +2548,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isEmptyObject: function isEmptyObject() {
-      if (Object.keys(this.publicMessages).length === 0) {
-        return true;
-      } else {
-        return false;
-      }
+      return Object.keys(this.publicMessages).length === 0;
     }
   }
 });

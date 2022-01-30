@@ -29,11 +29,7 @@
             },
         computed: {
             isMyid () {
-                if(this.myInfo.id === this.comment.from_user) {
-                    return true;
-                }else{
-                    return false;
-                }
+                return this.myInfo.id === this.comment.from_user;
             }
         }
     }

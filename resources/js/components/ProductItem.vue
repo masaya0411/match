@@ -38,11 +38,7 @@
             },
         computed: {
             ischeckCategory() {
-                if(this.product.category_id === 1) {
-                    return true;
-                }else{
-                    return false;
-                }
+                return this.product.category_id === 1;
             },
             checkfinished() {
                 return {
