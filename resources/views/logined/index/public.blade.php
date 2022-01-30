@@ -12,7 +12,7 @@
                         <div class="c-panel">
                             
                             <public-message 
-                                :public-messages="{{ json_encode($public_messages) }}">
+                                :public-messages="{{ json_encode($public_messages, JSON_FORCE_OBJECT) }}">
                             </public-message>
 
                                 <!-- @if($public_messages->isEmpty())

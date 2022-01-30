@@ -32,7 +32,7 @@
         //     PublicMessageItem
         // },
         props: {
-            publicMessages: { type:Object, required: false, default: null } 
+            publicMessages: Object
         },
         computed: {
             isEmptyObject() {

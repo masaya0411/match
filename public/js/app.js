@@ -2581,11 +2581,7 @@ __webpack_require__.r(__webpack_exports__);
   //     PublicMessageItem
   // },
   props: {
-    publicMessages: {
-      type: Object,
-      required: false,
-      "default": null
-    }
+    publicMessages: Object
   },
   computed: {
     isEmptyObject: function isEmptyObject() {
