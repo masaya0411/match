@@ -27,7 +27,7 @@
         },
         methods: {
             formatDate(date) {
-                if(!!date) return moment(date).format("YYYY/MM/DD hh:mm");
+                if(!!date) return moment(date).format("YYYY/MM/DD HH:mm");
             }
         }
     }

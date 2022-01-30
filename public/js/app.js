@@ -2593,7 +2593,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     formatDate: function formatDate(date) {
-      if (!!date) return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).format("YYYY/MM/DD hh:mm");
+      if (!!date) return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).format("YYYY/MM/DD HH:mm");
     }
   }
 });
