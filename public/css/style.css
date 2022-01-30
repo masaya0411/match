@@ -430,11 +430,10 @@ input[type=file] {
 .c-flash-message {
   font-size: 1.1rem;
   padding: 20px;
-  position: absolute;
+  position: relative;
   width: 100%;
   display: block;
   text-align: center;
-  transform: all 0.5s;
   z-index: 1001;
 }
 .c-flash-message--success {
