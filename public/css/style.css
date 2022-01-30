@@ -1481,6 +1481,10 @@ input[type=checkbox]:checked + input[type=checkbox] + .c-form__checkbox__text__c
 .p-mypage__panel__btn--delete:hover {
   opacity: 0.5;
 }
+.p-mypage__panel__btn--delete > .fa-trash-alt {
+  width: 32px;
+  height: 32px;
+}
 .p-mypage__pb-msg__wrap {
   display: flex;
   justify-content: space-between;
