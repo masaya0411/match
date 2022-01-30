@@ -2581,7 +2581,16 @@ __webpack_require__.r(__webpack_exports__);
   //     PublicMessageItem
   // },
   props: {
-    publicMessages: Array
+    publicMessages: Object
+  },
+  computed: {
+    isEmptyObject: function isEmptyObject() {
+      if (Object.keys(this.publicMessages).length === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
   methods: {
     formatDate: function formatDate(date) {
@@ -60473,7 +60482,7 @@ var render = function () {
     "ul",
     { staticClass: "c-panel__list" },
     [
-      !_vm.publicMessages.length
+      _vm.isEmptyObject
         ? _c("div", { staticClass: "c-panel__none" }, [
             _vm._v("\n        メッセージはありません\n    "),
           ])

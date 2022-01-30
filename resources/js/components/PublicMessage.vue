@@ -1,7 +1,7 @@
 <template>
     <ul class="c-panel__list">
 
-        <div v-if="!publicMessages.length" class="c-panel__none">
+        <div v-if="isEmptyObject" class="c-panel__none">
             メッセージはありません
         </div>
 
@@ -32,7 +32,16 @@
         //     PublicMessageItem
         // },
         props: {
-            publicMessages: Array, 
+            publicMessages: Object 
+        },
+        computed: {
+            isEmptyObject() {
+                if(Object.keys(this.publicMessages).length === 0) {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
         },
         methods: {
             formatDate(date) {
