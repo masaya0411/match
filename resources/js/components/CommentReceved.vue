@@ -42,18 +42,10 @@
         },
         computed: {
             isMyid () {
-                if(this.auth_id === this.comment.user_id) {
-                    return true;
-                }else{
-                    return false;
-                }
+                return this.auth_id === this.comment.user_id
             },
             isWithdraw() {
-                if(this.comment.user === null) {
-                    return true;
-                }else{
-                    return false;
-                }
+                return this.comment.user === null
             }
         }
     }

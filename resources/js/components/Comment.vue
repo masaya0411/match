@@ -1,5 +1,5 @@
 <template>
-    <div v-if="messages !== null" class="c-comment">
+    <div v-if="!isEmpty" class="c-comment">
         <div v-for="message in messages" :key="message.id" class="c-comment__list">
         
             <CommentSend 
@@ -27,6 +27,11 @@
         props: {
             messages: Array,
             auth: null
+        },
+        computed: {
+            isEmpty() {
+                return this.messages === null;
+            }
         },
         data: function() {
             return {

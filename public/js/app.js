@@ -1938,6 +1938,11 @@ __webpack_require__.r(__webpack_exports__);
     messages: Array,
     auth: null
   },
+  computed: {
+    isEmpty: function isEmpty() {
+      return this.messages === null;
+    }
+  },
   data: function data() {
     return {
       auth_id: this.auth
@@ -1999,18 +2004,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isMyid: function isMyid() {
-      if (this.auth_id === this.comment.user_id) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.auth_id === this.comment.user_id;
     },
     isWithdraw: function isWithdraw() {
-      if (this.comment.user === null) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.comment.user === null;
     }
   }
 });
@@ -2060,18 +2057,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isMyid: function isMyid() {
-      if (this.auth_id === this.comment.user_id) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.auth_id === this.comment.user_id;
     },
     isWithdraw: function isWithdraw() {
-      if (this.comment.user === null) {
-        return true;
-      } else {
-        return false;
-      }
+      return this.comment.user === null;
     }
   }
 });
@@ -59783,7 +59772,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.messages !== null
+  return !_vm.isEmpty
     ? _c(
         "div",
         { staticClass: "c-comment" },
